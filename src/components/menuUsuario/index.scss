@@ -1,0 +1,44 @@
+.menu-usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5vh;
+    width: 20%;
+    height: 100vh;
+    padding: 8vh 0;
+    background-color: #D9D9D9;
+
+    img {
+        width: 100%;
+        max-width: 6.5vw;
+    }
+
+    h1 {
+        font: 500 0.9vw inter;
+        color: #636D77;
+    }
+
+    .botoes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 2vh;
+        width: 100%;
+        margin-top: 3vh;
+
+        a {
+            color: #636D77;
+            text-decoration: none;
+            width: 100%;
+            padding: 1.5vw 4vw;
+            font: 400 0.8vw inter;
+
+            &:hover {
+                background-color: #CDCDCDE0;
+                transition: .3s;
+            }
+        }
+    }
+}

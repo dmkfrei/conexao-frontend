@@ -1,0 +1,66 @@
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #A2A2A2;
+    width: 20%;
+    height: 100vh;
+
+    .foto {
+        display: flex;
+        justify-content: center;
+        padding: 2.5vh;
+        width: 100%;
+
+        #semfoto {
+            width: 100%;
+            max-width: 3vw;
+        }
+    }
+
+    .navegacao {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1vw;
+        margin-top: 1vw;
+        a {
+            color: #fff;
+            font: 500 0.8vw inter;
+            text-decoration: none;
+            width: 100%;
+            padding: 1.5vw 4vw;
+
+            &:hover {
+                background-color: #D9D9D930;
+                cursor: pointer;
+                transition: .5s;
+            }
+        }
+
+        .exit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20vw;
+            width: 100%;
+
+            a {
+                color: #fff;
+                font: 500 0.8vw inter;
+                text-decoration: none;
+                text-align: left;
+                padding: 3vh 0;
+                width: 100%;
+                padding-left: 4vw;
+
+                &:hover {
+                    background-color: #D9D9D930;
+                    transition: .5s;
+                }
+            }
+        }
+    }
+}
