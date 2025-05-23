@@ -1,0 +1,170 @@
+.cadastro-empresa {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    background-color: #F3F3F3;
+    min-height: 100vh;
+    overflow: hidden;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+        padding: 25px;
+
+        .bordaBranca {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #fff;
+            background-color: #fff;
+            width: 45%;
+            min-width: 550px;
+            background: white;
+            padding: 8.5vh 13px;
+            border-radius: 8px;
+            gap: 1.5vw;
+            margin-left: 20px;
+
+            .texto {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 2vh;
+                min-width: 400px;
+                width: 60%;
+
+                h1 {
+                    font: 700 24px inter;
+                    color: #5D636B;
+                }
+
+                p {
+                    font: 500 18px inter;
+                    color: #5D636B;
+
+                    span {
+                        display: block;
+                    }
+                }
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 60%;
+                gap: 2vh;
+
+                .inputNome,
+                .inputSenha,
+                .inputConfirmar {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 1vh;
+                    width: 100%;
+                    min-width: 400px;
+                    align-items: center;
+
+                    h1 {
+                        font: 500 18px inter;
+                        color: #797B7C;
+                        margin-bottom: 8px;
+                        align-self: start;
+                    }
+
+                    input {
+                        height: 55px;
+                        border-radius: 16px;
+                        border: 2px solid #A2A2A2;
+                        padding: 12px;
+                        font: 500 16px inter;
+                        outline: none;
+                        width: 100%;
+                        min-width: 200px;
+                    }
+
+                }
+
+                .botao {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    margin-top: 1.5vw;
+
+                    button {
+                        width: 100%;
+                        min-width: 400px;
+                        min-height: 12px;
+                        height: 55px;
+                        border-radius: 16px;
+                        font: 500 17px inter;
+                        background-color: #797B7C;
+                        color: #fff;
+                        border: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-height: 800px) {
+        .content {
+            .bordaBranca {
+                width: 60%; 
+                max-width: 500px;
+                height: 95%;
+
+                .texto {
+                    min-width: 350px;
+                    h1 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 15px;
+                    }
+                }
+
+                .inputs {
+
+                    .inputNome,
+                    .inputConfirmar,
+                    .inputSenha {
+                        min-width: 350px;
+                        h1 {
+                            font-size: 15px;
+                        }
+
+                        input {
+                            height: 50px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .botao {
+                        button {
+                            height: 50px;
+                            min-width: 350px;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .menu-lateral, .menu-usuario{
+            width: 25%;
+            min-width: 0;
+        }
+    }
+}
