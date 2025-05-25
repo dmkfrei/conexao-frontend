@@ -15,7 +15,7 @@ export default function LoginEmpresa() {
                     </div>
 
                     <div className="form">
-                        <h1>Usuário</h1>
+                        <h1>Nome</h1>
                         <input type="text" placeholder='Insira o seu nome de usuário.' />
 
                         <h1>Senha</h1>

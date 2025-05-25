@@ -1,14 +1,14 @@
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
-import MenuUsuario from '../../../components/menuUsuario';
+import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 
 export default function ConfirmarInfos() {
     return (
         <div className="confirmar-infos">
             <MenuLateral />
-            <MenuUsuario />
+            <MenuEmpresa/>
             <Cabecalho>
                 <div className="content">
                     <div className="text">

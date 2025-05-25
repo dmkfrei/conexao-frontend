@@ -2,7 +2,7 @@ import './index.scss';
 import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
-import MenuUsuario from '../../../components/menuUsuario';
+import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 
 
@@ -10,7 +10,7 @@ export default function Contratos() {
     return (
         <div className="contratos">
             <MenuLateral />
-            <MenuUsuario />
+            <MenuEmpresa />
             <Cabecalho>
                 <div className="content">
 

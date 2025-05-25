@@ -1,7 +1,7 @@
 import './index.scss';
 import MenuLateral from '../../../components/menuLateral';
 import Cabecalho from '../../../components/cabecalho';
-import MenuUsuario from '../../../components/menuUsuario';
+import MenuEmpresa from '../../../components/menuEmpresa';
 
 
 export default function CadastroEmpresa() {
@@ -9,7 +9,7 @@ export default function CadastroEmpresa() {
 
         <div className="cadastro-empresa">
             <MenuLateral />
-            <MenuUsuario />
+            <MenuEmpresa />
             <Cabecalho>
 
                 <div className="content">

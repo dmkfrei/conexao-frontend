@@ -1,7 +1,7 @@
 import './index.scss';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
-export default function MenuUsuario() {
+export default function MenuEmpresa() {
     const location = useLocation();
 
     let rotas = [
@@ -13,7 +13,7 @@ export default function MenuUsuario() {
     let rotaPertenceValidacoes = rotas.includes(location.pathname);
 
     return (
-        <div className="menu-usuario">
+        <div className="menu-empresa">
             <div className="borda">
                 <img src="/assets/images/insf.svg" alt="" />
             </div>

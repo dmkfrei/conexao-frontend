@@ -6,6 +6,7 @@ import ConfirmarInfos from "./pages/insf/confirmarInfos";
 import Validacoes from "./pages/insf/validacoes";
 import Contratos from "./pages/insf/contratos";
 import LoginEmpresa from "./pages/empresa/login";
+import SalvarInfos from "./pages/empresa/salvarInfos";
 
 export default function Navegacao() {
     return (
@@ -18,6 +19,7 @@ export default function Navegacao() {
                 <Route path="/validacoes" element={<Validacoes />} />
                 <Route path="/contratos" element={<Contratos />} />
                 <Route path="/empresa/login" element={<LoginEmpresa />} />
+                <Route path="/empresa/salvarInfos" element={<SalvarInfos />} />
             </Routes>
         </BrowserRouter>
     )

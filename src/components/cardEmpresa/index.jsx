@@ -43,7 +43,7 @@ export default function CardEmpresa() {
             </div>
 
             <img src="/assets/images/olho.svg" alt="Visualizar" className="icon-eye" onClick={estaAtivo}/>
-            <img src="/assets/images/pupila.svg" alt="" id='pupila'/>
+            <img src="/assets/images/pupila.svg" alt="" id='pupila' onClick={estaAtivo}/>
         </div>
     );
 };
