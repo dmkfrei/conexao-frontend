@@ -30,7 +30,9 @@ export default function Login() {
                     </div>
                 </div>
 
-                <div className="direita"> </div>
+                <div className="direita"> 
+                    <img src="/assets/images/Art.svg" alt="" />
+                </div>
             </div>
 
         </div>

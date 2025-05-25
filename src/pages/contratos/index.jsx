@@ -1,0 +1,29 @@
+import './index.scss';
+import './index.scss';
+import Cabecalho from '../../components/cabecalho';
+import MenuLateral from '../../components/menuLateral';
+import MenuUsuario from '../../components/menuUsuario';
+import { Link } from 'react-router-dom';
+
+
+export default function Contratos() {
+    return (
+        <div className="contratos">
+            <MenuLateral />
+            <MenuUsuario />
+            <Cabecalho>
+                <div className="content">
+
+                    <h1>Contratos Pendentes</h1>
+
+                    <div className="bordaBranca">
+                        <div className="card-infos">
+                            <p id='id'>#1</p>
+                            <img src="/assets/images/olho.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </Cabecalho>
+        </div>
+    )
+}

@@ -6,8 +6,8 @@ export default function Cabecalho({children}) {
         <div className="cabecalho">
             <div className="cima">
                 <div className="infos">
-                    <h1>Bruno O Status </h1>
-                    <img src="/assets/images/semfoto.svg" alt="" />
+                    <h1>ISNF</h1>
+                    <img src="/assets/images/logoFrei.svg" alt="" />
                 </div>
             </div>
             {children}

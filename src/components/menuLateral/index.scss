@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #A2A2A2;
-  width: 15%;
-  min-width: 200px;
-  max-width: 230px;
+  background-color: #2B3031;
+  min-width: 240px;
+  max-width: 280px;
   min-height: 100vh;
   padding: 20px 0;
 
@@ -15,7 +14,7 @@
     padding: 2.5vh;
     width: 100%;
 
-    #semfoto {
+    #logo {
       width: 100%;
       max-width: 55px;
     }
@@ -37,28 +36,35 @@
       text-decoration: none;
       width: 100%;
       padding: 30px 55px;
-      background-color: #D9D9D930;
       cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: #D9D9D930;
+      }
     }
 
-    .exit {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+  }
+
+  .exit {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: auto;
+
+    a {
+      color: #fff;
+      font: 500 14px inter;
+      text-decoration: none;
+      text-align: left;
+      padding: 30px 55px;
       width: 100%;
 
-      a {
-        color: #fff;
-        font: 500 14px inter;
-        text-decoration: none;
-        text-align: left;
-        padding: 29px 55px;
-        width: 100%;
-
-        &:hover {
-          background-color: #D9D9D930;
-          transition: .5s;
-        }
+      &:hover {
+        background-color: #D9D9D930;
+        transition: .5s;
       }
     }
   }
@@ -70,6 +76,7 @@
   @media (max-width: 1153px) {
     .navegacao {
       margin-top: 22px;
+
       a {
         padding: 29px 20px;
       }
@@ -82,4 +89,8 @@
     }
   }
 
+  @media(max-height: 800px) {
+    width: 25%;
+    min-width: 0;
+  }
 }

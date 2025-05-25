@@ -6,7 +6,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-color: #A2A2A2;
+    background-color: #2B3130;
     gap: 2rem;
 
     .bordaBranca {
@@ -14,7 +14,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        width: 90%;
+        width: 80%;
         height: 90vh;
         background-color: #fff;
         border-radius: 20px;
@@ -35,16 +35,16 @@
                 justify-content: center;
                 align-items: flex-start;
                 gap: 1.2rem;
-                width: 60%;
+                width: 50%;
                 min-width: 400px;
 
                 h1 {
-                    font: 700 25px inter;
+                    font: 700 24px inter;
                     color: #797B7C;
                 }
 
                 p {
-                    font: 500 20px inter;
+                    font: 500 18px inter;
                     color: #797B7C;
                 }
             }
@@ -55,7 +55,7 @@
                 justify-content: center;
                 align-items: center;
                 gap: 1.5rem;
-                width: 60%;
+                width: 50%;
                 min-width: 400px;
 
                 h1 {
@@ -82,7 +82,7 @@
                     margin-top: -0.5rem;
 
                     h1 {
-                        font: 500 19px inter;
+                        font: 500 17px inter;
                         color: #797B7C;
                         cursor: pointer;
                     }
@@ -93,23 +93,26 @@
                     min-width: 350px;
                     border-radius: 18px;
                     padding: 18px 15px;
-                    font: 500 18px inter;
+                    font: 500 16px inter;
                     background-color: #797B7C;
                     color: #fff;
                     border: none;
                     cursor: pointer;
                 }
             }
-
-
         }
 
         .direita {
-            width: 50%;
-            border-radius: 2vw;
-            padding: 85vh 0 0;
-            margin: 3vh;
-            background-color: #D9D9D9;
+            width: 45%; 
+            height: 95%;
+            
+            img{
+                width: 100%;
+                max-width: 806px;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 1.5vw;
+            }
         }
     }
 
@@ -123,7 +126,7 @@
 
     @media (max-height: 800px) {
         .bordaBranca {
-            height: 95vh;
+            height: 80vh;
 
             .esquerda {
                 padding: 1rem 0;
@@ -154,12 +157,12 @@
 
                     input {
                         font-size: 14px;
-                        height: 52px;
+                        height: 45px;
                     }
 
                     button {
                         font-size: 14px;
-                        height: 50px;
+                        height: 48px;
                     }
 
 
