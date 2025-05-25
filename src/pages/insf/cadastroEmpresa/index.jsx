@@ -1,7 +1,7 @@
 import './index.scss';
-import MenuLateral from '../../components/menuLateral';
-import Cabecalho from '../../components/cabecalho';
-import MenuUsuario from '../../components/menuUsuario';
+import MenuLateral from '../../../components/menuLateral';
+import Cabecalho from '../../../components/cabecalho';
+import MenuUsuario from '../../../components/menuUsuario';
 
 
 export default function CadastroEmpresa() {

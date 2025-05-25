@@ -1,9 +1,9 @@
 import './index.scss';
-import Cabecalho from '../../components/cabecalho';
-import MenuLateral from '../../components/menuLateral';
-import MenuUsuario from '../../components/menuUsuario';
+import Cabecalho from '../../../components/cabecalho';
+import MenuLateral from '../../../components/menuLateral';
+import MenuUsuario from '../../../components/menuUsuario';
 import { Link } from 'react-router-dom';
-import CardEmpresa from '../../components/cardEmpresa';
+import CardEmpresa from '../../../components/cardEmpresa';
 
 export default function Validacoes() {
     return (

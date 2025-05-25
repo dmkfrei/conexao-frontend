@@ -1,0 +1,181 @@
+.login-empresa {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #2B3130;
+    gap: 2rem;
+
+    .bordaBranca {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 90vh;
+        background-color: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+
+        .esquerda {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            gap: 1rem;
+            padding: 2rem 0;
+
+            .mensagem {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 1.2rem;
+                width: 50%;
+                min-width: 400px;
+
+                h1 {
+                    font: 700 24px inter;
+                    color: #797B7C;
+                }
+
+                p {
+                    font: 500 18px inter;
+                    color: #797B7C;
+                }
+            }
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                width: 50%;
+                min-width: 400px;
+
+                h1 {
+                    font: 700 20px inter;
+                    color: #797B7C;
+                    align-self: start;
+                }
+
+                input {
+                    width: 100%;
+                    min-width: 350px;
+                    border-radius: 18px;
+                    border: 2px solid #A2A2A2;
+                    background-color: #FDFAFA;  
+                    padding: 0 15px;
+                    height: 60px;
+                    font: 500 16px inter;
+                    outline: none;
+                }
+
+                .senha {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: -0.5rem;
+
+                    h1 {
+                        font: 500 17px inter;
+                        color: #5D636B;
+                        cursor: pointer;
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    min-width: 350px;
+                    border-radius: 18px;
+                    padding: 18px 15px;
+                    font: 500 16px inter;
+                    background-color: #F5BA53;
+                    color: #fff;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .direita {
+            width: 45%; 
+            height: 95%;
+            
+            img{
+                width: 100%;
+                max-width: 806px;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 1.5vw;
+            }
+        }
+    }
+
+    @media (max-width: 1050px){
+        .bordaBranca {
+            .direita {
+                display: none;
+            }   
+        }
+    }
+
+    @media (max-height: 800px) {
+        .bordaBranca {
+            height: 80vh;
+
+            .esquerda {
+                padding: 1rem 0;
+                gap: 0.8rem;
+
+                .mensagem {
+                    gap: 1rem;
+                    width: 62%;
+                    min-width: 340px;
+
+                    h1 {
+                        font-size: 20px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                    }
+                }
+
+                .form {
+                    gap: 1rem;
+                    width: 62%;
+                    min-width: 340px;
+
+                    h1 {
+                        font-size: 15px;
+                    }
+
+                    input {
+                        font-size: 14px;
+                        height: 45px;
+                    }
+
+                    button {
+                        font-size: 14px;
+                        height: 48px;
+                    }
+
+
+                    .senha {
+                        h1 {
+                            font-size: 15px;
+                            margin-top: 1.2vh;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

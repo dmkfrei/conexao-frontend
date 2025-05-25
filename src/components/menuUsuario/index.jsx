@@ -1,7 +1,17 @@
 import './index.scss';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export default function MenuUsuario() {
+    const location = useLocation();
+
+    let rotas = [
+        '/validacoes',
+        '/validarInfos',
+        '/confirmarInfos'
+    ];
+
+    let rotaPertenceValidacoes = rotas.includes(location.pathname);
+
     return (
         <div className="menu-usuario">
             <div className="borda">
@@ -14,9 +24,9 @@ export default function MenuUsuario() {
                 <NavLink to='/cadastroEmpresa' className={({ isActive }) => isActive ? 'ativo' : ''}>
                     Fazer Cadastro
                 </NavLink>
-                <NavLink to='/validacoes' className={({ isActive }) => isActive ? 'ativo' : ''}>
+                <Link to='/validacoes' className={rotaPertenceValidacoes ? 'ativo' : ''}>
                     Validações
-                </NavLink>
+                </Link>
                 <NavLink to='/contratos' className={({ isActive }) => isActive ? 'ativo' : ''}>
                     Contratos
                 </NavLink>

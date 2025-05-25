@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./pages/login";
-import CadastroEmpresa from "./pages/cadastroEmpresa";
-import ValidarInfos from "./pages/validarInfos";
-import ConfirmarInfos from "./pages/confirmarInfos";
-import Validacoes from "./pages/validacoes";
-import Contratos from "./pages/contratos";
+import Login from "./pages/insf/login";
+import CadastroEmpresa from "./pages/insf/cadastroEmpresa";
+import ValidarInfos from "./pages/insf/validarInfos";
+import ConfirmarInfos from "./pages/insf/confirmarInfos";
+import Validacoes from "./pages/insf/validacoes";
+import Contratos from "./pages/insf/contratos";
+import LoginEmpresa from "./pages/empresa/login";
 
 export default function Navegacao() {
     return (
@@ -16,6 +17,7 @@ export default function Navegacao() {
                 <Route path="/confirmarInfos" element={<ConfirmarInfos />} />
                 <Route path="/validacoes" element={<Validacoes />} />
                 <Route path="/contratos" element={<Contratos />} />
+                <Route path="/empresa/login" element={<LoginEmpresa />} />
             </Routes>
         </BrowserRouter>
     )

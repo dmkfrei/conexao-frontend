@@ -1,7 +1,19 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 export default function MenuLateral() {
+    const location = useLocation();
+
+    let rotas = [
+        '/cadastroEmpresa',
+        '/validacoes',
+        '/contratos',
+        '/validarInfos',
+        '/confirmarInfos'
+    ];
+
+    let rotaPertenceCadastro = rotas.includes(location.pathname);
+
     return (
         <div className="menu-lateral">
             <div className="foto">
@@ -9,7 +21,7 @@ export default function MenuLateral() {
             </div>
             <div className="navegacao">
                 <Link>Menu</Link>
-                <Link>Cadastros</Link>
+                <Link className={rotaPertenceCadastro ? 'ativo' : ''}>Cadastros</Link>
                 <Link>Configurações</Link>
 
             </div>

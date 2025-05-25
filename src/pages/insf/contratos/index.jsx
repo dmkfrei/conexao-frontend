@@ -1,8 +1,8 @@
 import './index.scss';
 import './index.scss';
-import Cabecalho from '../../components/cabecalho';
-import MenuLateral from '../../components/menuLateral';
-import MenuUsuario from '../../components/menuUsuario';
+import Cabecalho from '../../../components/cabecalho';
+import MenuLateral from '../../../components/menuLateral';
+import MenuUsuario from '../../../components/menuUsuario';
 import { Link } from 'react-router-dom';
 
 
@@ -20,6 +20,7 @@ export default function Contratos() {
                         <div className="card-infos">
                             <p id='id'>#1</p>
                             <img src="/assets/images/olho.svg" alt="" />
+                            <img src="/assets/images/pupila.svg" alt="" id='pupila'/>
                         </div>
                     </div>
                 </div>
