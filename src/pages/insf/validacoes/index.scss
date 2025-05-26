@@ -33,4 +33,16 @@
             padding: 30px;
         }
     }
+
+
+      @media (max-height: 800px) {
+       .conteudo{
+        margin: 10vh 0vw 3vh 0vw;
+
+        .bordaBranca{
+            height: 100%;
+        }
+       }
+        
+    }
 }
