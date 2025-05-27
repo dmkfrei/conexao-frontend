@@ -8,7 +8,7 @@ export default function ConfirmarInfos() {
     return (
         <div className="confirmar-infos">
             <MenuLateral />
-            <MenuEmpresa/>
+            <MenuEmpresa />
             <Cabecalho>
                 <div className="content">
                     <div className="text">
@@ -106,12 +106,8 @@ export default function ConfirmarInfos() {
                         </div>
 
                         <div className="direita">
-                            <h1 id='ddos'>Dados da Empresa</h1>
-
-                            <div className="dados">
-                                <hr />
-                                <h1>Dados dos Responsáveis</h1>
-                            </div>
+                            <h1>Dados da Empresa</h1>
+                            <h1>Dados dos Responsáveis</h1>
                         </div>
                     </div>
                 </div>

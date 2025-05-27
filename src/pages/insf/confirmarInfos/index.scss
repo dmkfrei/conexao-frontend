@@ -148,53 +148,14 @@
             .direita {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
                 gap: 1vh;
 
-                hr {
-                    width: 5px;
-                    height: 21px;
-                    background-color: #9A9A9A;
-                }
 
-                #ddos {
+                h1 {
                     font: 500 15px inter;
                     color: #8F8D8D;
-                    padding-right: 31px;
-                }
-
-                .dados {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: flex-start;
-                    gap: 1vh;
-
-
-                    h1 {
-                        font: 500 15px inter;
-                        color: #8F8D8D;
-                    }
                 }
             }
-        }
-    }
-
-    @media (max-height: 865px),
-    (max-width: 1280px) {
-
-        .menu-lateral,
-        .menu-usuario {
-            width: 22%;
-            min-width: 0;
-        }
-    }
-
-    @media (max-width: 1153px) {
-
-        .menu-lateral,
-        .menu-usuario {
-            width: 25%;
-            min-width: 0;
         }
     }
 }

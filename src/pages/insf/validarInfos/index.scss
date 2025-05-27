@@ -76,24 +76,5 @@
                 }
             }
         }
-    }
-
-    @media (max-height: 865px),
-    (max-width: 1280px) {
-
-        .menu-lateral,
-        .menu-usuario {
-            width: 22%;
-            min-width: 0;
-        }
-    }
-
-    @media (max-width: 1153px) {
-
-        .menu-lateral,
-        .menu-usuario {
-            width: 25%;
-            min-width: 0;
-        }
-    }
+    }   
 }
