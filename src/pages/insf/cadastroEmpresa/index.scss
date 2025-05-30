@@ -164,4 +164,40 @@
             }
         }
     }
+    @media (max-width: 1440px) {
+        .content {
+            height: 80vh;
+            padding: 2vh 2vw;
+
+            .bordaBranca {
+                height: 77vh;
+                width: 45vw;
+                .texto {
+                   gap: 1.5vh;
+                }
+
+                .inputs {
+                    gap: 1.5vh;
+                    .inputNome,
+                    .inputConfirmar,
+                    .inputSenha {
+                        gap: 0.7vh;
+
+                        h1 {
+                            font: 14px;
+                        }
+
+                        input {
+                            height: 7vh;
+                        }
+                    }
+                    .botao {
+                        button {
+                            height: 7vh;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

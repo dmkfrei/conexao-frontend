@@ -15,7 +15,7 @@ export default function MenuEmpresa() {
     return (
         <div className="menu-empresa">
             <div className="borda">
-                <img src="/assets/images/insf.svg" alt="" />
+                <img src="/assets/images/logo-frei-cinza.png" alt="" />
             </div>
 
             <h1>INSF</h1>

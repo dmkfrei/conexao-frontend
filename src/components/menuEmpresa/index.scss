@@ -11,17 +11,10 @@
     border: 1px solid #E0E0E0;
 
     .borda {
-        display: flex;
-        justify-content: center;
-        background: radial-gradient(#ffffff 0%, #414f7d 100%);
-        width: 100%;
-        max-width: 106px;
-        height: 106px;
-        border-radius: 50%;
-
+        
         img {
             width: 60px;
-            text-align: center;
+           
         }
     }
 
@@ -74,5 +67,16 @@
 
         min-width: 200px;
         max-width: 200px;
+    }
+    @media (max-width: 1440px) {
+        height: 100vh;
+
+        .borda{
+            img{
+                width: 7vw;
+            }
+        }
+       
+
     }
 }
