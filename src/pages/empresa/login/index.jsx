@@ -22,7 +22,7 @@ export default function LoginEmpresa() {
                         <input type="text" placeholder='Minímo 8 caracteres.' />
 
                         <div className="senha">
-                            <h1>Esqueceu a senha?</h1>
+                            <Link to='/empresa/enviarCodigo'>Esqueceu a senha?</Link>
                         </div>
 
                         <button>Fazer Login</button>

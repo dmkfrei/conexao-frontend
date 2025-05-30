@@ -3,29 +3,36 @@ import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
-import Formulario from '../../../components/formularioDados';
+import CardFilial from '../../../components/cardFilial';
 
-export default function SalvarInfos() {
+export default function GerenciarFilial() {
     return (
-        <div className="salvar-infos">
+        <div className="gerenciar-filial">
             <MenuLateral />
             <MenuEmpresa />
             <Cabecalho>
                 <div className="content">
-                    <h1 id='h1Info'>Informações Cadastradas</h1>
+                    <h1 id='h1Info'>Gerenciamento de Filiais</h1>
 
                     <div className="principal">
                         <div className="esquerda">
-                            <Formulario botaoTexto='Proximo' botaoDestino='/confirmarInfos' />
+                            <div className="addFilial">
+                                <img src="/assets/images/novo.svg" alt="" />
+                                <h1>Nova Filial</h1>
+                            </div>
+
+                            <div className="bordaBranca">
+                                <CardFilial />
+                            </div>
                         </div>
-                        
+
+
                         <div className="direita">
-                            <hr />
                             <div className="dados">
-                                <Link>Dados da Empresa</Link>
-                                <Link to='/empresa/gerenciarFuncionarios'>Dados dos Responsáveis</Link>
+                                <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
+                                <Link to='/empresa/gerenciarFuncionarios' >Dados dos Responsáveis</Link>
                                 <Link to='/empresa/gerenciarFilial'>Filiais</Link>
-                                <Link to='/empresa/Acordo'>Acordo</Link>
+                                <Link to='/empresa/acordo'>Acordo</Link>
                             </div>
                         </div>
                     </div>

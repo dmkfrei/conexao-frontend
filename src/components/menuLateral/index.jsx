@@ -20,9 +20,8 @@ export default function MenuLateral() {
                 <img id='logo' src="/assets/images/logoFrei.svg" alt="" />
             </div>
             <div className="navegacao">
-                <Link>Menu</Link>
                 <Link className={rotaPertenceCadastro ? 'ativo' : ''}>Cadastros</Link>
-                <Link>Configurações</Link>
+                <Link>Informações</Link>
 
             </div>
             <div className="exit">

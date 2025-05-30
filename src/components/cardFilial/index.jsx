@@ -1,17 +1,10 @@
-import { useState } from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 
-export default function CardEmpresa({ img }) {
-    const [ativo, setAtivo] = useState(true);
-
-    function estaAtivo() {
-        setAtivo(!ativo);
-    }
-
+export default function CardFilial() {
     return (
-        <div className="card-empresa">
-            <p className="id"><Link to='/validarInfos'>#1</Link></p>
+        <div className="card-filial">
+            <p className="id"><Link to='/empresa/cadastrarFilial'>#1</Link></p>
 
             <div className="card-info">
                 <div className="item">
@@ -19,7 +12,7 @@ export default function CardEmpresa({ img }) {
 
                     <div className="text">
                         <p className="label">Nome</p>
-                        <p className="valor">{ativo ? 'Empresa X...' : '***********'}</p>
+                        <p className="valor">Empresa X...</p>
                     </div>
                 </div>
 
@@ -28,7 +21,7 @@ export default function CardEmpresa({ img }) {
 
                     <div className="text">
                         <p className="label">Localização</p>
-                        <p className="valor">{ativo ? 'R. Abóbora M...' : '**********'}</p>
+                        <p className="valor">R. Abóbora M...</p>
                     </div>
                 </div>
 
@@ -37,13 +30,12 @@ export default function CardEmpresa({ img }) {
 
                     <div className="text">
                         <p className="label">Contato</p>
-                        <p className="valor">{ativo ? '(11) 99999-9999' : '(**) *****-****'}</p>
+                        <p className="valor">(11) 99999-9999</p>
                     </div>
                 </div>
             </div>
 
-            <img src="/assets/images/olho.svg" alt="Visualizar" className="icon-eye" onClick={estaAtivo} />
-            <img src="/assets/images/pupila.svg" alt="" id='pupila' onClick={estaAtivo} />
+            <img src="/assets/images/lixeira.svg" alt="Visualizar" className="icon-lixeira" />
         </div>
     );
 };

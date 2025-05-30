@@ -1,0 +1,105 @@
+.cadastro-filial {
+    display: flex;
+    flex-direction: row;
+    background-color: #F3F3F3;
+    overflow: hidden;
+    min-height: 100vh;
+
+    .conteudo {
+        width: 100%;
+        padding: 40px;
+        gap: 1vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        #h1Info {
+            font: 700 20px inter;
+            color: #5D636B;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .text {
+            padding: 20px;
+
+            .link {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+                text-decoration: none;
+
+                img {
+                    width: 20px;
+                }
+
+                h1 {
+                    font: 500 15px inter;
+                    color: #5D636B;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .principal {
+            display: flex;
+            flex-direction: row;
+            gap: 70px;
+            width: 100%;
+            padding: 20px;
+
+            .direita {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 1vh;
+                width: 50%;
+
+                hr {
+                    width: 5px;
+                    height: 21px;
+                    background-color: #9A9A9A;
+                }
+
+                .dados {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 1vh;
+                    width: 100%;
+
+                    a {
+                        font: 500 15px inter;
+                        color: #8F8D8D;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .botao {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 100%;
+
+        button {
+            width: 113px;
+            height: 42px;
+            border-radius: 15px;
+            background-color: #F5BA53;
+            border: none;
+            font: 500 14px inter;
+            color: #FFF;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: #FFF;
+            }
+        }
+    }
+}

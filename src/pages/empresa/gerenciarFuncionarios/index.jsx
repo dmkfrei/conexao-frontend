@@ -4,38 +4,37 @@ import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 import Formulario from '../../../components/formularioDados';
+import CardFuncionarios from '../../../components/cardFuncionarios';
 
-export default function ValidarInfos() {
+export default function Gerenciar() {
     return (
-        <div className="validar-infos">
+        <div className="gerenciar-funcionarios">
             <MenuLateral />
             <MenuEmpresa />
             <Cabecalho>
                 <div className="content">
-                    <div className="text">
-                        <Link to='/validacoes' className='link'><img src="/assets/images/Vector.svg" alt="" />
-                            <h1>Voltar</h1>
-                        </Link>
-                    </div>
-
-                    <h1 id='h1Info'>Informações Cadastradas</h1>
+                    <h1 id='h1Info'>Gerenciamento dos funcionários</h1>
 
                     <div className="principal">
-                        <div className="esquerda">
-                            <Formulario botaoTexto='Proximo' botaoDestino='/confirmarInfos' />
+                        <div className="bordaBranca">
+                            <CardFuncionarios />
                         </div>
-
+                        
 
                         <div className="direita">
                             <hr />
                             <div className="dados">
-                                <h1>Dados da Empresa</h1>
-                                <h1 id='ddos'>Dados dos Responsáveis</h1>
+                                <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
+                                <Link to='/empresa/gerenciarFuncionarios' >Dados dos Responsáveis</Link>
+                                <Link to='/empresa/gerenciarFilial'>Filiais</Link>
+                                <Link>Acordo</Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </Cabecalho>
+
+
         </div>
     )
-}
+}   

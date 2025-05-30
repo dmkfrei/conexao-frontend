@@ -1,4 +1,4 @@
-.secao-login {
+.mudar-senha {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,23 +10,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 85%; 
+        width: 85%;
         max-width: 1728px;
         height: 90%;
-        max-height: 55vw;
         background-color: #fff;
         border-radius: 20px;
         overflow: hidden;
         gap: 2rem;
         padding: 0 2rem;
 
-        .esquerda {
+        .direita {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             flex: 1;
-            gap: 1rem;
+            gap: 2.5rem;
             padding: 1rem;
 
             .mensagem {
@@ -43,7 +42,7 @@
                 }
 
                 p {
-                    font: 500 17px 'Inter';
+                    font: 500 16px 'Inter';
                     color: #797B7C;
                 }
             }
@@ -52,31 +51,42 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: flex-start;
                 gap: 1.5rem;
                 width: 100%;
-                max-width: 350px;
 
-                h1 {
-                    font: 700 19px 'Inter';
-                    color: #797B7C;
-                    align-self: start;
-                }
-
-                input {
+                .inputSenha, .inputConfirmar {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
                     width: 100%;
+                    gap: 1.5rem;
                     max-width: 350px;
-                    border-radius: 12px;
-                    border: 2px solid #A2A2A2;
-                    background-color: #FDFAFA;
-                    padding: 0 15px;
-                    height: 54px;
-                    font: 500 14px 'Inter';
-                    outline: none;
-                    margin-top: -5px;
+
+                    h1 {
+                        font: 700 19px 'Inter';
+                        color: #797B7C;
+                    }
+
+                    input {
+                        width: 100%;
+                        max-width: 350px;
+                        border-radius: 12px;
+                        border: 2px solid #A2A2A2;
+                        background-color: #FDFAFA;
+                        padding: 0 15px;
+                        height: 54px;
+                        font: 500 14px 'Inter';
+                        outline: none;
+                        margin-top: -5px;
+                        align-self: center;
+                    }
                 }
 
                 button {
                     width: 100%;
+                    max-width: 350px;
                     border-radius: 12px;
                     padding: 18px 15px;
                     font: 500 16px 'Inter';
@@ -88,7 +98,7 @@
             }
         }
 
-        .direita {
+        .esquerda {
             width: 50%;
             flex: 1;
             height: 95%;
@@ -101,47 +111,11 @@
             }
         }
     }
-    
-    @media(max-width: 1200px) {
-        height: 105vh;
 
+    @media(max-width: 1050px) {
         .bordaBranca {
-            width: 90vw;
-            height: 45vw;
-
             .esquerda {
-                .mensagem {
-                    max-width: 300px;
-
-                    h1 {
-                        font-size: 17px;
-                    }
-
-                    p {
-                        font-size: 14px;
-                    }
-                }
-
-                .form {
-                    max-width: 300px;
-                    gap: 1rem;
-
-                    h1 {
-                        font-size: 15px;
-                    }
-
-                    input {
-                        height: 48px;
-                        padding-left: 10px;
-                        font-size: 12px;
-                    }
-
-                    button {
-                        height: 48px;
-                        text-align: center;
-                        font-size: 13px;
-                    }
-                }
+                display: none;
             }
         }
     }

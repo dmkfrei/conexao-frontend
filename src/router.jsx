@@ -7,6 +7,12 @@ import Validacoes from "./pages/insf/validacoes";
 import Contratos from "./pages/insf/contratos";
 import LoginEmpresa from "./pages/empresa/login";
 import SalvarInfos from "./pages/empresa/salvarInfos";
+import EnviarCodigo from "./pages/empresa/enviarCodigo";
+import MudarSenha from "./pages/empresa/redefinirSenha";
+import Gerenciar from "./pages/empresa/gerenciarFuncionarios";
+import CadastroFuncionario from "./pages/empresa/cadastrarFuncionarios";
+import GerenciarFilial from "./pages/empresa/gerenciarFilial";
+import CadastroFilial from "./pages/empresa/cadastrarFilial";
 
 export default function Navegacao() {
     return (
@@ -20,6 +26,12 @@ export default function Navegacao() {
                 <Route path="/contratos" element={<Contratos />} />
                 <Route path="/empresa/login" element={<LoginEmpresa />} />
                 <Route path="/empresa/salvarInfos" element={<SalvarInfos />} />
+                <Route path='/empresa/enviarCodigo' element={<EnviarCodigo />} />
+                <Route path='/empresa/redefinirSenha' element={<MudarSenha />} />
+                <Route path='/empresa/gerenciarFuncionarios' element={<Gerenciar />} />
+                <Route path='/empresa/cadastrarFuncionarios' element={<CadastroFuncionario />} />
+                <Route path='/empresa/gerenciarFilial' element={<GerenciarFilial />} />
+                <Route path='/empresa/cadastrarFilial' element={<CadastroFilial />} />
             </Routes>
         </BrowserRouter>
     )

@@ -1,11 +1,11 @@
-.salvar-infos {
+.gerenciar-funcionarios {
     display: flex;
     flex-direction: row;
     width: 100%;
     background-color: #F3F3F3;
     min-height: 100vh;
     overflow: hidden;
-
+    
     .content {
         width: 100%;
         padding: 40px;
@@ -26,13 +26,29 @@
             flex-direction: row;
             width: 100%;
             padding: 20px;
-            gap: 40px;
+            gap: 30px;
+
+            .bordaBranca {
+                width: 70%;
+                max-width: 600px;
+                border-radius: 15px;
+                border: 1px solid #fff;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
+                gap: 50px;
+                padding: 30px;
+            }
 
             .direita {
                 display: flex;
                 flex-direction: row;
-                gap: 10px;
-                width: 195px;
+                justify-content: center;
+                gap: 1vh;
+                width: 160px;
 
                 hr {
                     width: 5px;
@@ -55,5 +71,6 @@
             }
         }
     }
+
 
 }

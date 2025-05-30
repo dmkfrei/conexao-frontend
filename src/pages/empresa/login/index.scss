@@ -12,13 +12,14 @@
     .bordaBranca {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         width: 80%;
         height: 90vh;
         background-color: #fff;
         border-radius: 20px;
         overflow: hidden;
+        gap: 2rem;
 
         .esquerda {
             display: flex;
@@ -26,8 +27,7 @@
             justify-content: center;
             align-items: center;
             width: 50%;
-            gap: 1rem;
-            padding: 2rem 0;
+            gap: 1.5rem;
 
             .mensagem {
                 display: flex;
@@ -59,7 +59,7 @@
                 min-width: 400px;
 
                 h1 {
-                    font: 700 20px inter;
+                    font: 700 18px inter;
                     color: #797B7C;
                     align-self: start;
                 }
@@ -67,12 +67,12 @@
                 input {
                     width: 100%;
                     min-width: 350px;
-                    border-radius: 18px;
+                    border-radius: 12px;
                     border: 2px solid #A2A2A2;
                     background-color: #FDFAFA;  
-                    padding: 0 15px;
-                    height: 60px;
-                    font: 500 16px inter;
+                    padding: 0 12px;
+                    height: 54px;
+                    font: 500 14px inter;
                     outline: none;
                 }
 
@@ -82,8 +82,8 @@
                     justify-content: flex-end;
                     margin-top: -0.5rem;
 
-                    h1 {
-                        font: 500 17px inter;
+                    a {
+                        font: 500 16px inter;
                         color: #5D636B;
                         cursor: pointer;
                     }
@@ -92,7 +92,7 @@
                 button {
                     width: 100%;
                     min-width: 350px;
-                    border-radius: 18px;
+                    border-radius: 12px;
                     padding: 18px 15px;
                     font: 500 16px inter;
                     background-color: #F5BA53;
@@ -104,15 +104,14 @@
         }
 
         .direita {
-            width: 45%; 
+            width: 42%;
             height: 95%;
-            
-            img{
+
+            img {
                 width: 100%;
-                max-width: 806px;
                 height: 100%;
                 object-fit: cover;
-                border-radius: 1.5vw;
+                border-radius: 20px;
             }
         }
     }
@@ -122,60 +121,6 @@
             .direita {
                 display: none;
             }   
-        }
-    }
-
-    @media (max-height: 800px) {
-        .bordaBranca {
-          
-
-            .esquerda {
-                padding: 1rem 0;
-                gap: 0.8rem;
-
-                .mensagem {
-                    gap: 1rem;
-                    width: 62%;
-                    min-width: 340px;
-
-                    h1 {
-                        font-size: 20px;
-                    }
-
-                    p {
-                        font-size: 16px;
-                    }
-                }
-
-                .form {
-                    gap: 1rem;
-                    width: 62%;
-                    min-width: 340px;
-
-                    h1 {
-                        font-size: 15px;
-                    }
-
-                    input {
-                        font-size: 14px;
-                        height: 45px;
-                    }
-
-                    button {
-                        font-size: 14px;
-                        height: 48px;
-                    }
-
-
-                    .senha {
-                        h1 {
-                            font-size: 15px;
-                            margin-top: 1.2vh;
-                        }
-
-                    }
-                }
-            }
         }
     }
 }
