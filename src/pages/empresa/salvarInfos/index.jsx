@@ -16,7 +16,7 @@ export default function SalvarInfos() {
 
                     <div className="principal">
                         <div className="esquerda">
-                            <Formulario botaoTexto='Proximo' botaoDestino='/confirmarInfos' />
+                            <Formulario botaoTexto='Salvar'/>
                         </div>
                         
                         <div className="direita">
