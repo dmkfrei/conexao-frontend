@@ -26,23 +26,38 @@
             background-color: #fff;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+           
             box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
             gap: 50px;
             padding: 30px;
         }
     }
 
-
+    
       @media (max-height: 800px) {
        .conteudo{
-        margin: 10vh 0vw 3vh 0vw;
-
-        .bordaBranca{
-            height: 100%;
-        }
+        margin: 1vh 0vw 1vh 0vw;
        }
         
     }
+
+                
+    
 }
+    @media (max-width: 1440px) {
+        .validacoes{
+            
+            .conteudo{
+                height: 100%;
+                padding: 3vh 5vw;
+        
+                gap: 5vh;
+
+                .bordaBranca{
+                    gap: 5vh;
+                    height: 97%;
+                }
+
+            }
+        }
+    }
