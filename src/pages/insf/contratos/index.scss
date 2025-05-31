@@ -80,3 +80,25 @@
         }
     }
 }
+
+@media (max-width: 1440px) {
+    .contratos{
+        .content{
+            height: 100%;
+            margin: 0vh 0vw;
+            padding: 4vh 5vw;
+            gap: 3vh;
+
+            .bordaBranca{
+                height: 95%;
+                gap: 5vh;
+
+                .card-infos{
+                    height: 15vh;
+                }
+c
+            }
+           
+        }
+    }
+  }
