@@ -2,8 +2,8 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
-import { Link } from 'react-router-dom';
 import Formulario from '../../../components/formularioDados';
+import MenuLinks from '../../../components/menuLinks';
 
 export default function SalvarInfos() {
     return (
@@ -19,15 +19,7 @@ export default function SalvarInfos() {
                             <Formulario botaoTexto='Salvar'/>
                         </div>
                         
-                        <div className="direita">
-                            <hr />
-                            <div className="dados">
-                                <Link>Dados da Empresa</Link>
-                                <Link to='/empresa/gerenciarFuncionarios'>Dados dos Responsáveis</Link>
-                                <Link to='/empresa/gerenciarFilial'>Filiais</Link>
-                                <Link to='/empresa/Acordo'>Acordo</Link>
-                            </div>
-                        </div>
+                        <MenuLinks />
                     </div>
                 </div>
             </Cabecalho>

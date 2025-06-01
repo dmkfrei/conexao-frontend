@@ -3,31 +3,36 @@
     flex-direction: row;
     background-color: #F3F3F3;
     overflow: hidden;
-    min-height: 100vh;
+    height: 100vh;
 
     .conteudo {
         width: 100%;
-        padding: 40px;
+        padding: 10px 50px 0;
         gap: 1vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 100%;
+        max-width: 650px;
 
         #h1Info {
             font: 700 20px inter;
             color: #5D636B;
             text-align: left;
-            padding: 20px;
+            padding: 14px 0 40px;
         }
 
         .text {
-            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 0;
 
             .link {
                 display: flex;
                 flex-direction: row;
-                align-items: center;
+                align-items: flex-start;
+                justify-content: flex-start;
                 gap: 10px;
                 text-decoration: none;
 
@@ -46,37 +51,9 @@
         .principal {
             display: flex;
             flex-direction: row;
-            gap: 70px;
             width: 100%;
-            padding: 20px;
-
-            .direita {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                gap: 1vh;
-                width: 50%;
-
-                hr {
-                    width: 5px;
-                    height: 21px;
-                    background-color: #9A9A9A;
-                }
-
-                .dados {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 1vh;
-                    width: 100%;
-
-                    a {
-                        font: 500 15px inter;
-                        color: #8F8D8D;
-                        text-decoration: none;
-                    }
-                }
-            }
+            gap: 30px;
+           
         }
     }
 
@@ -100,6 +77,27 @@
                 text-decoration: none;
                 color: #FFF;
             }
+        }
+    }
+
+    @media (max-width: 1280px){
+        .conteudo {
+            .principal {
+                .bordaBranca {
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    max-height: 40vh;
+                    min-width: 450px;
+                    width: 60%;
+                    overflow: hidden;
+                    overflow-y: auto;
+                }
+            }
+        }
+
+        .botao{
+            min-width: 450px;
+            width: 60%;
         }
     }
 }

@@ -1,15 +1,16 @@
 .validacoes {
     display: flex;
     flex-direction: row;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
-    background-color: #F9F9F9;
+    background-color: #F3F3F3;
     overflow: hidden;
+
 
     .conteudo {
         display: flex;
         flex-direction: column;
-        padding: 60px;
+        padding: 40px 60px 40px;
         width: 100%;
         gap: 30px;
 
@@ -19,44 +20,37 @@
         }
 
         .bordaBranca {
-            width: 50%;
+            width: 40%;
             min-width: 550px;
+            max-height: 68vh;
+            overflow: hidden;
+            overflow-y: auto;
             border-radius: 15px;
             border: 1px solid #fff;
             background-color: #fff;
             display: flex;
             flex-direction: column;
-           
+            align-items: center;
             box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
             gap: 50px;
             padding: 30px;
         }
     }
 
-    
-      @media (max-height: 800px) {
-       .conteudo{
-        margin: 1vh 0vw 1vh 0vw;
-       }
-        
-    }
+    @media(max-width: 1177px) {
+        .conteudo {
 
-                
-    
-}
-    @media (max-width: 1440px) {
-        .validacoes{
-            
-            .conteudo{
-                height: 100%;
-                padding: 3vh 5vw;
-        
-                gap: 5vh;
-
-                .bordaBranca{
-                    gap: 5vh;
-                    height: 97%;
-                }
+            .bordaBranca {
+                max-height: 55vh;
             }
+
         }
     }
+
+    @media (max-height: 800px) {
+        .conteudo {
+            margin: 1vh 0vw 1vh 0vw;
+        }
+
+    }
+}

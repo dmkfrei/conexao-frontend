@@ -3,12 +3,12 @@
     flex-direction: row;
     width: 100%;
     background-color: #F3F3F3;
-    min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
 
     .content {
         width: 100%;
-        padding: 40px;
+        padding: 50px 20px 0;
         gap: 1vh;
         display: flex;
         flex-direction: column;
@@ -27,33 +27,45 @@
             width: 100%;
             padding: 20px;
             gap: 40px;
+        }
+    }
 
-            .direita {
-                display: flex;
-                flex-direction: row;
-                gap: 10px;
-                width: 195px;
-
-                hr {
-                    width: 5px;
-                    height: 21px;
-                    background-color: #9A9A9A;
-                }
-
-                .dados {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 1vh;
-
-                    a {
-                        font: 500 15px inter;
-                        color: #8F8D8D;
-                        text-decoration: none;
-                    }
+    @media(max-height: 901px) {
+        .content {
+            .principal {
+                .bordaBranca {
+                    max-height: 38vh;
                 }
             }
         }
     }
 
+    @media(max-width: 1177px) {
+        .content {
+            .principal {
+                .bordaBranca {
+                    min-width: 450px;
+                    max-height: 34vh;
+                }
+
+                .botao {
+                    min-width: 450px;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 1025px) {
+        .content {
+            justify-content: center;
+
+            #h1Info {
+                padding: 20px 145px 0;
+            }
+
+            .principal {
+                justify-content: center;
+            }
+        }
+    }
 }

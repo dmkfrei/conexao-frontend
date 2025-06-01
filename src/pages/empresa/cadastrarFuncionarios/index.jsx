@@ -3,6 +3,7 @@ import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
+import MenuLinks from '../../../components/menuLinks'
 
 export default function CadastroFuncionario() {
     return (
@@ -17,7 +18,7 @@ export default function CadastroFuncionario() {
                         </Link>
                     </div>
 
-                    <h1 id='h1Info'>Cadastro de Funcionários</h1>
+                    <h1 id='h1Info'>Informações da Nova Filial</h1>
 
                     <div className="principal">
                         <div className="bordaBranca">
@@ -48,15 +49,8 @@ export default function CadastroFuncionario() {
                                 </div>
                             </div>
                         </div>
-                        <div className="direita">
-                            <hr />
-                            <div className="dados">
-                                <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
-                                <Link to='/empresa/gerenciarFuncionarios'>Dados dos Responsáveis</Link>
-                                <Link to='/empresa/gerenciarFilial'>Filiais</Link>
-                                <Link>Acordo</Link>
-                            </div>
-                        </div>
+
+                        <MenuLinks />
                     </div>
                     <div className="botao">
                         <button>Salvar</button>

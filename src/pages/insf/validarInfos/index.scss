@@ -3,32 +3,35 @@
     flex-direction: row;
     justify-content: center;
     min-width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #F3F3F3;
     overflow: hidden;
 
     .content {
         width: 100%;
-        padding: 40px;
-        gap: 1vh;
+        padding: 10px 50px 0;
+        gap: 0.5vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
 
         #h1Info {
             font: 700 20px inter;
             color: #5D636B;
             text-align: left;
-            padding: 20px;
+            padding: 20px 0 50px;
         }
 
         .text {
-            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 0;
 
             .link {
                 display: flex;
-                flex-direction: row;
-                align-items: center;
+                flex-direction: row;    
+                align-items: flex-start;
+                justify-content: flex-start;
                 gap: 10px;
                 text-decoration: none;
 
@@ -41,15 +44,14 @@
                     color: #5D636B;
                     cursor: pointer;
                 }
-            }
+            }   
         }
 
         .principal {
             display: flex;
             flex-direction: row;
-            gap: 70px;
+            gap: 90px;
             width: 100%;
-            padding: 20px;
 
             .direita {
                 display: flex;
@@ -72,9 +74,39 @@
                     h1 {
                         font: 500 15px inter;
                         color: #8F8D8D;
-                    }
+                    }   
                 }
             }
         }
-    }   
+    }
+
+    @media(max-height: 901px) {
+        .content {
+            .principal {
+                .bordaBranca {
+                    max-height: 38vh;
+                }
+            }
+
+        }
+    }
+
+    @media(max-width: 1177px) {
+        .content {
+            .principal {
+                .bordaBranca {
+                    min-width: 450px;
+                    max-height: 34vh;
+                }
+
+                .botao{
+                    min-width: 450px;
+                }
+                .direita {
+                    min-width: 120px;
+                    margin-left: -60px;
+                }
+            }
+        }
+    }
 }

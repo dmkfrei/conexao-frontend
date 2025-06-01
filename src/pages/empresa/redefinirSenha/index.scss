@@ -55,7 +55,8 @@
                 gap: 1.5rem;
                 width: 100%;
 
-                .inputSenha, .inputConfirmar {
+                .inputSenha,
+                .inputConfirmar {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -116,6 +117,53 @@
         .bordaBranca {
             .esquerda {
                 display: none;
+            }
+        }
+    }
+
+    @media(max-width: 1200px) {
+        height: 105vh;
+
+        .bordaBranca {
+            width: 90vw;
+            height: 45vw;
+
+            .direita {
+                .mensagem {
+                    max-width: 300px;
+
+                    h1 {
+                        font-size: 17px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+                .form {
+                    max-width: 300px;
+
+                    .inputSenha,
+                    .inputConfirmar {
+                        h1 {
+                            font-size: 15px;
+                        }
+
+                        input {
+                            height: 48px;
+                            padding-left: 10px;
+                            font-size: 12px;
+                        }
+                    }
+
+
+                    button {
+                        height: 48px;
+                        text-align: center;
+                        font-size: 13px;
+                    }
+                }
             }
         }
     }
