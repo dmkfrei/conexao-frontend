@@ -1,7 +1,7 @@
 .contratos {
     display: flex;
     flex-direction: row;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
     background-color: #F9F9F9;
@@ -9,7 +9,7 @@
     .content {
         display: flex;
         flex-direction: column;
-        padding: 60px;
+        padding: 40px 60px 40px;
         width: 100%;
         gap: 30px;
 
@@ -19,9 +19,11 @@
         }
 
         .bordaBranca {
-            width: 50%;
+            width: 40%;
             min-width: 550px;
-            height: 650px;
+            max-height: 68vh;
+            overflow: hidden;
+            overflow-y: auto;
             border-radius: 15px;
             border: 1px solid #fff;
             background-color: #fff;
@@ -73,32 +75,31 @@
         }
     }
 
-    
-  @media (max-height: 800px) {
-        .content{
+
+    @media (max-height: 800px) {
+        .content {
             margin: 10vh 0vw;
         }
     }
 }
 
 @media (max-width: 1440px) {
-    .contratos{
-        .content{
+    .contratos {
+        .content {
             height: 100%;
             margin: 0vh 0vw;
             padding: 4vh 5vw;
             gap: 3vh;
 
-            .bordaBranca{
+            .bordaBranca {
                 height: 95%;
                 gap: 5vh;
 
-                .card-infos{
+                .card-infos {
                     height: 15vh;
                 }
-c
             }
-           
+
         }
     }
-  }
+}

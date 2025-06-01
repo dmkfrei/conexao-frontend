@@ -5,6 +5,7 @@ import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 import Formulario from '../../../components/formularioDados';
 import CardFuncionarios from '../../../components/cardFuncionarios';
+import MenuLinks from '../../../components/menuLinks'
 
 export default function Gerenciar() {
     return (
@@ -18,18 +19,16 @@ export default function Gerenciar() {
                     <div className="principal">
                         <div className="bordaBranca">
                             <CardFuncionarios />
+                            <CardFuncionarios />
+                            <CardFuncionarios />
+                            <CardFuncionarios />
+                            <CardFuncionarios />
+                            <CardFuncionarios />
+                            <CardFuncionarios />
                         </div>
-                        
 
-                        <div className="direita">
-                            <hr />
-                            <div className="dados">
-                                <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
-                                <Link to='/empresa/gerenciarFuncionarios' >Dados dos Responsáveis</Link>
-                                <Link to='/empresa/gerenciarFilial'>Filiais</Link>
-                                <Link>Acordo</Link>
-                            </div>
-                        </div>
+
+                        <MenuLinks />
                     </div>
                 </div>
             </Cabecalho>

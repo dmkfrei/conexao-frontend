@@ -3,14 +3,14 @@
     flex-direction: row;
     justify-content: center;
     min-width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background-color: #F3F3F3;
     overflow: hidden;
 
     .content {
         width: 100%;
-        padding: 40px;
-        gap: 1vh;
+        padding: 10px 50px 0;
+        gap: 0.5vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -19,16 +19,20 @@
             font: 700 20px inter;
             color: #5D636B;
             text-align: left;
-            padding: 20px;
+            padding: 20px 0 50px;
         }
 
         .text {
-            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 0;
 
             .link {
                 display: flex;
                 flex-direction: row;
-                align-items: center;
+                align-items: flex-start;
+                justify-content: flex-start;
                 gap: 10px;
                 text-decoration: none;
 
@@ -48,9 +52,7 @@
         .principal {
             display: flex;
             flex-direction: row;
-            gap: 70px;
             width: 100%;
-            padding: 20px;
 
             .lado-esquerdo {
                 display: flex;
@@ -61,16 +63,17 @@
             }
 
             .bordaBranca {
-                width: 100%;
+                width: 50%;
                 min-width: 550px;
                 border-radius: 15px;
                 border: 1px solid #fff;
                 background-color: #fff;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
                 box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
+                overflow: hidden;
+                overflow-y: auto;
+                max-height: 60vh;
 
                 .infos {
                     display: flex;
@@ -131,7 +134,8 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-end;
-                width: 100%;
+                width: 85%;
+                min-width: 550px;
 
                 button {
                     width: 113px;
@@ -150,10 +154,42 @@
                 flex-direction: column;
                 gap: 1vh;
 
-
                 h1 {
                     font: 500 15px inter;
                     color: #8F8D8D;
+                }
+            }
+        }
+    }
+
+    @media(max-height: 901px) {
+        .content {
+            .principal {
+                .bordaBranca {
+                    max-height: 38vh;
+                }
+            }
+
+            .direita {
+                margin-left: -50px;
+            }
+        }
+    }
+
+    @media(max-width: 1177px) {
+        .content {
+            .principal {
+                .bordaBranca {
+                    min-width: 450px;
+                    max-height: 34vh;
+                }
+
+                .botao{
+                    width: 70%;
+                    min-width: 450px;
+                }
+                .direita {
+                    min-width: 180px;
                 }
             }
         }

@@ -4,6 +4,7 @@ import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 import Formulario from '../../../components/formularioDados';
+import MenuLinks from '../../../components/menuLinks'
 
 export default function CadastroFilial() {
     return (
@@ -26,15 +27,7 @@ export default function CadastroFilial() {
                         </div>
                         
 
-                        <div className="direita">
-                            <hr />
-                            <div className="dados">
-                                <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
-                                <Link to='/empresa/gerenciarFuncionarios'>Dados dos Responsáveis</Link>
-                                <Link to='/empresa/gerenciarFilial'>Filiais</Link>
-                                <Link to='/empresa/acordo'>Acordo</Link>
-                            </div>
-                        </div>
+                        <MenuLinks />
                     </div>
                 </div>
             </Cabecalho>

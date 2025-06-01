@@ -4,6 +4,7 @@ import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 import CardFilial from '../../../components/cardFilial';
+import MenuLinks from '../../../components/menuLinks'
 
 export default function GerenciarFilial() {
     return (
@@ -21,18 +22,13 @@ export default function GerenciarFilial() {
                                 <h1>Nova Filial</h1>
                             </div>
 
-                            <div className="bordaBranca">
-                                <CardFilial />
-                            </div>
-                        </div>
-
-
-                        <div className="direita">
-                            <div className="dados">
-                                <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
-                                <Link to='/empresa/gerenciarFuncionarios' >Dados dos Responsáveis</Link>
-                                <Link to='/empresa/gerenciarFilial'>Filiais</Link>
-                                <Link to='/empresa/acordo'>Acordo</Link>
+                            <div className="meio">
+                                <div className="bordaBranca">
+                                    <CardFilial />
+                                </div>
+                                <div className="lado-esquerdo">
+                                    <MenuLinks />
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,20 +1,21 @@
 .formulario-dados {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 100%;
     gap: 30px;
-  
+
     .bordaBranca {
         width: 100%;
-        min-width: 550px;
         border-radius: 15px;
         border: 1px solid #fff;
         background-color: #fff;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: 60vh;
+        min-width: 550px;
 
         .infos {
             display: flex;
@@ -92,6 +93,12 @@
                 text-decoration: none;
                 color: #FFF;
             }
+        }
+    }
+
+    @media(max-height: 800px){
+        .bordaBranca{
+            max-height: 38vh;
         }
     }
 }

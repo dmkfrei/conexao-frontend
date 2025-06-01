@@ -20,7 +20,17 @@ export default function Validacoes() {
                         <CardEmpresa />
                         <CardEmpresa />
                         <CardEmpresa />
-            
+                        <CardEmpresa />
+                        <CardEmpresa />
+                        <CardEmpresa />
+                        <CardEmpresa />
+                        <CardEmpresa />
+                        <CardEmpresa />
+                        <CardEmpresa />
+                        <CardEmpresa />
+                        <CardEmpresa />
+
+
                     </div>
                 </div>
             </Cabecalho>
