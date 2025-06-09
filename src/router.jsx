@@ -13,6 +13,12 @@ import Gerenciar from "./pages/empresa/gerenciarFuncionarios";
 import CadastroFuncionario from "./pages/empresa/cadastrarFuncionarios";
 import GerenciarFilial from "./pages/empresa/gerenciarFilial";
 import CadastroFilial from "./pages/empresa/cadastrarFilial";
+import InfosEmpresa from "./pages/insf/infosEmpresa";
+import InfosFuncionario from "./pages/insf/infosFuncionario";
+import InfosFilial from "./pages/insf/infosFilial";
+import GerenciarFilialINSF from "./pages/insf/gerenciarFilial";
+import GerenciarFuncionarioINSF from "./pages/insf/gerenciarFuncionario";
+import Acordo from "./pages/empresa/acordo";
 
 export default function Navegacao() {
     return (
@@ -32,6 +38,12 @@ export default function Navegacao() {
                 <Route path='/empresa/cadastrarFuncionarios' element={<CadastroFuncionario />} />
                 <Route path='/empresa/gerenciarFilial' element={<GerenciarFilial />} />
                 <Route path='/empresa/cadastrarFilial' element={<CadastroFilial />} />
+                <Route path='/infosEmpresa' element={<InfosEmpresa />} />
+                <Route path='/infosFuncionario' element={<InfosFuncionario />} />
+                <Route path='/infosFilial' element={<InfosFilial />} />
+                <Route path='/gerenciarFilial' element={<GerenciarFilialINSF />} />
+                <Route path='/gerenciarFuncionario' element={<GerenciarFuncionarioINSF />} />
+                <Route path='/empresa/acordo' element={<Acordo />} />
             </Routes>
         </BrowserRouter>
     )

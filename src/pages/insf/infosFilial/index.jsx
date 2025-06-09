@@ -4,36 +4,31 @@ import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 import Formulario from '../../../components/formularioDados';
+import MenuLinks from '../../../components/menuLinks'
 
-export default function ValidarInfos() {
+export default function InfosFilial() {
     return (
-        <div className="validar-infos">
+        <div className="infos-filial">
             <MenuLateral />
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
-                <div className="content">
+                <div className="conteudo">
                     <div className="text">
-                        <Link to='/validacoes' className='link'><img src="/assets/images/Vector.svg" alt="" />
+                        <Link to='/gerenciarFilial' className='link'><img src="/assets/images/Vector.svg" alt="" />
                             <h1>Voltar</h1>
                         </Link>
                     </div>
 
-                    <h1 id='h1Info'>Informações Cadastradas</h1>
+                    <h1 id='h1Info'>Informações da Nova Filial</h1>
 
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
-                                <Formulario botaoTexto='Proximo' botaoDestino='/confirmarInfos' />
+                                <Formulario botaoTexto='Salvar' />
                             </div>
 
 
-                            <div className="direita">
-                                <hr />
-                                <div className="dados">
-                                    <Link to='/validarInfos'>Dados da Empresa</Link>
-                                    <Link to='/confirmarInfos'>Dados dos Responsáveis</Link>
-                                </div>
-                            </div>
+                            <MenuLinks menuFrei={true} />
                         </div>
 
                     </div>

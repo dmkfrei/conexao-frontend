@@ -7,7 +7,7 @@ export default function Cabecalho({children}) {
             <div className="cima">
                 <div className="infos">
                     <h1>ISNF</h1>
-                    <img src="/assets/images/logoFrei.svg" alt="" />
+                    <img src="/assets/images/logo-frei-cinza.svg" alt="" />
                 </div>
             </div>
             {children}

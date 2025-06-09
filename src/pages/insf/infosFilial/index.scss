@@ -1,4 +1,4 @@
-.cadastro-filial {
+.infos-filial {
     display: flex;
     flex-direction: row;
     background-color: #f9f9f9;
@@ -50,12 +50,11 @@
             display: flex;
             flex-direction: row;
             width: 100%;
-            gap: 90px;
             margin-top: -5px;
 
             .meio {
                 display: flex;
-                gap: 87px;
+                gap: 90px;
                 width: 100%;
             }
 
@@ -106,25 +105,27 @@
         }
     }
 
-    @media(max-width: 1280px) {
+    @media (max-width: 1280px) {
         .conteudo {
             margin-top: -5px;
 
-            #h1Info {
-                font-size: 18px;
-                margin-top: -5px;
-            }
-
             .principal {
-                gap: 35px;
+                gap: 90px;
                 margin-top: -35px;
 
                 .esquerda {
                     max-width: 500px;
                 }
             }
+
+            #h1Info {
+                font-size: 18px;
+                margin-top: -5px;
+            }
         }
     }
+
+
 
     @media(max-width: 1176px) {
         .conteudo {
@@ -132,11 +133,10 @@
                 .meio {
                     gap: 10px;
                 }
-            }
 
-            .botao{
-                min-width: 250px;
-                width: 85%;
+                .botao {
+                    width: 85%;
+                }
             }
         }
     }

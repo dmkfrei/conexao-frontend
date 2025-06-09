@@ -3,41 +3,37 @@ import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
-import Formulario from '../../../components/formularioDados';
-import CardFuncionarios from '../../../components/cardFuncionarios';
+import CardFilial from '../../../components/cardFilial';
 import MenuLinks from '../../../components/menuLinks'
 
-export default function Gerenciar() {
+export default function GerenciarFilialINSF() {
     return (
-        <div className="gerenciar-funcionarios">
+        <div className="gerenciar-filial-insf">
             <MenuLateral />
-            <MenuEmpresa menuEmpresa={true} />
+            <MenuEmpresa menuFrei={true}/>
             <Cabecalho>
                 <div className="content">
-                    <h1 id='h1Info'>Gerenciamento dos funcionários</h1>
+                    <h1 id='h1Info'>Gerenciamento de Filiais</h1>
 
                     <div className="principal">
                         <div className="esquerda">
                             <div className="addFilial">
                                 <img src="/assets/images/novo.svg" alt="" />
-                                <h1>Novo Cargo</h1>
+                                <h1>Nova Filial</h1>
                             </div>
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFuncionarios rota='/empresa/cadastrarFuncionarios' />
+                                    <CardFilial rota='/infosFilial'/>
                                 </div>
                                 <div className="lado-esquerdo">
-                                    <MenuLinks menuEmpresa={true} />
+                                    <MenuLinks menuFrei={true}/>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </Cabecalho>
-
-
         </div>
     )
-}   
+}

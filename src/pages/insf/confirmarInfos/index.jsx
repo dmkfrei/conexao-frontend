@@ -3,12 +3,13 @@ import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
+import CardFuncionario from '../../../components/cardFuncionarios';
 
 export default function ConfirmarInfos() {
     return (
         <div className="confirmar-infos">
             <MenuLateral />
-            <MenuEmpresa />
+            <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
                     <div className="text">
@@ -24,80 +25,7 @@ export default function ConfirmarInfos() {
                     <div className="principal">
                         <div className="lado-esquerdo">
                             <div className="bordaBranca">
-                                <div className="infos">
-                                    <div className="card">
-                                        <img src="/assets/images/pessoa.svg" alt="" />
-                                        <h1>Representante Legal</h1>
-                                    </div>
-
-                                    <div className="campo">
-                                        <h1>Nome</h1>
-                                        <input type="text" />
-                                    </div>
-                                    <div className="campo">
-                                        <h1>Cargo</h1>
-                                        <input type="text" />
-                                    </div>
-                                    <div className="campo">
-                                        <h1>Email</h1>
-                                        <input type="text" />
-                                    </div>
-                                    <div className="campo">
-                                        <h1>Telefone</h1>
-                                        <input type="text" />
-                                    </div>
-
-                                    <div className="card">
-                                        <img src="/assets/images/pessoa.svg" alt="" />
-                                        <h1>Supervisor de Estágio</h1>
-                                    </div>
-
-                                    <div className="campo">
-                                        <h1>Nome</h1>
-                                        <input type="text" />
-                                    </div>
-
-                                    <div className="campo">
-                                        <h1>Cargo</h1>
-                                        <input type="text" />
-                                    </div>
-
-                                    <div className="campo">
-                                        <h1>Email</h1>
-                                        <input type="text" />
-                                    </div>
-
-                                    <div className="campo">
-                                        <h1>Telefone</h1>
-                                        <input type="text" />
-                                    </div>
-
-                                    <div className="card">
-                                        <img src="/assets/images/pessoa.svg" alt="" />
-                                        <h1>Contato</h1>
-                                    </div>
-
-                                    <div className="campo">
-                                        <h1>Nome</h1>
-                                        <input type="text" />
-                                    </div>
-
-                                    <div className="campo">
-                                        <h1>Cargo</h1>
-                                        <input type="text" />
-                                    </div>
-
-                                    <div className="campo">
-                                        <h1>Email</h1>
-                                        <input type="text" />
-                                    </div>
-
-                                    <div className="campo">
-                                        <h1>Telefone</h1>
-                                        <input type="text" />
-                                    </div>
-
-                                </div>
+                                <CardFuncionario />
                             </div>
                             <div className="botao">
                                 <button>Recusar</button>
@@ -106,8 +34,12 @@ export default function ConfirmarInfos() {
                         </div>
 
                         <div className="direita">
-                            <h1>Dados da Empresa</h1>
-                            <h1>Dados dos Responsáveis</h1>
+                            <Link to='/validarInfos'>Dados da Empresa</Link>
+                            <div className="dados">
+                                <hr />
+                                <Link to='/confirmarInfos'>Dados dos Responsáveis</Link>
+                            </div>
+
                         </div>
                     </div>
                 </div>

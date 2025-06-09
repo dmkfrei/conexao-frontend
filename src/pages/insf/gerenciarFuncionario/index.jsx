@@ -3,18 +3,18 @@ import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
-import Formulario from '../../../components/formularioDados';
-import CardFuncionarios from '../../../components/cardFuncionarios';
+import CardFilial from '../../../components/cardFilial';
 import MenuLinks from '../../../components/menuLinks'
+import CardFuncionarios from '../../../components/cardFuncionarios';
 
-export default function Gerenciar() {
+export default function GerenciarFuncionarioINSF() {
     return (
-        <div className="gerenciar-funcionarios">
+        <div className="gerenciar-funcionario-insf">
             <MenuLateral />
-            <MenuEmpresa menuEmpresa={true} />
+            <MenuEmpresa menuFrei={true}/>
             <Cabecalho>
                 <div className="content">
-                    <h1 id='h1Info'>Gerenciamento dos funcionários</h1>
+                    <h1 id='h1Info'>Gerenciamento de Funcionários</h1>
 
                     <div className="principal">
                         <div className="esquerda">
@@ -25,19 +25,16 @@ export default function Gerenciar() {
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFuncionarios rota='/empresa/cadastrarFuncionarios' />
+                                    <CardFuncionarios rota='/infosFuncionario'/>
                                 </div>
                                 <div className="lado-esquerdo">
-                                    <MenuLinks menuEmpresa={true} />
+                                    <MenuLinks menuFrei={true}/>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </Cabecalho>
-
-
         </div>
     )
-}   
+}

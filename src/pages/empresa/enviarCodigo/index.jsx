@@ -21,7 +21,7 @@ export default function EnviarCodigo() {
                     <div className="form">
                         <div className="inputCodigo">
                             <h1>Código</h1>
-                            <input type="text" placeholder='Escreva aqui' />
+                            <input type="text" placeholder='Escreva aqui' maxLength={6}/>
                         </div>
 
                         <button>Verificar</button>

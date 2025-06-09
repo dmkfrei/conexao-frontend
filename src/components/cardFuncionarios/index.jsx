@@ -1,10 +1,10 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 
-export default function CardFuncionarios() {
+export default function CardFuncionarios({ rota }) {
     return (
         <div className="card-funcionarios">
-            <p className="id"><Link to='/empresa/cadastrarFuncionarios'>#1</Link></p>
+            <p className="id"><Link to={rota}>#1</Link></p>
 
             <div className="card-info">
                 <div className="item">
@@ -17,11 +17,11 @@ export default function CardFuncionarios() {
                 </div>
 
                 <div className="item">
-                    <img src="/assets/images/localizacao.svg" alt="Localização" />
+                    <img src="/assets/images/Briefcase.svg" alt="Localização" />
 
                     <div className="text">
-                        <p className="label">Localização</p>
-                        <p className="valor">R. Abóbora M...</p>
+                        <p className="label">Cargo</p>
+                        <p className="valor">Supervisor...</p>
                     </div>
                 </div>
 

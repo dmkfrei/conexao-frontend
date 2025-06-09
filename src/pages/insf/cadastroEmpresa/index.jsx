@@ -9,7 +9,7 @@ export default function CadastroEmpresa() {
 
         <div className="cadastro-empresa">
             <MenuLateral />
-            <MenuEmpresa />
+            <MenuEmpresa menuFrei={true}/>
             <Cabecalho>
 
                 <div className="content">

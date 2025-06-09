@@ -2,87 +2,174 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: #F3F3F3;
+    background-color: #f9f9f9;
     height: 100vh;
     overflow: hidden;
 
     .content {
         width: 100%;
-        padding: 50px 20px 0;
-        gap: 1vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-left: 30px;
+        margin-top: 35px;
+        gap: 5px;
 
         #h1Info {
             font: 700 20px inter;
             color: #5D636B;
             text-align: left;
-            padding: 20px;
+            margin: 20px 20px;
         }
 
         .principal {
             display: flex;
             flex-direction: row;
             width: 100%;
-            padding: 20px;
-            gap: 20px;
+            margin: -5px 20px 0;
+            gap: 90px;
 
-            .bordaBranca {
-                width: 40%;
-                min-width: 550px;
-                max-height: 68vh;
-                overflow: hidden;
-                overflow-y: auto;
-                border-radius: 15px;
-                border: 1px solid #fff;
-                background-color: #fff;
+            .esquerda {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
+                justify-content: center;
                 gap: 20px;
-                padding: 30px;
+
+                .addFilial {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+                    width: 61.8%;
+                    min-width: 550px;
+                    margin-top: -15px;
+                    gap: 5px;
+
+                    h1 {
+                        font: 500 16px inter;
+                        color: #8F8D8D;
+                    }
+
+                    img {
+                        cursor: pointer;
+                    }
+                }
+
+                .meio {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    gap: 90px;
+
+                    .bordaBranca {
+                        width: 61.8%;
+                        min-width: 550px;
+                        max-height: 68vh;
+                        overflow: hidden;
+                        overflow-y: auto;
+                        border-radius: 15px;
+                        border: 1px solid #fff;
+                        background-color: #fff;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
+                        gap: 20px;
+                        padding: 30px;
+                    }
+                }
+
             }
         }
     }
 
-    @media(max-height: 901px) {
+    @media (max-width: 1399px) {
         .content {
-            .principal {
-                .bordaBranca {
-                    max-height: 38vh;
-                }
-            }
-
-        }
-    }
-
-    @media(max-width: 1177px) {
-        .content {
-            .principal {
-                .bordaBranca {
-                    min-width: 530px;
-                    max-height: 34vh;
-                }
-
-                .botao {
-                    min-width: 450px;
-                }
-            }
-        }
-    }
-    
-    @media(max-width: 1025px) {
-        .content {
-            justify-content: center;
+            margin-top: 5px;
 
             #h1Info {
-                padding: 20px 145px 0;
+                font-size: 18px;
+            }
+        }
+    }
+
+    @media(max-width: 1280px) {
+        .content {
+            .principal {
+                .esquerda {
+                    .meio {
+                        gap: 37px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media(max-width: 1176px) {
+        .content {
+            .principal {
+                .esquerda {
+                    .addFilial {
+                        min-width: 450px;
+                        max-width: 480px;
+                        width: 70%;
+                    }
+
+                    .meio {
+                        gap: 30px;
+
+                        .bordaBranca {
+                            min-width: 450px;
+                            max-width: 480px;
+                            width: 70%;
+                            padding: 10px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content {
+            margin: 15px 15px;
+
+            #h1Info{
+                margin-left: 0;
             }
 
             .principal {
-                justify-content: center;
+                margin: 10px 0;
+
+                .esquerda {
+                    gap: 10px;
+
+                    .addFilial {
+                        min-width: 400px;
+                    }
+
+                    .meio {
+                        .bordaBranca {
+                            justify-content: center;
+                            align-items: center;
+                            min-width: 400px;
+                            max-width: 0px;
+                            width: 20%;
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    @media (max-width: 378px) {
+        .content {
+            .bordaBranca {
+                min-width: 360px;
             }
         }
     }

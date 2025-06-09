@@ -1,10 +1,10 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
 
-export default function CardFilial() {
+export default function CardFilial({ rota }) {
     return (
         <div className="card-filial">
-            <p className="id"><Link to='/empresa/cadastrarFilial'>#1</Link></p>
+            <p className="id"><Link to={rota}>#1</Link></p>
 
             <div className="card-info">
                 <div className="item">

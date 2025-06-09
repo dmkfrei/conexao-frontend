@@ -4,7 +4,7 @@
     justify-content: center;
     width: 100%;
     background-color: #F9F9F9;
-    min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
 
     .content {
@@ -120,83 +120,86 @@
         }
     }
 
-    @media (max-height: 800px) {
+    @media (max-width: 1440px) {
         .content {
             .bordaBranca {
-                margin: 10vh 0vw;
-                width: 50vw;
+                padding: 6vh 15px;
+                width: 60%;
+                min-width: 200px;
 
                 .texto {
-                    min-width: 350px;
+                    min-width: 300px;
 
                     h1 {
-                        font-size: 18px;
+                        font-size: 17px;
                     }
 
                     p {
-                        font-size: 15px;
+                        font-size: 14px;
                     }
                 }
 
                 .inputs {
+
                     .inputNome,
                     .inputConfirmar,
                     .inputSenha {
-                        min-width: 350px;
+                        min-width: 300px;
+                        gap: 0px;
 
                         h1 {
                             font-size: 15px;
                         }
 
                         input {
-                            height: 50px;
-                            font-size: 14px;
+                            height: 45px;
+                            font-size: 13px;
+                            border-radius: 12px;
                         }
                     }
+
                     .botao {
+                        margin-top: 5px;
+
                         button {
-                            height: 50px;
-                            min-width: 350px;
-                            font-size: 15px;
+                            height: 45px;
+                            min-width: 300px;
+                            font-size: 13px;
                         }
                     }
                 }
             }
         }
     }
-    @media (max-width: 1440px) {
+
+    @media(max-width: 1176px) {
         .content {
-            height: 80vh;
-            padding: 2vh 2vw;
+            .bordaBranca {
+                height: 78vh;
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .content {
+            margin-left: -10px;
+            padding: 0;
 
             .bordaBranca {
-                height: 77vh;
-                width: 45vw;
-                .texto {
-                   gap: 1.5vh;
-                }
+                min-width: 400px;
+                max-width: 400px;
+                max-height: 60vh;
+            }
+        }
+    }
 
-                .inputs {
-                    gap: 1.5vh;
-                    .inputNome,
-                    .inputConfirmar,
-                    .inputSenha {
-                        gap: 0.7vh;
+    @media (max-width: 400px) {
+        .content {
+            margin-left: -10px;
+            padding: 0;
 
-                        h1 {
-                            font: 14px;
-                        }
-
-                        input {
-                            height: 7vh;
-                        }
-                    }
-                    .botao {
-                        button {
-                            height: 7vh;
-                        }
-                    }
-                }
+            .bordaBranca {
+                min-width: 350px;
             }
         }
     }

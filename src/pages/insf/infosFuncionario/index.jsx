@@ -5,15 +5,15 @@ import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 import MenuLinks from '../../../components/menuLinks'
 
-export default function CadastroFuncionario() {
+export default function InfosFuncionario() {
     return (
-        <div className="cadastro-funcionario">
+        <div className="infos-funcionario">
             <MenuLateral />
-            <MenuEmpresa menuEmpresa={true}/>
+            <MenuEmpresa menuFrei={true}/>
             <Cabecalho>
                 <div className="conteudo">
                     <div className="text">
-                        <Link to='/empresa/gerenciarFuncionarios' className='link'><img src="/assets/images/Vector.svg" alt="" />
+                        <Link to='/gerenciarFuncionario' className='link'><img src="/assets/images/Vector.svg" alt="" />
                             <h1>Voltar</h1>
                         </Link>
                     </div>
@@ -50,7 +50,7 @@ export default function CadastroFuncionario() {
                             </div>
                         </div>
 
-                        <MenuLinks menuEmpresa={true}/>
+                        <MenuLinks menuFrei={true}/>
                     </div>
                     <div className="botao">
                         <button>Salvar</button>

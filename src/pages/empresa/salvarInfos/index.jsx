@@ -9,17 +9,20 @@ export default function SalvarInfos() {
     return (
         <div className="salvar-infos">
             <MenuLateral />
-            <MenuEmpresa />
+            <MenuEmpresa menuEmpresa={true} />
             <Cabecalho>
                 <div className="content">
                     <h1 id='h1Info'>Informações Cadastradas</h1>
 
                     <div className="principal">
-                        <div className="esquerda">
-                            <Formulario botaoTexto='Salvar'/>
+                        <div className="meio">
+                            <div className="esquerda">
+                                <Formulario botaoTexto='Salvar' />
+                            </div>
+
+                            <MenuLinks menuEmpresa={true} />
                         </div>
-                        
-                        <MenuLinks />
+
                     </div>
                 </div>
             </Cabecalho>

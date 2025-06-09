@@ -33,12 +33,27 @@
             }
         }
     }
-    
+
+    @media(max-width: 768px) {
+        .cima {
+            .infos{
+                gap: 1.5vh;
+                img{
+                    width: 50px;
+                }
+
+                h1{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
 }
+
 @media (max-width: 1440px) {
-    .cabecalho{
-        .cima{
-            height: 11vh;
+    .cabecalho {
+        .cima {
+            padding: 10px 30px;
         }
     }
 }

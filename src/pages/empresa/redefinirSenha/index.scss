@@ -113,14 +113,6 @@
         }
     }
 
-    @media(max-width: 1050px) {
-        .bordaBranca {
-            .esquerda {
-                display: none;
-            }
-        }
-    }
-
     @media(max-width: 1200px) {
         height: 105vh;
 
@@ -164,6 +156,37 @@
                         font-size: 13px;
                     }
                 }
+            }
+        }
+    }
+
+    @media (max-width: 800px) {
+        height: 100vh;
+
+        .bordaBranca {
+            gap: 150px;
+            flex-direction: column;
+            min-width: 430px;
+            height: 75vh;
+            max-height: 80vh;
+
+
+            .esquerda {
+                width: 90%;
+                margin: 0px 0;
+                flex: 0;
+
+                img {
+                    width: 100%;
+                    height: 50%;
+                }
+            }
+
+            .direita {
+                justify-content: end;
+                flex: 0;
+                height: 0vh;
+                gap: 0;
             }
         }
     }

@@ -6,16 +6,15 @@
     background-color: #F9F9F9;
     overflow: hidden;
 
-
     .conteudo {
         display: flex;
         flex-direction: column;
-        padding: 40px 60px 40px;
+        margin: 95px 50px 40px;
         width: 100%;
         gap: 30px;
 
         h1 {
-            font: 700 18px inter;
+            font: 700 20px inter;
             color: #5D636B;
         }
 
@@ -34,23 +33,48 @@
             box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
             gap: 50px;
             padding: 30px;
+            margin: 15px 0;
         }
     }
 
-    @media(max-width: 1177px) {
-        .conteudo {
+    @media (max-width: 768px){
+        .conteudo{
+            justify-content: center;
+            align-items: center;
 
-            .bordaBranca {
-                max-height: 55vh;
+            .bordaBranca{
+                justify-content: center;
+                align-items: center;
+                min-width: 400px;
+                margin: 0;
+                padding: 5px;
+            }
+        }
+    }
+
+    @media (max-width: 378px){
+        .conteudo{
+            .bordaBranca{
+                min-width: 360px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1440px) {
+    .validacoes {
+        .conteudo {
+            h1 {
+                font-size: 18px;
             }
 
-        }
-    }
+            margin: 0vh 0vw;
+            padding: 4vh 5vw;
+            gap: 3vh;
 
-    @media (max-height: 800px) {
-        .conteudo {
-            margin: 1vh 0vw 1vh 0vw;
+            .bordaBranca {
+                height: 95%;
+            }
         }
-
     }
 }

@@ -9,7 +9,7 @@ export default function Validacoes() {
     return (
         <div className="validacoes">
             <MenuLateral />
-            <MenuEmpresa />
+            <MenuEmpresa menuFrei={true}/>
 
             <Cabecalho>
                 <div className="conteudo">
@@ -18,19 +18,6 @@ export default function Validacoes() {
 
                     <div className="bordaBranca">
                         <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-                        <CardEmpresa />
-
-
                     </div>
                 </div>
             </Cabecalho>

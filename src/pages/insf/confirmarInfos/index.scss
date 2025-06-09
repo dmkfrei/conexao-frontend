@@ -2,15 +2,13 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    min-width: 100%;
     height: 100vh;
-    background-color: #F3F3F3;
+    background-color: #f9f9f9;
     overflow: hidden;
 
     .content {
         width: 100%;
-        padding: 10px 50px 0;
-        gap: 0.5vh;
+        margin: 15px 50px 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -19,14 +17,14 @@
             font: 700 20px inter;
             color: #5D636B;
             text-align: left;
-            padding: 20px 0 50px;
+            margin: 20px 0 50px;
         }
 
         .text {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            padding: 20px 0;
+            margin: 20px 0;
 
             .link {
                 display: flex;
@@ -53,81 +51,31 @@
             display: flex;
             flex-direction: row;
             width: 100%;
+            margin-top: -5px;
 
             .lado-esquerdo {
                 display: flex;
                 flex-direction: column;
-                max-width: 650px;
                 width: 100%;
+                max-width: 690px;
                 gap: 30px;
             }
 
             .bordaBranca {
-                width: 50%;
+                width: 85%;
                 min-width: 550px;
+                max-height: 50vh;
+                overflow: hidden;
+                overflow-y: auto;
                 border-radius: 15px;
                 border: 1px solid #fff;
                 background-color: #fff;
                 display: flex;
                 flex-direction: column;
+                align-items: center;
                 box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
-                overflow: hidden;
-                overflow-y: auto;
-                max-height: 60vh;
-
-                .infos {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 2.5vh;
-                    padding: 30px;
-                    width: 100%;
-
-                    .card {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-start;
-                        align-items: center;
-                        width: 100%;
-                        gap: 1.5vh;
-
-                        img {
-                            width: 15px;
-                        }
-
-                        h1 {
-                            font: 500 16px inter;
-                            color: #5D636B;
-                        }
-                    }
-
-                    .campo {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        width: 100%;
-                        gap: 1.5vh;
-
-                        input {
-                            width: 100%;
-                            max-width: 450px;
-                            height: 45px;
-                            padding: 15px;
-                            outline: none;
-                            border: 1px solid #A2A2A2;
-                            background-color: #FDFAFA;
-                            border-radius: 15px;
-                            font: 500 15px inter;
-                        }
-
-                        h1 {
-                            font: 500 15px inter;
-                            color: #5D636B;
-                            width: 25%;
-                        }
-                    }
-                }
+                gap: 20px;
+                padding: 30px;
             }
 
             .botao {
@@ -153,45 +101,131 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1vh;
+                width: 100%;
 
-                h1 {
+                a {
                     font: 500 15px inter;
                     color: #8F8D8D;
+                    text-decoration: none;
+                }
+
+                .dados {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    gap: 1vh;
+
+                    hr {
+                        width: 5px;
+                        height: 21px;
+                        background-color: #9A9A9A;
+                        margin-left: -14px;
+                    }
+
                 }
             }
         }
     }
 
-    @media(max-height: 901px) {
+    @media (max-width: 1440px) {
         .content {
-            .principal {
-                .bordaBranca {
-                    max-height: 38vh;
-                }
+            .text {
+                margin-top: 11px;
+                margin-left: 3px;
             }
 
-            .direita {
-                margin-left: -50px;
+            #h1Info {
+                font-size: 18px;
+                margin-left: 3px;
+                margin-top: -2px;
+            }
+
+            .principal {
+                gap: 95px;
+                margin-top: -23px;
+                margin-left: 3px;
+
+                .direita {
+                    .dados {
+                        margin-left: 3px;
+                    }
+                }
             }
         }
     }
 
-    @media(max-width: 1177px) {
+    @media(max-width: 1176px) {
         .content {
+            margin-top: 12px;
+
+            .text {
+                margin-top: 10px;
+                margin-left: 0px;
+            }
+
+            #h1Info {
+                margin-top: 0px;
+                margin-left: 0px;
+            }
+
             .principal {
+                margin-left: 0px;
+                margin-top: -25px;
+                max-width: 500px;
+                gap: 27px;
+
+                .direita {
+                    min-width: 200px;
+
+                    .dados {
+                        margin-left: 3px;
+                    }
+                }
+
                 .bordaBranca {
-                    min-width: 450px;
-                    max-height: 34vh;
+                    min-width: 480px;
+                    width: 85%;
+                    padding: 10px;
+                }
+
+                .botao {
+                    min-width: 480px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .content {
+            margin-left: 15px;
+            .lado-esquerdo {
+                .bordaBranca {
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 400px;
+                    margin: 0;
+                    padding: 5px;
                 }
 
                 .botao{
-                    width: 70%;
-                    min-width: 450px;
-                }
-                .direita {
-                    min-width: 180px;
+                    min-width: 400px;
                 }
             }
+
+            .direita{
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 378px) {
+        .content {
+            .lado-esquerdo {
+                .bordaBranca {
+                    min-width: 360px;
+                }
+            }
+
         }
     }
 }

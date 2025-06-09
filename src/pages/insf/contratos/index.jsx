@@ -10,7 +10,7 @@ export default function Contratos() {
     return (
         <div className="contratos">
             <MenuLateral />
-            <MenuEmpresa />
+            <MenuEmpresa menuFrei={true}/>
             <Cabecalho>
                 <div className="content">
 
