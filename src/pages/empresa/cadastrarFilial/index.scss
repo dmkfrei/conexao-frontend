@@ -116,8 +116,11 @@
             }
 
             .principal {
-                gap: 35px;
                 margin-top: -35px;
+
+                .meio{
+                    gap: 90px;
+                }
 
                 .esquerda {
                     max-width: 500px;
@@ -138,12 +141,6 @@
                 min-width: 250px;
                 width: 85%;
             }
-        }
-    }
-
-    @media(max-width: 800px) {
-        .conteudo {
-            margin-left: 15px;
         }
     }
 }

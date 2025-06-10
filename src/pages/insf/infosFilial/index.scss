@@ -110,8 +110,11 @@
             margin-top: -5px;
 
             .principal {
-                gap: 90px;
                 margin-top: -35px;
+
+                .meio {
+                    gap: 90px;
+                }
 
                 .esquerda {
                     max-width: 500px;
@@ -132,10 +135,7 @@
             .principal {
                 .meio {
                     gap: 10px;
-                }
-
-                .botao {
-                    width: 85%;
+                    margin: 0;
                 }
             }
         }
@@ -143,7 +143,26 @@
 
     @media(max-width: 800px) {
         .conteudo {
-            margin-left: 15px;
+            margin-left: 0px;
+
+            .text{
+                margin-left: 25px;
+            }
+
+
+            #h1Info{
+                margin-left: 25px;
+            }
+
+            .principal {
+                .meio {
+                    .esquerda {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
         }
     }
 }

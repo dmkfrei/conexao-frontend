@@ -12,15 +12,15 @@ export default function ConfirmarInfos() {
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
-                    <div className="text">
-                        <Link to='/validarInfos' className="link">
-                            <img src="/assets/images/Vector.svg" alt="" />
-                            <h1>Voltar</h1>
-                        </Link>
+                    <div className="texto">
+                        <div className="links">
+                            <Link to='/validarInfos' className="link">
+                                <img src="/assets/images/Vector.svg" alt="" />
+                                <h1>Voltar</h1>
+                            </Link>
+                        </div>
+                        <h1 id='h1Info'>Informações Cadastradas</h1>
                     </div>
-
-
-                    <h1 id='h1Info'>Informações Cadastradas</h1>
 
                     <div className="principal">
                         <div className="lado-esquerdo">

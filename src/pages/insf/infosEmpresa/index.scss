@@ -51,8 +51,12 @@
     @media(max-width: 1280px) {
         .content {
             .principal {
+
+                .meio{
+                    gap: 88px;
+                }
                 .esquerda {
-                    max-width: 500px;
+                    max-width: 499px;
                 }
             }
         }
@@ -60,12 +64,11 @@
 
     @media(max-width: 1176px) {
         .content {
-            margin: 0 40px;
+            margin: 5px 50px;
 
             .principal {
-
                 .meio {
-                    gap: 10px;
+                    gap: 11px;
                 }
             }
         }
@@ -73,7 +76,29 @@
 
     @media(max-width: 800px) {
         .content {
-            margin-left: 15px;
+            margin-left: 0px;
+
+            #h1Info{
+                text-align: center;
+            }
+
+            .principal{
+                .meio{
+                    .esquerda{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 400px){
+        .content{
+            #h1Info{
+                text-align: center;
+            }
         }
     }
 }

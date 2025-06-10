@@ -1,6 +1,6 @@
 .formulario-dados {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     width: 100%;
     gap: 30px;
     min-width: 556px;
@@ -99,45 +99,68 @@
     @media(max-width: 1280px) {
         .bordaBranca {
             max-height: 55vh;
+            min-width: 550px;
+            max-width: 550px;
+        }
+
+        .botao {
+            min-width: 550px;
+            max-width: 550px;
         }
     }
 
     @media(max-width: 1176px) {
         .bordaBranca {
             width: 85%;
-            min-width: 400px;
+            min-width: 480px;
             max-height: 51vh;
         }
 
         .botao {
             width: 85%;
-            min-width: 400px;
+            min-width: 480px;
+            max-width: 490px;
         }
     }
 
     @media (max-width: 800px) {
-        min-width: 460px;
-
         .bordaBranca {
-            min-width: 400px;
-            width: 60%;
+            margin: 0 auto;
+            min-width: 350px;
+            max-width: 400px;
 
             .infos {
-                padding: 10px;
-                gap: 1vh;
-                
                 .campo {
                     flex-direction: column;
+                    gap: 1vh;
 
                     input{
                         border-radius: 12px;
                     }
 
                     h1 {
+                        align-self: self-start;
                         width: 100%;
                     }
                 }
             }
         }
+
+        .botao {
+            min-width: 350px;
+            max-width: 500px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .bordaBranca {
+            min-width: 250px;
+            max-width: 330px;
+        }
+    }
+
+    .botao {
+        min-width: 250px;
+        max-width: 440px;
     }
 }

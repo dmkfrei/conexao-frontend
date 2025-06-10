@@ -209,13 +209,13 @@
 
     @media (max-width: 800px) {
         .conteudo {
-            margin: 15px;
+            margin: 5px;
             gap: 2vh;
+
             .principal {
                 .bordaBranca {
-                    min-width: 400px;
-                    max-width: 400px;
-                    width: 55%;
+                    min-width: 380px;
+                    max-width: 0px;
 
                     .infos {
                         gap: 1.5vh;
@@ -236,9 +236,8 @@
             }
 
             .botao {
-                min-width: 400px;
-                max-width: 400px;
-                width: 55%;
+                min-width: 380px;
+                max-width: 0px;
             }
         }
     }

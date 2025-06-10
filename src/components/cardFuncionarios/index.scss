@@ -73,4 +73,29 @@
             gap: 0;
         }
     }
+
+    @media(max-width: 800px){
+        .card-info{
+            gap: 0rem;
+
+            .item{
+                gap: 0.2rem;
+
+                img{
+                    width: 15px;
+                    height: 15px;
+                }
+
+                .text{
+                    .label{
+                        font-size: 12px;
+                    }
+
+                    .valor{
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
 }
