@@ -11,10 +11,13 @@ export default function GerenciarFuncionarioINSF() {
     return (
         <div className="gerenciar-funcionario-insf">
             <MenuLateral />
-            <MenuEmpresa menuFrei={true}/>
+            <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
-                    <h1 id='h1Info'>Gerenciamento de Funcionários</h1>
+                    <div className="texto">
+                        <h1 id='h1Info'>Gerenciamento de Funcionários</h1>
+                    </div>
+
 
                     <div className="principal">
                         <div className="esquerda">
@@ -25,10 +28,10 @@ export default function GerenciarFuncionarioINSF() {
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFuncionarios rota='/infosFuncionario'/>
+                                    <CardFuncionarios rota='/infosFuncionario' />
                                 </div>
                                 <div className="lado-esquerdo">
-                                    <MenuLinks menuFrei={true}/>
+                                    <MenuLinks menuFrei={true} />
                                 </div>
                             </div>
                         </div>

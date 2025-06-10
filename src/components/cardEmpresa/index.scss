@@ -75,20 +75,28 @@
     cursor: pointer;
   }
 
-  @media (max-width: 768px) {
-    .card-info {
-      .item {
-        .text {
-          .label {
-            font-size: 13px;
-          }
+  @media(max-width: 800px) {
+        .card-info {
+            gap: 0.1rem;
 
-          .valor {
-            font-size: 10px;
-          }
+            .item {
+                gap: 0.2rem;
+
+                img {
+                    width: 15px;
+                    height: 15px;
+                }
+
+                .text {
+                    .label {
+                        font-size: 12px;
+                    }
+
+                    .valor {
+                        font-size: 11px;
+                    }
+                }
+            }
         }
-      }
-
     }
-  }
 }

@@ -10,10 +10,13 @@ export default function GerenciarFilialINSF() {
     return (
         <div className="gerenciar-filial-insf">
             <MenuLateral />
-            <MenuEmpresa menuFrei={true}/>
+            <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
-                    <h1 id='h1Info'>Gerenciamento de Filiais</h1>
+                    <div className="texto">
+                        <h1 id='h1Info'>Gerenciamento de Filiais</h1>
+                    </div>
+
 
                     <div className="principal">
                         <div className="esquerda">
@@ -24,10 +27,10 @@ export default function GerenciarFilialINSF() {
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFilial rota='/infosFilial'/>
+                                    <CardFilial rota='/infosFilial' />
                                 </div>
                                 <div className="lado-esquerdo">
-                                    <MenuLinks menuFrei={true}/>
+                                    <MenuLinks menuFrei={true} />
                                 </div>
                             </div>
                         </div>

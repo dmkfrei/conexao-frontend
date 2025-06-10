@@ -153,24 +153,66 @@
 
     @media (max-width: 800px) {
         .content {
-            margin-left: 0;
+            min-width: 350px;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+
+            .text {
+                min-width: 350px;
+                justify-content: flex-start;
+
+                h1{
+                    margin-left: 0;
+                }
+            }
 
             .principal {
                 margin-top: 0;
+                max-width: 350px;
+
                 .esquerda {
                     .bordaBranca {
-                        min-width: 400px;
-                        max-width: 400px;
+                        min-width: 350px;
+                        max-width: 350px;
                     }
 
                     .botoes {
-                        min-width: 400px;
-                        max-width: 400px;
+                        min-width: 350px;
+                        max-width: 350px;
 
-                        button{
+                        button {
                             width: 94px;
                             height: 42px;
                         }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 800px) {
+        .content {
+            min-width: 300px;
+
+            .text {
+                min-width: 300px;
+            }
+
+            .principal {
+                max-width: 300px;
+
+                .esquerda {
+                    .bordaBranca {
+                        min-width: 300px;
+                        max-width: 300px;
+                    }
+
+                    .botoes {
+                        min-width: 300px;
+                        max-width: 300px;
+                        margin-top: -15px;
                     }
                 }
 

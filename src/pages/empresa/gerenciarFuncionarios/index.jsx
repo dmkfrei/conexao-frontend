@@ -14,7 +14,10 @@ export default function Gerenciar() {
             <MenuEmpresa menuEmpresa={true} />
             <Cabecalho>
                 <div className="content">
-                    <h1 id='h1Info'>Gerenciamento dos funcionários</h1>
+                    <div className="texto">
+                        <h1 id='h1Info'>Gerenciamento dos funcionários</h1>
+                    </div>
+                    
 
                     <div className="principal">
                         <div className="esquerda">

@@ -147,20 +147,21 @@
     }
 
     @media (max-width: 800px) {
-        height: 100vh;
+        height: 105vh;
 
         .bordaBranca {
             gap: 150px;
             flex-direction: column-reverse;
             min-width: 430px;
-            height: 75vh;
-            max-height: 80vh;
-
+            height: 100vh;
+            max-height: none;
 
             .direita {
-                width: 90%;
+                width: 80%;
                 margin: 0px 0;
                 flex: 0;
+
+                justify-content: center;
 
                 img {
                     width: 100%;
@@ -172,6 +173,20 @@
                 justify-content: end;
                 flex: 0;
                 height: 0vh;
+            }
+        }
+    }
+
+    @media(max-width: 330px){
+        .bordaBranca{
+            min-height: 150vh;
+
+            .esquerda{
+                margin: -60px 0;
+            }
+
+            .direita{
+                margin: 50px 0;
             }
         }
     }

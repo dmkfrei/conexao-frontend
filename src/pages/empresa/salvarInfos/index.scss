@@ -53,6 +53,7 @@
 
     @media(max-width: 1280px) {
         .content {
+
             .principal {
                 .esquerda {
                     max-width: 500px;
@@ -87,7 +88,45 @@
 
     @media(max-width: 800px) {
         .content {
-            margin-left: 15px;
+            min-width: 350px;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0px;
+
+            .texto{
+                min-width: 350px;
+            }
+
+            .principal {
+                .meio {
+                    .esquerda {
+                        .botao {
+                            min-width: 350px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 330px) {
+        .content {
+            min-width: 310px;
+
+            .texto {
+                min-width: 310px;
+            }
+
+            .principal {
+                .meio {
+                    .esquerda {
+                        .botao {
+                            min-width: 310px;
+                            margin-top: -15px;
+                        }
+                    }
+                }
+            }
         }
     }
 }

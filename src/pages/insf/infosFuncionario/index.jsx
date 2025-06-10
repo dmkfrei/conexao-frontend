@@ -9,16 +9,17 @@ export default function InfosFuncionario() {
     return (
         <div className="infos-funcionario">
             <MenuLateral />
-            <MenuEmpresa menuFrei={true}/>
+            <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="conteudo">
                     <div className="text">
-                        <Link to='/gerenciarFuncionario' className='link'><img src="/assets/images/Vector.svg" alt="" />
-                            <h1>Voltar</h1>
-                        </Link>
+                        <div className="link">
+                            <Link to='/gerenciarFuncionario' className='link'><img src="/assets/images/Vector.svg" alt="" />
+                                <h1>Voltar</h1>
+                            </Link>
+                        </div>
+                        <h1 id='h1Info'>Cadastro de Funcionários</h1>
                     </div>
-
-                    <h1 id='h1Info'>Cadastro de Funcionários</h1>
 
                     <div className="principal">
                         <div className="bordaBranca">
@@ -50,7 +51,7 @@ export default function InfosFuncionario() {
                             </div>
                         </div>
 
-                        <MenuLinks menuFrei={true}/>
+                        <MenuLinks menuFrei={true} />
                     </div>
                     <div className="botao">
                         <button>Salvar</button>

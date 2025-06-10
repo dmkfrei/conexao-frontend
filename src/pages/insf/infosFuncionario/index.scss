@@ -22,8 +22,9 @@
 
         .text {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
             margin: 20px 0;
 
             .link {
@@ -166,11 +167,15 @@
 
     @media (max-width: 1280px) {
         .conteudo {
-            margin-top: -5px;
+            margin-top: 5px;
 
             #h1Info {
                 font-size: 18px;
                 margin-top: -5px;
+            }
+
+            .text{
+                gap: 20px;
             }
 
             .principal {
@@ -192,8 +197,13 @@
 
     @media(max-width: 1176px) {
         .conteudo {
+
+            .text{
+                gap: 20px;
+            }
             .principal {
                 gap: 40px;
+                margin-top: -65px;
 
                 .bordaBranca {
                     max-width: 470px;
@@ -209,12 +219,21 @@
 
     @media (max-width: 800px) {
         .conteudo {
-            margin: 5px;
             gap: 2vh;
+            min-width: 350px;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0px;
+
+            .text{
+                min-width: 350px;
+            }
 
             .principal {
+                justify-content: center;
                 .bordaBranca {
-                    min-width: 380px;
+                    min-width: 350px;
                     max-width: 0px;
 
                     .infos {
@@ -236,8 +255,31 @@
             }
 
             .botao {
-                min-width: 380px;
+                min-width: 350px;
                 max-width: 0px;
+            }
+        }
+    }
+
+    @media (max-width: 360px){
+        .conteudo{
+            min-width: 310px;
+
+            .text{
+                min-width: 310px;
+            }
+
+            .principal{
+                .bordaBranca{
+                    min-width: 310px;
+                    max-height: 46vh;
+                    justify-content: flex-start;
+                    overflow-y: auto;
+                }
+            }
+
+            .botao{
+                min-width: 310px;
             }
         }
     }

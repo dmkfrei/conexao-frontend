@@ -9,7 +9,7 @@
     padding: 1rem;
     background-color: #fff;
     position: relative;
-    
+
     .id {
         position: absolute;
         bottom: 8px;
@@ -68,30 +68,30 @@
         cursor: pointer;
     }
 
-    @media( max-width: 1280px){
-        .card-info{
+    @media(max-width: 1280px) {
+        .card-info {
             gap: 0;
         }
     }
 
-    @media(max-width: 800px){
-        .card-info{
+    @media(max-width: 800px) {
+        .card-info {
             gap: 0rem;
 
-            .item{
+            .item {
                 gap: 0.2rem;
 
-                img{
+                img {
                     width: 15px;
                     height: 15px;
                 }
 
-                .text{
-                    .label{
+                .text {
+                    .label {
                         font-size: 12px;
                     }
 
-                    .valor{
+                    .valor {
                         font-size: 11px;
                     }
                 }

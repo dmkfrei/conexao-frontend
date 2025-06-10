@@ -22,8 +22,9 @@
 
         .text {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
             margin: 20px 0;
 
             .link {
@@ -94,6 +95,11 @@
         .conteudo {
             margin-top: 0px;
 
+            .text{
+                gap: 20px;
+            }
+
+
             #h1Info {
                 font-size: 18px;
                 margin-top: 0px;
@@ -144,6 +150,7 @@
                     .esquerda {
                         .botao {
                             min-width: 480px;
+                            max-width: 480px;
                         }
                     }
                 }
@@ -153,23 +160,49 @@
 
     @media(max-width: 800px) {
         .conteudo {
+            min-width: 350px;
+            justify-content: center;
+            align-items: center;
             margin-left: 0px;
 
-            .text {
-                margin-left: 25px;
-            }
-
-
-            #h1Info {
-                margin-left: 25px;
+            .text{
+                min-width: 350px;
             }
 
             .principal {
                 .meio {
                     .esquerda {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        .botao {
+                            min-width: 350px;
+                            max-width: 350px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 330px){
+        .conteudo{
+            min-width: 300px;
+
+            .text{
+                min-width: 300px;
+            }
+
+            .principal{
+                .meio{
+                    .esquerda{
+
+                        .bordaBranca{
+                            min-width: 300px;
+                            max-width: 300px;
+                            height: 42vh;
+                        }
+                        .botao{
+                            min-width: 300px;
+                            max-width: 300px;
+                        }
                     }
                 }
             }

@@ -133,18 +133,26 @@
             .texto {
                 margin-top: 11px;
                 margin-left: 3px;
-            }
 
-            #h1Info {
-                font-size: 18px;
-                margin-left: 3px;
-                margin-top: -2px;
+                #h1Info {
+                    font-size: 18px;
+                }
             }
 
             .principal {
-                gap: 95px;
+                gap: 92px;
                 margin-top: -23px;
                 margin-left: 3px;
+
+                .lado-esquerdo {
+                    .bordaBranca {
+                        min-width: 586px;
+                    }
+
+                    .botao {
+                        min-width: 586px;
+                    }
+                }
 
                 .direita {
                     .dados {
@@ -155,14 +163,25 @@
         }
     }
 
-    @media (max-width: 1280px){
-        .content{
-            .texto{
-                gap: 20px;
+    @media (max-width: 1280px) {
+        .content {
+            .texto {
+                gap: 0px;
             }
-            
-            .principal{
-                margin-top: -45px;
+
+            .principal {
+                margin-top: -55px;
+                gap: 51px;
+
+                .lado-esquerdo {
+                    .bordaBranca {
+                        min-width: 550px;
+                    }
+
+                    .botao {
+                        min-width: 550px;
+                    }
+                }
             }
         }
     }
@@ -177,9 +196,19 @@
 
             .principal {
                 margin-left: 0px;
-                margin-top: -50px;
+                margin-top: -55px;
                 max-width: 500px;
-                gap: 27px;
+                gap: 33px;
+
+                .lado-esquerdo {
+                    .bordaBranca {
+                        min-width: 480px;
+                    }
+
+                    .botao {
+                        min-width: 480px;
+                    }
+                }
 
                 .direita {
                     min-width: 200px;
@@ -204,14 +233,17 @@
 
     @media (max-width: 768px) {
         .content {
-            margin: 0;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0px;
+            min-width: 350px;
 
             .texto {
-                margin-left: 20px;
+                min-width: 350px;
                 gap: 20px;
             }
 
-            #h1Info{
+            #h1Info {
                 margin: 0;
             }
 
@@ -251,14 +283,13 @@
 
     @media (max-width: 378px) {
         .content {
+            min-width: 340px;
 
             .texto {
-                margin-left: 10px;
+                min-width: 340px;
             }
 
             .lado-esquerdo {
-   
-
                 .bordaBranca {
                     min-width: 340px;
                 }

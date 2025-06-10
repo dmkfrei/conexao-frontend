@@ -75,25 +75,36 @@
         }
     }
 
-    @media (max-width: 768px){
-        .content{
+    @media (max-width: 768px) {
+        .content {
             justify-content: center;
             align-items: center;
+            min-width: 350px;
 
-            .bordaBranca{
+            .texto{
+                min-width: 350px;
+            }
+
+            .bordaBranca {
                 justify-content: center;
                 align-items: center;
-                min-width: 400px;
+                min-width: 350px;
                 margin: 0;
                 padding: 5px;
             }
         }
     }
 
-    @media (max-width: 378px){
-        .content{
-            .bordaBranca{
-                min-width: 360px;
+    @media (max-width: 378px) {
+        .content {
+            min-width: 310px;
+
+            .texto{
+                min-width: 310px;
+            }
+
+            .bordaBranca {
+                min-width: 310px;
             }
         }
     }
@@ -102,11 +113,10 @@
 @media (max-width: 1440px) {
     .contratos {
         .content {
-
-            h1{
+            h1 {
                 font-size: 18px;
             }
-            
+
             margin: 0vh 0vw;
             padding: 4vh 5vw;
             gap: 3vh;

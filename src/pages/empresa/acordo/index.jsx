@@ -13,7 +13,10 @@ export default function Acordo() {
 
             <Cabecalho>
                 <div className="content">
-                    <h1>Acordo</h1>
+                    <div className="text">
+                        <h1>Acordo</h1>
+                    </div>
+                    
                     <div className="principal">
                         <div className="esquerda">
                             <div className="bordaBranca">

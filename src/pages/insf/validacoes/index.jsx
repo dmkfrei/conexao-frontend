@@ -14,7 +14,10 @@ export default function Validacoes() {
             <Cabecalho>
                 <div className="conteudo">
 
-                    <h1>Validações Pendentes</h1>
+                    <div className="texto">
+                        <h1>Validações Pendentes</h1>
+                    </div>
+                    
 
                     <div className="bordaBranca">
                         <CardEmpresa />

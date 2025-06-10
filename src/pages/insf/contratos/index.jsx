@@ -13,8 +13,10 @@ export default function Contratos() {
             <MenuEmpresa menuFrei={true}/>
             <Cabecalho>
                 <div className="content">
-
-                    <h1>Contratos Pendentes</h1>
+                    <div className="texto">
+                        <h1>Contratos Pendentes</h1>
+                    </div>
+                    
 
                     <div className="bordaBranca">
                         <div className="card-infos">

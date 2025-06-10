@@ -9,16 +9,17 @@ export default function CadastroFuncionario() {
     return (
         <div className="cadastro-funcionario">
             <MenuLateral />
-            <MenuEmpresa menuEmpresa={true}/>
+            <MenuEmpresa menuEmpresa={true} />
             <Cabecalho>
                 <div className="conteudo">
                     <div className="text">
-                        <Link to='/empresa/gerenciarFuncionarios' className='link'><img src="/assets/images/Vector.svg" alt="" />
-                            <h1>Voltar</h1>
-                        </Link>
+                        <div className="link">
+                            <Link to='/empresa/gerenciarFuncionarios' className='link'><img src="/assets/images/Vector.svg" alt="" />
+                                <h1>Voltar</h1>
+                            </Link>
+                        </div>
+                        <h1 id='h1Info'>Cadastro de Funcionários</h1>
                     </div>
-
-                    <h1 id='h1Info'>Cadastro de Funcionários</h1>
 
                     <div className="principal">
                         <div className="bordaBranca">
@@ -50,7 +51,7 @@ export default function CadastroFuncionario() {
                             </div>
                         </div>
 
-                        <MenuLinks menuEmpresa={true}/>
+                        <MenuLinks menuEmpresa={true} />
                     </div>
                     <div className="botao">
                         <button>Salvar</button>

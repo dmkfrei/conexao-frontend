@@ -161,20 +161,22 @@
         }
     }
 
-    @media (max-width: 800px) {
-        height: 100vh;
+     @media (max-width: 800px) {
+        height: 105vh;
 
         .bordaBranca {
-            gap: 70px;
+            gap: 80px;
             flex-direction: column;
             min-width: 430px;
-            height: 75vh;
-            max-height: 80vh;
-            
+            height: 100vh;
+            max-height: none;
+            overflow-y: auto;
+
             .esquerda {
-                width: 90%;
+                width: 85%;
                 margin: 0px 0;
                 flex: 0;
+                justify-content: center;
 
                 img {
                     width: 100%;
@@ -186,6 +188,22 @@
                 justify-content: end;
                 flex: 0;
                 height: 0vh;
+                gap: 30px;
+            }
+        }
+    }
+
+    @media (max-width: 330px){
+        height: 100vh;
+
+        .bordaBranca{
+            height: 100vh;
+            max-height: none;
+
+            .esquerda{
+                width: 80%;
+                margin: 10px 0;
+                height: 70vh;
             }
         }
     }

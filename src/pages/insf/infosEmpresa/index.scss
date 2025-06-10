@@ -88,28 +88,44 @@
 
     @media(max-width: 800px) {
         .content {
+            min-width: 350px;
+            justify-content: center;
+            align-items: center;
             margin-left: 0px;
 
-            #h1Info {
-                text-align: center;
+            .text {
+                min-width: 350px;
             }
 
             .principal {
                 .meio {
                     .esquerda {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        .botao {
+                            min-width: 350px;
+                        }
                     }
                 }
             }
         }
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 330px) {
         .content {
-            #h1Info {
-                text-align: center;
+            min-width: 310px;
+
+            .text {
+                min-width: 310px;
+            }
+
+            .principal {
+                .meio {
+                    .esquerda {
+                        .botao {
+                            min-width: 310px;
+                            margin-top: -15px;
+                        }
+                    }
+                }
             }
         }
     }

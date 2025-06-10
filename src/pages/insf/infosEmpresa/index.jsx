@@ -13,7 +13,10 @@ export default function InfosEmpresa() {
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
-                    <h1 id='h1Info'>Informações Cadastradas</h1>
+                    <div className="text">
+                        <h1 id='h1Info'>Informações Cadastradas</h1>
+                    </div>
+
 
                     <div className="principal">
                         <div className="meio">

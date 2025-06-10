@@ -37,25 +37,37 @@
         }
     }
 
-    @media (max-width: 768px){
-        .conteudo{
+    @media (max-width: 768px) {
+        .conteudo {
             justify-content: center;
             align-items: center;
+            min-width: 350px;
 
-            .bordaBranca{
+            .texto{
+                min-width: 350px;
+            }
+
+            .bordaBranca {
                 justify-content: center;
                 align-items: center;
-                min-width: 400px;
+                min-width: 350px;
                 margin: 0;
                 padding: 5px;
+                gap: 0;
             }
         }
     }
 
-    @media (max-width: 378px){
-        .conteudo{
-            .bordaBranca{
-                min-width: 360px;
+    @media (max-width: 378px) {
+        .conteudo {
+            min-width: 310px;
+
+            .texto{
+                min-width: 310px;
+            }
+
+            .bordaBranca {
+                min-width: 310px;
             }
         }
     }

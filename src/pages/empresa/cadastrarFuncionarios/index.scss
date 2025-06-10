@@ -22,8 +22,9 @@
 
         .text {
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
             margin: 20px 0;
 
             .link {
@@ -153,12 +154,16 @@
         .conteudo {
             margin-top: 0px;
 
+            .text{
+                gap: 20px;
+            }
+
             #h1Info {
                 font-size: 18px;
                 margin-top: 0px;
             }
 
-            .principal{
+            .principal {
                 margin-top: -15px;
             }
         }
@@ -193,8 +198,13 @@
 
     @media(max-width: 1176px) {
         .conteudo {
+
+            .text{
+                gap: 10px;
+            }
             .principal {
                 gap: 40px;
+                margin-top: -60px;
                 .bordaBranca {
                     max-width: 470px;
                 }
@@ -207,15 +217,25 @@
         }
     }
 
-     @media (max-width: 800px) {
+    @media (max-width: 800px) {
         .conteudo {
-            margin: 15px;
             gap: 2vh;
+            min-width: 350px;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            margin-left: 0px;
+
+            .text {
+                min-width: 350px;
+            }
+
             .principal {
+                justify-content: center;
+
                 .bordaBranca {
-                    min-width: 400px;
-                    max-width: 400px;
-                    width: 55%;
+                    min-width: 350px;
+                    max-width: 0px;
 
                     .infos {
                         gap: 1.5vh;
@@ -236,9 +256,31 @@
             }
 
             .botao {
-                min-width: 400px;
-                max-width: 400px;
-                width: 55%;
+                min-width: 350px;
+                max-width: 0px;
+            }
+        }
+    }
+
+    @media (max-width: 360px) {
+        .conteudo {
+            min-width: 310px;
+
+            .text {
+                min-width: 310px;
+            }
+
+            .principal {
+                .bordaBranca {
+                    min-width: 310px;
+                    max-height: 46vh;
+                    justify-content: flex-start;
+                    overflow-y: auto;
+                }
+            }
+
+            .botao {
+                min-width: 310px;
             }
         }
     }

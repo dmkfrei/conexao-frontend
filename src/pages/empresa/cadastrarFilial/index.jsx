@@ -14,12 +14,15 @@ export default function CadastroFilial() {
             <Cabecalho>
                 <div className="conteudo">
                     <div className="text">
-                        <Link to='/empresa/gerenciarFilial' className='link'><img src="/assets/images/Vector.svg" alt="" />
-                            <h1>Voltar</h1>
-                        </Link>
+                        <div className="links">
+                            <Link to='/empresa/gerenciarFilial' className='link'><img src="/assets/images/Vector.svg" alt="" />
+                                <h1>Voltar</h1>
+                            </Link>
+                        </div>
+                        <h1 id='h1Info'>Informações da Nova Filial</h1>
                     </div>
 
-                    <h1 id='h1Info'>Informações da Nova Filial</h1>
+
 
                     <div className="principal">
                         <div className="meio">

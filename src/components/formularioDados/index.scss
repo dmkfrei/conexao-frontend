@@ -78,6 +78,7 @@
         align-items: flex-end;
         width: 100%;
         min-width: 550px;
+        
 
         button {
             width: 113px;
@@ -96,9 +97,20 @@
         }
     }
 
+    @media (max-width: 1399px){
+        .bordaBranca{
+            max-height: 45vh;
+        }
+    }
+
     @media(max-width: 1280px) {
         .bordaBranca {
             max-height: 55vh;
+            min-width: 550px;
+            max-width: 550px;
+        }
+
+        .botao{
             min-width: 550px;
             max-width: 550px;
         }
@@ -114,13 +126,15 @@
         .botao {
             width: 85%;
             min-width: 480px;
-            max-width: 490px;
         }
     }
 
     @media (max-width: 800px) {
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        
         .bordaBranca {
-            margin: 0 auto;
             min-width: 350px;
             max-width: 400px;
 
@@ -140,22 +154,5 @@
                 }
             }
         }
-
-        .botao {
-            min-width: 350px;
-            max-width: 500px;
-        }
-    }
-
-    @media (max-width: 400px) {
-        .bordaBranca {
-            min-width: 250px;
-            max-width: 330px;
-        }
-    }
-
-    .botao {
-        min-width: 250px;
-        max-width: 440px;
     }
 }
