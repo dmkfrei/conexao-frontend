@@ -155,6 +155,18 @@
         }
     }
 
+    @media (max-width: 1280px){
+        .content{
+            .texto{
+                gap: 20px;
+            }
+            
+            .principal{
+                margin-top: -45px;
+            }
+        }
+    }
+
     @media(max-width: 1176px) {
         .content {
             .texto {

@@ -118,6 +118,10 @@
 
                 .esquerda {
                     max-width: 500px;
+
+                    .botao {
+                        min-width: 550px;
+                    }
                 }
             }
 
@@ -136,6 +140,12 @@
                 .meio {
                     gap: 10px;
                     margin: 0;
+
+                    .esquerda {
+                        .botao {
+                            min-width: 480px;
+                        }
+                    }
                 }
             }
         }
@@ -145,12 +155,12 @@
         .conteudo {
             margin-left: 0px;
 
-            .text{
+            .text {
                 margin-left: 25px;
             }
 
 
-            #h1Info{
+            #h1Info {
                 margin-left: 25px;
             }
 

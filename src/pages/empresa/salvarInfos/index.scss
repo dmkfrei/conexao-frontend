@@ -56,9 +56,13 @@
             .principal {
                 .esquerda {
                     max-width: 500px;
+
+                    .botao {
+                        min-width: 550px;
+                    }
                 }
 
-                .meio{
+                .meio {
                     gap: 87px;
                 }
             }
@@ -70,6 +74,12 @@
             .principal {
                 .meio {
                     gap: 10px;
+
+                    .esquerda {
+                        .botao {
+                            min-width: 480px;
+                        }
+                    }
                 }
             }
         }

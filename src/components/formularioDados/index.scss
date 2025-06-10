@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 100%;
     gap: 30px;
-    min-width: 556px;
 
     .bordaBranca {
         width: 100%;
@@ -16,6 +15,7 @@
         overflow: hidden;
         overflow-y: auto;
         max-height: 57vh;
+        min-width: 556px;
 
         .infos {
             display: flex;
@@ -102,11 +102,6 @@
             min-width: 550px;
             max-width: 550px;
         }
-
-        .botao {
-            min-width: 550px;
-            max-width: 550px;
-        }
     }
 
     @media(max-width: 1176px) {
@@ -134,7 +129,7 @@
                     flex-direction: column;
                     gap: 1vh;
 
-                    input{
+                    input {
                         border-radius: 12px;
                     }
 

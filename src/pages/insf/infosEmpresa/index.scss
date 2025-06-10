@@ -52,11 +52,16 @@
         .content {
             .principal {
 
-                .meio{
+                .meio {
                     gap: 88px;
                 }
+
                 .esquerda {
                     max-width: 499px;
+
+                    .botao {
+                        min-width: 550px;
+                    }
                 }
             }
         }
@@ -69,6 +74,13 @@
             .principal {
                 .meio {
                     gap: 11px;
+
+                    .esquerda {
+
+                        .botao {
+                            min-width: 480px;
+                        }
+                    }
                 }
             }
         }
@@ -78,13 +90,13 @@
         .content {
             margin-left: 0px;
 
-            #h1Info{
+            #h1Info {
                 text-align: center;
             }
 
-            .principal{
-                .meio{
-                    .esquerda{
+            .principal {
+                .meio {
+                    .esquerda {
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -94,9 +106,9 @@
         }
     }
 
-    @media (max-width: 400px){
-        .content{
-            #h1Info{
+    @media (max-width: 400px) {
+        .content {
+            #h1Info {
                 text-align: center;
             }
         }

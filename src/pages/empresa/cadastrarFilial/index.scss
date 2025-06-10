@@ -118,12 +118,16 @@
             .principal {
                 margin-top: -35px;
 
-                .meio{
+                .meio {
                     gap: 90px;
                 }
 
                 .esquerda {
                     max-width: 500px;
+
+                    .botao {
+                        min-width: 550px;
+                    }
                 }
             }
         }
@@ -134,13 +138,14 @@
             .principal {
                 .meio {
                     gap: 10px;
+
+                    .botao {
+                        min-width: 480px;
+                    }
                 }
             }
 
-            .botao{
-                min-width: 250px;
-                width: 85%;
-            }
+
         }
     }
 }
