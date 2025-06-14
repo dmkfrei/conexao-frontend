@@ -1,128 +1,97 @@
 .salvar-infos {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    background-color: #f9f9f9;
     height: 100vh;
+    background-color: #F9F9F9;
     overflow: hidden;
 
     .content {
         width: 100%;
-        margin: 35px 50px;
+        max-width: 1200px;
+        margin: 35px;
         display: flex;
         flex-direction: column;
+        padding: 0 20px;
 
         #h1Info {
             font: 700 20px inter;
             color: #5D636B;
             text-align: left;
-            margin: 20px 0 50px;
+            margin: 20px 0 30px;
         }
 
         .principal {
             display: flex;
             flex-direction: row;
-            gap: 90px;
             width: 100%;
-            margin-top: -5px;
 
             .meio {
                 display: flex;
-                gap: 87px;
+                gap: 88px;
                 width: 100%;
-            }
 
-            .esquerda {
-                flex: 1;
-                min-width: 250px;
-                max-width: 590px;
+                .esquerda {
+                    max-width: 560px;
+                    width: 100%;
+                }
             }
         }
     }
 
-
-    @media (max-width: 1399px) {
+    @media (max-width: 1280px) {
         .content {
-            margin-top: 5px;
-
             #h1Info {
                 font-size: 18px;
             }
-        }
-    }
-
-    @media(max-width: 1280px) {
-        .content {
 
             .principal {
-                .esquerda {
-                    max-width: 500px;
-
-                    .botao {
-                        min-width: 550px;
-                    }
-                }
-
                 .meio {
-                    gap: 87px;
+                    gap: 40px;
                 }
             }
         }
     }
 
-    @media(max-width: 1176px) {
+    @media (max-width: 1176px) {
         .content {
+            margin-top: 0px;
+
             .principal {
+                margin-left: 0;
+                margin-top: 0px;
+
                 .meio {
-                    gap: 10px;
+                    gap: 33px;
 
                     .esquerda {
-                        .botao {
-                            min-width: 480px;
-                        }
+                        max-width: 480px;
                     }
                 }
             }
         }
     }
 
-    @media(max-width: 800px) {
+    @media (max-width: 800px) {
         .content {
-            min-width: 350px;
             justify-content: center;
             align-items: center;
-            margin-left: 0px;
-
-            .texto{
-                min-width: 350px;
-            }
-
-            .principal {
-                .meio {
-                    .esquerda {
-                        .botao {
-                            min-width: 350px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media (max-width: 330px) {
-        .content {
-            min-width: 310px;
+            margin-left: 0;
+            max-width: 450px;
 
             .texto {
-                min-width: 310px;
+                width: 85%;
+                gap: 20px;
             }
 
             .principal {
                 .meio {
                     .esquerda {
+                        .bordaBranca {
+                            width: 85%;
+                        }
+
                         .botao {
-                            min-width: 310px;
-                            margin-top: -15px;
+                            width: 85%;
                         }
                     }
                 }

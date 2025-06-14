@@ -4,6 +4,7 @@ import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 import MenuLinks from '../../../components/menuLinks'
+import FormularioFuncionario from '../../../components/formularioFuncionario';
 
 export default function InfosFuncionario() {
     return (
@@ -22,39 +23,14 @@ export default function InfosFuncionario() {
                     </div>
 
                     <div className="principal">
-                        <div className="bordaBranca">
-                            <div className="infos">
-                                <div className="card">
-                                    <img src="/assets/images/pessoa.svg" alt="" />
-                                    <h1>Informações do Profissional</h1>
-                                </div>
-
-                                <div className="campo">
-                                    <h1>Nome</h1>
-                                    <input type="text" placeholder='Escreva aqui' />
-                                </div>
-
-                                <div className="campo">
-                                    <h1>Cargo</h1>
-                                    <input type="text" placeholder='Escreva aqui' />
-                                </div>
-
-                                <div className="campo">
-                                    <h1>Email</h1>
-                                    <input type="text" placeholder='Escreva aqui' />
-                                </div>
-
-                                <div className="campo">
-                                    <h1>Telefone</h1>
-                                    <input type="text" placeholder='Escreva aqui' />
-                                </div>
+                        <div className="meio">
+                            <div className="esquerda">
+                                <FormularioFuncionario />
                             </div>
+
+                            <MenuLinks menuFrei={true} />
                         </div>
 
-                        <MenuLinks menuFrei={true} />
-                    </div>
-                    <div className="botao">
-                        <button>Salvar</button>
                     </div>
                 </div>
             </Cabecalho>

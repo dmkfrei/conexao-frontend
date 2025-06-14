@@ -4,6 +4,7 @@ import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 import CardFuncionario from '../../../components/cardFuncionarios';
+import MenuDireita from '../../../components/menuDireita';
 
 export default function ConfirmarInfos() {
     return (
@@ -33,14 +34,7 @@ export default function ConfirmarInfos() {
                             </div>
                         </div>
 
-                        <div className="direita">
-                            <Link to='/validarInfos'>Dados da Empresa</Link>
-                            <div className="dados">
-                                <hr />
-                                <Link to='/confirmarInfos'>Dados dos Responsáveis</Link>
-                            </div>
-
-                        </div>
+                        <MenuDireita />
                     </div>
                 </div>
             </Cabecalho>

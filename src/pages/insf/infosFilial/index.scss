@@ -7,17 +7,17 @@
 
     .conteudo {
         width: 100%;
-        margin: 15px 50px 0;
+        max-width: 1200px;
+        margin: 35px;
+        padding: 0 20px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        width: 100%;
 
         #h1Info {
             font: 700 20px inter;
             color: #5D636B;
             text-align: left;
-            margin: 20px 0 50px;
+            margin: 20px 0 30px;
         }
 
         .text {
@@ -25,13 +25,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            margin: 20px 0;
+            gap: 10px;
 
             .link {
                 display: flex;
-                flex-direction: row;
-                align-items: flex-start;
-                justify-content: flex-start;
+                align-items: center;
                 gap: 10px;
                 text-decoration: none;
 
@@ -51,157 +49,82 @@
             display: flex;
             flex-direction: row;
             width: 100%;
-            margin-top: -5px;
 
             .meio {
                 display: flex;
-                gap: 90px;
                 width: 100%;
-            }
+                gap: 88px;
 
-            .esquerda {
-                flex: 1;
-                min-width: 250px;
-                max-width: 590px;
-            }
-        }
-    }
-
-    .botao {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        width: 100%;
-        min-width: 250px;
-
-        button {
-            width: 113px;
-            height: 42px;
-            border-radius: 15px;
-            background-color: #F5BA53;
-            border: none;
-            font: 500 14px inter;
-            color: #FFF;
-            cursor: pointer;
-
-            a {
-                text-decoration: none;
-                color: #FFF;
-            }
-        }
-    }
-
-    @media (max-width: 1399px) {
-        .conteudo {
-            margin-top: 0px;
-
-            .text{
-                gap: 20px;
-            }
-
-
-            #h1Info {
-                font-size: 18px;
-                margin-top: 0px;
-            }
-
-            .principal {
-                margin-top: -15px;
+                .esquerda {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    width: 100%;
+                    max-width: 560px;
+                }
             }
         }
     }
 
     @media (max-width: 1280px) {
         .conteudo {
-            margin-top: -5px;
-
-            .principal {
-                margin-top: -35px;
-
-                .meio {
-                    gap: 90px;
-                }
-
-                .esquerda {
-                    max-width: 500px;
-
-                    .botao {
-                        min-width: 550px;
-                    }
-                }
-            }
-
             #h1Info {
                 font-size: 18px;
-                margin-top: -5px;
+                margin-top: 0;
+            }
+
+            .principal {
+                margin-left: 0;
+                margin-top: -20px;
+
+                .meio {
+                    gap: 40px;
+                }
             }
         }
     }
 
-
-
-    @media(max-width: 1176px) {
+    @media (max-width: 1176px) {
         .conteudo {
+            margin-top: 0px;
+
+            .text{
+                margin-top: 15px;
+            }
+
             .principal {
                 .meio {
-                    gap: 10px;
-                    margin: 0;
+                    gap: 33px;
 
                     .esquerda {
-                        .botao {
-                            min-width: 480px;
-                            max-width: 480px;
-                        }
+                        max-width: 480px;
                     }
                 }
             }
         }
     }
 
-    @media(max-width: 800px) {
+    @media (max-width: 800px) {
         .conteudo {
-            min-width: 350px;
             justify-content: center;
             align-items: center;
-            margin-left: 0px;
+            margin-left: 0;
+            max-width: 450px;
 
-            .text{
-                min-width: 350px;
+            .text {
+                width: 85%;
+                gap: 20px;
             }
 
             .principal {
                 .meio {
                     .esquerda {
+                        .bordaBranca {
+                            width: 85%;
+                        }
+
                         .botao {
-                            min-width: 350px;
-                            max-width: 350px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @media (max-width: 330px){
-        .conteudo{
-            min-width: 300px;
-
-            .text{
-                min-width: 300px;
-            }
-
-            .principal{
-                .meio{
-                    .esquerda{
-
-                        .bordaBranca{
-                            min-width: 300px;
-                            max-width: 300px;
-                            height: 42vh;
-                        }
-                        .botao{
-                            min-width: 300px;
-                            max-width: 300px;
+                            width: 85%;
                         }
                     }
                 }

@@ -12,9 +12,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: auto;
         width: 100%;
         padding: 25px;
+        flex: 1;
 
         .bordaBranca {
             display: flex;
@@ -23,13 +23,11 @@
             align-items: center;
             border: 1px solid #fff;
             background-color: #fff;
-            width: 45%;
-            min-width: 550px;
-            background: white;
+            width: 100%;
+            max-width: 650px;
             padding: 8.5vh 13px;
             border-radius: 8px;
             gap: 1.5vw;
-            margin-left: 20px;
             box-shadow: 0 4px 5px #E0E0E0;
 
             .texto {
@@ -38,8 +36,8 @@
                 justify-content: center;
                 align-items: flex-start;
                 gap: 2vh;
-                min-width: 350px;
-                width: 60%;
+                width: 100%;
+                max-width: 400px;
 
                 h1 {
                     font: 700 22px inter;
@@ -61,7 +59,8 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                width: 60%;
+                width: 100%;
+                max-width: 400px;
                 gap: 2vh;
 
                 .inputNome,
@@ -72,8 +71,6 @@
                     justify-content: center;
                     gap: 1vh;
                     width: 100%;
-                    min-width: 350px;
-                    align-items: center;
 
                     h1 {
                         font: 500 16px inter;
@@ -91,9 +88,7 @@
                         font: 500 16px inter;
                         outline: none;
                         width: 100%;
-                        min-width: 200px;
                     }
-
                 }
 
                 .botao {
@@ -101,12 +96,9 @@
                     justify-content: center;
                     align-items: center;
                     width: 100%;
-                    margin-top: 1.5vw;
 
                     button {
                         width: 100%;
-                        min-width: 350px;
-                        min-height: 12px;
                         height: 55px;
                         border-radius: 16px;
                         font: 500 15px inter;
@@ -124,12 +116,11 @@
         .content {
             .bordaBranca {
                 padding: 6vh 15px;
-                width: 60%;
-                min-width: 200px;
+                width: 100%;
+                max-width: 500px;
 
                 .texto {
-                    min-width: 300px;
-
+                    max-width: 300px;
                     h1 {
                         font-size: 17px;
                     }
@@ -140,13 +131,13 @@
                 }
 
                 .inputs {
-
                     .inputNome,
                     .inputConfirmar,
                     .inputSenha {
-                        min-width: 300px;
                         gap: 0px;
-
+                        max-width: 300px;
+                        justify-content: center;
+                        align-items: center;
                         h1 {
                             font-size: 15px;
                         }
@@ -154,16 +145,17 @@
                         input {
                             height: 45px;
                             font-size: 13px;
+                            max-width: 300px;
                             border-radius: 12px;
                         }
                     }
 
                     .botao {
                         margin-top: 5px;
+                        max-width: 300px;
 
                         button {
                             height: 45px;
-                            min-width: 300px;
                             font-size: 13px;
                         }
                     }
@@ -172,44 +164,21 @@
         }
     }
 
-    @media(max-width: 1176px) {
+    @media(max-width: 1280px) {
         .content {
-            .bordaBranca {
-                height: 78vh;
-            }
-        }
-    }
-
-    @media (max-width: 1024px) {
-        .content {
-            margin-left: -10px;
             padding: 0;
 
             .bordaBranca {
-                min-width: 400px;
-                max-width: 400px;
-                max-height: 60vh;
+                padding: 5vh 10px;
             }
         }
     }
 
-    @media (max-width: 400px) {
-        .content {
-            margin-left: -10px;
-            padding: 0;
-
-            .bordaBranca {
-                min-width: 350px;
-            }
-        }
-    }
-
-    @media (max-width: 320px) {
+    @media (max-width: 720px) {
         .content {
             .bordaBranca {
-                min-width: 350px;
-                max-height: 100vh;
-                height: 85vh;
+                max-height: 80vh;
+                height: 80vh;
             }
         }
     }

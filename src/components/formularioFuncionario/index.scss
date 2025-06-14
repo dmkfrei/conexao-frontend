@@ -1,4 +1,4 @@
-.formulario-dados {
+.formulario-funcionario {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -75,10 +75,9 @@
     .botao {
         display: flex;
         justify-content: flex-end;
-        align-items: flex-end;
         width: 100%;
         max-width: 560px;
-        
+
         button {
             width: 113px;
             height: 42px;
@@ -96,8 +95,8 @@
         }
     }
 
-    @media (max-width: 1399px){
-        .bordaBranca{
+    @media (max-width: 1399px) {
+        .bordaBranca {
             max-height: 45vh;
         }
     }
@@ -108,7 +107,7 @@
             max-width: 550px;
         }
 
-        .botao{
+        .botao {
             max-width: 550px;
         }
     }
@@ -117,7 +116,7 @@
         margin: 0 auto;
         justify-content: center;
         align-items: center;
-        
+
         .bordaBranca {
             max-width: 400px;
 

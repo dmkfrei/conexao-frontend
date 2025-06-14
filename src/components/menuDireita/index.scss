@@ -1,0 +1,33 @@
+.menu-direita {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        a {
+            font: 500 15px inter;
+            color: #8F8D8D;
+            text-decoration: none;
+        }
+
+        .barra {
+            width: 5px;
+            height: 21px;
+        }
+
+
+        &.ativo {
+            .barra {
+                background-color: #9A9A9A;
+            }
+        }
+    }
+
+    @media (max-width: 830px){
+        display: none;
+    }
+}

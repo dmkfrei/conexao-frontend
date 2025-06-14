@@ -9,8 +9,9 @@
     .content {
         display: flex;
         flex-direction: column;
-        margin: 95px 50px 40px;
+        margin: 55px 50px 40px;
         width: 100%;
+        max-width: 1280px;
         gap: 30px;
 
         h1 {
@@ -19,10 +20,9 @@
         }
 
         .bordaBranca {
-            width: 40%;
-            min-width: 550px;
+            width: 100%;
+            max-width: 670px;
             max-height: 68vh;
-            overflow: hidden;
             overflow-y: auto;
             border-radius: 15px;
             border: 1px solid #fff;
@@ -79,50 +79,22 @@
         .content {
             justify-content: center;
             align-items: center;
-            min-width: 350px;
+            width: 100%;
+            max-width: 450px;
+            gap: 20px;
 
-            .texto{
-                min-width: 350px;
+            .texto {
+                width: 85%;
             }
 
             .bordaBranca {
                 justify-content: center;
                 align-items: center;
-                min-width: 350px;
+                width: 85%;
+                max-width: 450px;
                 margin: 0;
-                padding: 5px;
-            }
-        }
-    }
-
-    @media (max-width: 378px) {
-        .content {
-            min-width: 310px;
-
-            .texto{
-                min-width: 310px;
-            }
-
-            .bordaBranca {
-                min-width: 310px;
-            }
-        }
-    }
-}
-
-@media (max-width: 1440px) {
-    .contratos {
-        .content {
-            h1 {
-                font-size: 18px;
-            }
-
-            margin: 0vh 0vw;
-            padding: 4vh 5vw;
-            gap: 3vh;
-
-            .bordaBranca {
-                height: 95%;
+                padding: 10px;
+                gap: 20px;
             }
         }
     }

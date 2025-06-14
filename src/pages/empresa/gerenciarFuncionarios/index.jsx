@@ -17,7 +17,7 @@ export default function Gerenciar() {
                     <div className="texto">
                         <h1 id='h1Info'>Gerenciamento dos funcionários</h1>
                     </div>
-                    
+
 
                     <div className="principal">
                         <div className="esquerda">
@@ -30,9 +30,7 @@ export default function Gerenciar() {
                                 <div className="bordaBranca">
                                     <CardFuncionarios rota='/empresa/cadastrarFuncionarios' />
                                 </div>
-                                <div className="lado-esquerdo">
-                                    <MenuLinks menuEmpresa={true} />
-                                </div>
+                                <MenuLinks menuEmpresa={true} />
                             </div>
                         </div>
 

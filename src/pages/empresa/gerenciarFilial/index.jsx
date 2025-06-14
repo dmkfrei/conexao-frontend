@@ -10,13 +10,13 @@ export default function GerenciarFilial() {
     return (
         <div className="gerenciar-filial">
             <MenuLateral />
-            <MenuEmpresa menuEmpresa={true}/>
+            <MenuEmpresa menuEmpresa={true} />
             <Cabecalho>
                 <div className="content">
                     <div className="texto">
                         <h1 id='h1Info'>Gerenciamento de Filiais</h1>
                     </div>
-                    
+
 
                     <div className="principal">
                         <div className="esquerda">
@@ -27,11 +27,9 @@ export default function GerenciarFilial() {
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFilial rota='/empresa/cadastrarFilial'/>
+                                    <CardFilial rota='/empresa/cadastrarFilial' />
                                 </div>
-                                <div className="lado-esquerdo">
-                                    <MenuLinks menuEmpresa={true}/>
-                                </div>
+                                <MenuLinks menuEmpresa={true} />
                             </div>
                         </div>
                     </div>

@@ -118,7 +118,7 @@
         }
     }
 
-    @media(max-width: 1200px) {
+    @media(max-width: 1176px) {
         height: 105vh;
 
         .bordaBranca {
@@ -127,7 +127,7 @@
 
             .esquerda {
                 .mensagem {
-                    min-width: 300px;
+                    max-width: 300px;
 
                     h1 {
                         font-size: 17px;
@@ -139,7 +139,7 @@
                 }
 
                 .form {
-                    min-width: 300px;
+                    max-width: 300px;
                     gap: 1rem;
 
                     h1 {
@@ -150,7 +150,7 @@
                         height: 48px;
                         padding-left: 10px;
                         font-size: 12px;
-                        min-width: 200px;
+                        max-width: 400px;
                     }
 
                     .senha {
@@ -163,61 +163,49 @@
                         height: 48px;
                         text-align: center;
                         font-size: 13px;
-                        min-width: 200px;
+                        max-width: 400px;
                     }
                 }
             }
         }
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         height: 105vh;
 
         .bordaBranca {
-            gap: 150px;
             flex-direction: column-reverse;
-            min-width: 430px;
-            height: 95vh;
-            max-height: none;
+            height: 100vh;
+            max-height: 100vh;
             overflow-y: auto;
+            gap: 0;
 
             .direita {
-                width: 87%;
-                margin: 0px 0;
+                width: 100%;
+                margin: -90px auto;
                 flex: 0;
+                display: flex;
                 justify-content: center;
 
                 img {
-                    width: 100%;
+                    width: 50%;
                     height: 50%;
                 }
             }
 
             .esquerda {
-                justify-content: end;
                 flex: 0;
-                height: 0vh;
+                width: 100%;
+                margin: -80px;
             }
         }
     }
 
-    @media(max-width: 330px) {
-        .bordaBranca {
-            min-height: 150vh;
-
-            .esquerda {
-                margin: -60px 0;
-                max-width: 300px;
-
-
-            }
-
-            .direita {
-                margin: 50px 0;
-                justify-content: center;
-                align-items: center;
-                margin: 0 auto;
-                img {
+    @media (max-width: 500px) {
+        .bordaBranca{
+            .direita{
+                margin: -40px;
+                img{
                     width: 90%;
                 }
             }

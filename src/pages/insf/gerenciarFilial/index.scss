@@ -2,46 +2,45 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: #f9f9f9;
     height: 100vh;
+    background-color: #f9f9f9;
     overflow: hidden;
 
     .content {
         width: 100%;
-        margin: 35px 30px 0;
-        gap: 5px;
+        max-width: 1200px;
+        margin: 35px;
+        padding: 0 20px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
 
         #h1Info {
             font: 700 20px inter;
             color: #5D636B;
             text-align: left;
-            margin: 20px 20px;
+            margin: 20px 0 30px;
         }
 
         .principal {
             display: flex;
             flex-direction: row;
             width: 100%;
-            margin: -5px 20px 0;
+            gap: 88px;
+            margin-top: -25px;
 
             .esquerda {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                gap: 20px;
+                gap: 5px;
+                width: 100%;
 
                 .addFilial {
                     display: flex;
-                    flex-direction: row;
                     justify-content: flex-end;
                     align-items: center;
-                    width: 65%;
-                    min-width: 550px;
-                    margin-top: -15px;
-                    gap: 5px;
+                    gap: 8px;
+                    width: 100%;
+                    max-width: 560px;
 
                     h1 {
                         font: 500 16px inter;
@@ -50,152 +49,110 @@
 
                     img {
                         cursor: pointer;
+                        width: 18px;
                     }
                 }
 
                 .meio {
                     display: flex;
-                    flex-direction: row;
                     width: 100%;
-                    gap: 91px;
+                    gap: 88px;
 
                     .bordaBranca {
-                        width: 65%;
-                        min-width: 550px;
-                        max-height: 68vh;
-                        overflow: hidden;
-                        overflow-y: auto;
+                        width: 100%;
+                        max-width: 560px;
                         border-radius: 15px;
                         border: 1px solid #fff;
                         background-color: #fff;
+                        box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
                         gap: 20px;
                         padding: 30px;
+                        max-height: 68vh;
+                        overflow-y: auto;
                     }
                 }
             }
-
         }
     }
 
-    @media (max-width: 1399px) {
+    @media (max-width: 1280px) {
         .content {
-            margin-top: 5px;
-
             #h1Info {
                 font-size: 18px;
             }
-        }
-    }
 
-    @media(max-width: 1280px) {
-        .content {
             .principal {
                 .esquerda {
-                    max-width: 500px;
-
                     .meio {
-                        gap: 37px;
+                        gap: 40px;
                     }
                 }
             }
         }
     }
 
-    @media(max-width: 1176px) {
+    @media (max-width: 1176px) {
         .content {
+            margin-top: 0px;
+
             .principal {
+                margin-left: 0;
+
                 .esquerda {
+
                     .addFilial {
-                        min-width: 480px;
-                        width: 85%;
+                        max-width: 480px;
                     }
 
                     .meio {
-                        gap: 30px;
+                        gap: 33px;
 
                         .bordaBranca {
-                            min-width: 480px;
-                            width: 85%;
+                            max-width: 480px;
                             padding: 10px;
                         }
                     }
-                }
 
+                }
             }
         }
     }
 
     @media (max-width: 768px) {
         .content {
-            margin-left: 0;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            max-width: 350px;
-
-            .texto {
-                min-width: 350px;
-                margin-top: 20px;
-            }
+            max-width: 100%;
+            padding: 0 10px;
+            margin: 10px auto;
 
             #h1Info {
-                margin: 0;
+                margin: 10px 0 20px;
+                font-size: 17px;
             }
 
             .principal {
-                margin: 10px 0;
+                gap: 20px;
 
                 .esquerda {
-                    gap: 10px;
+                    gap: 15px;
 
                     .addFilial {
-                        min-width: 350px;
-                        margin-top: 10px;
-
-                        img {
-                            width: 15px;
-                        }
+                        gap: 5px;
 
                         h1 {
-                            font-size: 13px;
+                            font-size: 14px;
+                        }
+
+                        img {
+                            width: 14px;
                         }
                     }
 
                     .meio {
                         .bordaBranca {
-                            min-width: 350px;
-                            max-width: 0px;
-                            padding: 5px;
-                        }
-                    }
-                }
-            }
-
-        }
-    }
-
-    @media (max-width: 378px) {
-        .content {
-            max-width: 310px;
-
-            .texto {
-                min-width: 310px;
-            }
-
-            .principal {
-                .esquerda {
-
-                    .addFilial {
-                        min-width: 310px;
-                    }
-
-                    .meio {
-                        .bordaBranca {
-                            min-width: 310px;
+                            padding: 15px;
                         }
                     }
                 }

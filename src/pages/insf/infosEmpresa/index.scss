@@ -7,9 +7,11 @@
 
     .content {
         width: 100%;
-        margin: 35px 50px;
+        max-width: 1200px;
+        margin: 35px;
         display: flex;
         flex-direction: column;
+        padding: 0 20px;
 
         #h1Info {
             font: 700 20px inter;
@@ -22,107 +24,74 @@
             display: flex;
             flex-direction: row;
             width: 100%;
-            margin: 15px 0;
 
             .meio {
                 display: flex;
-                gap: 87px;
+                gap: 88px;
                 width: 100%;
-            }
 
-            .esquerda {
-                flex: 1;
-                min-width: 250px;
-                max-width: 590px;
+                .esquerda {
+                    max-width: 560px;
+                    width: 100%;
+                }
             }
         }
     }
 
-    @media (max-width: 1399px) {
+    @media (max-width: 1280px) {
         .content {
-            margin-top: 5px;
-
             #h1Info {
                 font-size: 18px;
             }
-        }
-    }
 
-    @media(max-width: 1280px) {
-        .content {
             .principal {
-
                 .meio {
-                    gap: 88px;
-                }
-
-                .esquerda {
-                    max-width: 499px;
-
-                    .botao {
-                        min-width: 550px;
-                    }
+                    gap: 40px;
                 }
             }
         }
     }
 
-    @media(max-width: 1176px) {
+    @media (max-width: 1176px) {
         .content {
-            margin: 5px 50px;
+            margin-top: 0px;
 
             .principal {
+                margin-left: 0;
+                margin-top: 0px;
+
                 .meio {
-                    gap: 11px;
+                    gap: 33px;
 
                     .esquerda {
-
-                        .botao {
-                            min-width: 480px;
-                        }
+                        max-width: 480px;
                     }
                 }
             }
         }
     }
 
-    @media(max-width: 800px) {
+    @media (max-width: 800px) {
         .content {
-            min-width: 350px;
             justify-content: center;
             align-items: center;
-            margin-left: 0px;
+            margin-left: 0;
+            max-width: 450px;
 
             .text {
-                min-width: 350px;
+                width: 85%;
+                gap: 20px;
             }
 
             .principal {
                 .meio {
                     .esquerda {
-                        .botao {
-                            min-width: 350px;
+                        .bordaBranca {
+                            width: 85%;
                         }
-                    }
-                }
-            }
-        }
-    }
 
-    @media (max-width: 330px) {
-        .content {
-            min-width: 310px;
-
-            .text {
-                min-width: 310px;
-            }
-
-            .principal {
-                .meio {
-                    .esquerda {
                         .botao {
-                            min-width: 310px;
-                            margin-top: -15px;
+                            width: 85%;
                         }
                     }
                 }

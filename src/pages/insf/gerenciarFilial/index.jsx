@@ -29,9 +29,7 @@ export default function GerenciarFilialINSF() {
                                 <div className="bordaBranca">
                                     <CardFilial rota='/infosFilial' />
                                 </div>
-                                <div className="lado-esquerdo">
                                     <MenuLinks menuFrei={true} />
-                                </div>
                             </div>
                         </div>
                     </div>

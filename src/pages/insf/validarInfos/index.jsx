@@ -4,6 +4,7 @@ import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
 import Formulario from '../../../components/formularioDados';
+import MenuDireita from '../../../components/menuDireita';
 
 export default function ValidarInfos() {
     return (
@@ -23,8 +24,6 @@ export default function ValidarInfos() {
                         <h1 id='h1Info'>Informações Cadastradas</h1>
                     </div>
 
-
-
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
@@ -32,13 +31,7 @@ export default function ValidarInfos() {
                             </div>
 
 
-                            <div className="direita">
-                                <hr />
-                                <div className="dados">
-                                    <Link to='/validarInfos'>Dados da Empresa</Link>
-                                    <Link to='/confirmarInfos'>Dados dos Responsáveis</Link>
-                                </div>
-                            </div>
+                            <MenuDireita />
                         </div>
 
                     </div>

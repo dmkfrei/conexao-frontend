@@ -30,9 +30,7 @@ export default function GerenciarFuncionarioINSF() {
                                 <div className="bordaBranca">
                                     <CardFuncionarios rota='/infosFuncionario' />
                                 </div>
-                                <div className="lado-esquerdo">
                                     <MenuLinks menuFrei={true} />
-                                </div>
                             </div>
                         </div>
                     </div>
