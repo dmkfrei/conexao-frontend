@@ -15,6 +15,16 @@ export default function MenuLinks({ menuFrei, menuEmpresa }) {
         '/gerenciarFilial'
     ];
 
+    let rotaFuncionarioEmpresa = [
+        '/empresa/cadastrarFuncionarios',
+        '/empresa/gerenciarFuncionarios'
+    ];
+
+    let rotaFilialEmpresa = [
+        '/empresa/cadastrarFilial',
+        '/empresa/gerenciarFilial'
+    ];
+
     return (
         <div className="menu-links">
             {menuEmpresa &&
@@ -24,11 +34,11 @@ export default function MenuLinks({ menuFrei, menuEmpresa }) {
                             <div className="barra" />
                             <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
                         </div>
-                        <div className={`item ${rotaAtual == '/empresa/gerenciarFuncionarios' ? 'ativo' : ''}`}>
+                        <div className={`item ${rotaFuncionarioEmpresa.includes(rotaAtual) ? 'ativo' : ''}`}>
                             <div className="barra" />
                             <Link to='/empresa/gerenciarFuncionarios'>Dados dos Responsáveis</Link>
                         </div>
-                        <div className={`item ${rotaAtual == '/empresa/gerenciarFilial' ? 'ativo' : ''}`}>
+                        <div className={`item ${rotaFilialEmpresa.includes(rotaAtual) ? 'ativo' : ''}`}>
                             <div className="barra" />
                             <Link to='/empresa/gerenciarFilial'>Filiais</Link>
                         </div>
