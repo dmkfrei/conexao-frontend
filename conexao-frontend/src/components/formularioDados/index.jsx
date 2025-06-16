@@ -134,7 +134,7 @@ export default function Formulario({ botaoTexto, botaoDestino }) {
                             value={cep}
                             onAccept={(value) => {
                                 setCep(value);
-                                if (value.replace(/\D/g, '').length === 8) {
+                                if (value.replace(/\D/g, '').length == 8) {
                                     buscarCep(value);
                                 }
                             }}
