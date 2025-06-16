@@ -1,7 +1,11 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
+import PopUpDeletar from '../popUpDeletar';
+import { useState } from 'react';
 
 export default function CardFuncionarios({ rota }) {
+    const [abrirPopUpDeletar, setAbrirPopUpDeletar] = useState(false);
+
     return (
         <div className="card-funcionarios">
             <p className="id"><Link to={rota}>#1</Link></p>
@@ -44,7 +48,10 @@ export default function CardFuncionarios({ rota }) {
                 </div>
             </div>
 
-            <img src="/assets/images/lixeira.svg" alt="Visualizar" className="icon-lixeira" />
+            <img src="/assets/images/lixeira.svg" alt="Visualizar" className="icon-lixeira" onClick={() => setAbrirPopUpDeletar(true)} />
+            {abrirPopUpDeletar && (
+                <PopUpDeletar onClose={() => setAbrirPopUpDeletar(false)} />
+            )}
         </div>
     );
 };

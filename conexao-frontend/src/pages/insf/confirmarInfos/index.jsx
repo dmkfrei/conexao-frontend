@@ -1,22 +1,27 @@
 import './index.scss';
+import { useState, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
-import { Link, useNavigate } from 'react-router-dom';
 import CardFuncionario from '../../../components/cardFuncionarios';
 import MenuDireita from '../../../components/menuDireita';
-import { useEffect } from 'react';
+import PopUpAprovar from '../../../components/popUpAprovar';
+import PopUpReprovar from '../../../components/popUpReprovar';
 
 export default function ConfirmarInfos() {
     const navigate = useNavigate();
-    let token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
+
+    const [abrirPopUpAprovar, setAbrirPopUpAprovar] = useState(false);
+    const [abrirPopUpReprovar, setAbrirPopUpReprovar] = useState(false);
 
     useEffect(() => {
-        if (token == null || token == undefined) {
-            navigate('/')
+        if (!token) {
+            navigate('/');
         }
     }, []);
-    
+
     return (
         <div className="confirmar-infos">
             <MenuLateral />
@@ -39,8 +44,8 @@ export default function ConfirmarInfos() {
                                 <CardFuncionario />
                             </div>
                             <div className="botao">
-                                <button>Recusar</button>
-                                <button>Aprovar</button>
+                                <button onClick={() => setAbrirPopUpReprovar(true)}>Recusar</button>
+                                <button onClick={() => setAbrirPopUpAprovar(true)}>Aprovar</button>
                             </div>
                         </div>
 
@@ -48,6 +53,13 @@ export default function ConfirmarInfos() {
                     </div>
                 </div>
             </Cabecalho>
+
+            {abrirPopUpAprovar && (
+                <PopUpAprovar onClose={() => setAbrirPopUpAprovar(false)} />
+            )}
+            {abrirPopUpReprovar && (
+                <PopUpReprovar onClose={() => setAbrirPopUpReprovar(false)} />
+            )}
         </div>
-    )
+    );
 }

@@ -8,18 +8,17 @@
 
     .content {
         width: 100%;
-        max-width: 1280px;
-        margin: 35px;
-        padding: 0 20px;
+        max-width: 1200px;
+        margin: 5px;
+        padding: 0 50px;
+        gap: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
 
         #h1Info {
             font: 700 20px inter;
             color: #5D636B;
             text-align: left;
-            margin: 20px 0 30px;
         }
 
         .texto {
@@ -27,7 +26,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 10px;
+            gap: 20px;
+            margin: 10px 0;
 
             .link {
                 display: flex;
@@ -130,7 +130,7 @@
     @media (max-width: 1280px) {
         .content {
             .principal {
-                margin-top: -55px;
+                margin-top: -5px;
                 gap: 0px;
             }
         }
@@ -145,7 +145,7 @@
 
             .principal {
                 margin-left: 0;
-                gap: 33px;
+                gap: 20px;
 
                 .lado-esquerdo {
                     width: 100%;
@@ -169,11 +169,12 @@
         .content {
             justify-content: center;
             align-items: center;
-            margin-left: 0;
+            margin: 0;
+            padding: 0 20px;
             max-width: 450px;
 
             .texto {
-                width: 85%;
+                width: 100%;
                 gap: 20px;
             }
 
@@ -188,20 +189,19 @@
 
                 .lado-esquerdo {
                     width: 100%;
-                    max-width: 500px;
+                    max-width: 550px;
                     justify-content: center;
                     align-items: center;
                     margin: 0;
 
                     .bordaBranca {
-                        width: 85%;
-                        max-width: 500px;
+                        width: 100%;
                         margin: 0;
                         padding: 10px;
                     }
 
                     .botao {
-                        width: 85%;
+                        width: 100%;
                         max-width: 500px;
 
                         button {
