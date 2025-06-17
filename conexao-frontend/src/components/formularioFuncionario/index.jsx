@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './index.scss';
 import { IMaskInput } from 'react-imask';
 import axios from 'axios';
@@ -10,7 +10,6 @@ export default function FormularioFuncionario() {
     const [cargo, setCargo] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
-    const [id_empresa, setIdEmpresa] = useState(0);
 
     let token = localStorage.getItem('token');
     const decoded = jwtDecode(token);
@@ -21,21 +20,24 @@ export default function FormularioFuncionario() {
         let url = 'http://localhost:5001/buscarEmpresaPeloLogin';
         let resp = await axios.post(url, { id_login });
 
-        setIdEmpresa(resp.data.id_empresa);
-    }
+        return resp.data.id_empresa;
+    };
+
 
     async function CadastrarFuncionario() {
         try {
+            const id = await BuscarId();
+
             let url = 'http://localhost:5001/resp';
 
             const obj = {
-                id_empresa: id_empresa,
+                id_empresa: id,
                 nm_nome: nome,
                 ds_cargo: cargo,
                 ds_email: email,
                 ds_telefone: telefone,
                 tp_role: cargo
-            }
+            };
 
             let resp = await axios.post(url, obj, {
                 headers: {
@@ -57,7 +59,6 @@ export default function FormularioFuncionario() {
                 toast.error('Erro inesperado, tente novamente.');
             }
         }
-
     }
 
     return (

@@ -12,11 +12,11 @@ export default function CardFuncionarios() {
 
             <div className="card-info">
                 <div className="item">
-                    <img src="/assets/images/apartamento.svg" alt="Nome" />
+                    <img src="/assets/images/pessoa.svg" alt="Nome" />
 
                     <div className="text">
                         <p className="label">Nome</p>
-                        <p className="valor">Empresa X...</p>
+                        <p className="valor">João</p>
                     </div>
                 </div>
 

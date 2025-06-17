@@ -42,7 +42,7 @@
                     max-width: 560px;
                     gap: 8px;
 
-                   a {
+                    a {
                         display: flex;
                         justify-content: flex-end;
                         align-items: center;
@@ -116,7 +116,7 @@
                     .addFilial {
                         max-width: 480px;
 
-                        a{
+                        a {
                             width: 25%;
                         }
                     }
@@ -154,12 +154,14 @@
                     .addFilial {
                         gap: 5px;
 
-                        h1 {
-                            font-size: 14px;
-                        }
+                        a {
+                            h1 {
+                                font-size: 14px;
+                            }
 
-                        img {
-                            width: 14px;
+                            img {
+                                width: 14px;
+                            }
                         }
                     }
 

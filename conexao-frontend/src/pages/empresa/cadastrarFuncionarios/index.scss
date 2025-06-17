@@ -1,5 +1,5 @@
 .cadastro-funcionario {
-  display: flex;
+    display: flex;
     flex-direction: row;
     background-color: #f9f9f9;
     height: 100vh;
@@ -72,7 +72,7 @@
                 margin-left: 0;
                 margin-top: -0px;
 
-                .meio{
+                .meio {
                     gap: 40px;
                 }
             }
@@ -84,16 +84,17 @@
         }
     }
 
-     @media (max-width: 1176px) {
+    @media (max-width: 1176px) {
         .conteudo {
             margin-top: 0px;
 
-            .text{
+            .text {
                 margin-top: 15px;
             }
 
             .principal {
                 margin-top: -20px;
+
                 .meio {
                     gap: 20px;
 
@@ -105,11 +106,13 @@
         }
     }
 
-   @media (max-width: 800px) {
+    @media (max-width: 800px) {
         .conteudo {
             justify-content: center;
             align-items: center;
             margin-left: 0;
+            margin: 0;
+            padding: 0 20px;
             max-width: 450px;
 
             .text {
