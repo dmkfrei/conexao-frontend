@@ -13,7 +13,6 @@
     bottom: 8px;
     left: 8px;
     font: 0.8rem inter;
-    color: #6b7280;
 
     a {
       text-decoration: none;
@@ -76,27 +75,27 @@
   }
 
   @media(max-width: 800px) {
-        .card-info {
-            gap: 0.1rem;
+    .card-info {
+      gap: 0.1rem;
 
-            .item {
-                gap: 0.2rem;
+      .item {
+        gap: 0.2rem;
 
-                img {
-                    width: 15px;
-                    height: 15px;
-                }
-
-                .text {
-                    .label {
-                        font-size: 12px;
-                    }
-
-                    .valor {
-                        font-size: 11px;
-                    }
-                }
-            }
+        img {
+          width: 15px;
+          height: 15px;
         }
+
+        .text {
+          .label {
+            font-size: 12px;
+          }
+
+          .valor {
+            font-size: 11px;
+          }
+        }
+      }
     }
+  }
 }

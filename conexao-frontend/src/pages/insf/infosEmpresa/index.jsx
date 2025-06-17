@@ -19,7 +19,7 @@ export default function InfosEmpresa() {
     
     return (
         <div className="infos-empresa">
-            <MenuLateral />
+            <MenuLateral menuFrei={true}/>
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">

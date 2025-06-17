@@ -13,13 +13,13 @@ export default function GerenciarFilial() {
 
     useEffect(() => {
         if (token == null || token == undefined) {
-            navigate('/')
+            navigate('/empresa/login');
         }
     }, []);
-    
+
     return (
         <div className="gerenciar-filial">
-            <MenuLateral />
+            <MenuLateral menuEmpresa={true}/>
             <MenuEmpresa menuEmpresa={true} />
             <Cabecalho>
                 <div className="content">
@@ -31,13 +31,16 @@ export default function GerenciarFilial() {
                     <div className="principal">
                         <div className="esquerda">
                             <div className="addFilial">
-                                <img src="/assets/images/novo.svg" alt="" />
-                                <h1>Nova Filial</h1>
+                                <Link to='/empresa/cadastrarFilial'>
+                                    <img src="/assets/images/novo.svg" alt="" />
+                                    <h1>Nova Filial</h1>
+                                </Link>
+
                             </div>
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFilial rota='/empresa/cadastrarFilial' />
+                                    <CardFilial />
                                 </div>
                                 <MenuLinks menuEmpresa={true} />
                             </div>

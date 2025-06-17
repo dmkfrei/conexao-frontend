@@ -14,7 +14,7 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const url = `http://localhost:5001/logar`;
+            const url = `http://localhost:5001/loginAdm`;
 
             let obj = {
                 ds_usuario: nome,

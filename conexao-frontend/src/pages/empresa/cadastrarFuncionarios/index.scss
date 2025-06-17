@@ -70,7 +70,7 @@
         .conteudo {
             .principal {
                 margin-left: 0;
-                margin-top: -20px;
+                margin-top: -0px;
 
                 .meio{
                     gap: 40px;
@@ -93,8 +93,9 @@
             }
 
             .principal {
+                margin-top: -20px;
                 .meio {
-                    gap: 33px;
+                    gap: 20px;
 
                     .esquerda {
                         max-width: 480px;

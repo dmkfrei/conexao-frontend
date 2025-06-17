@@ -15,12 +15,12 @@ export default function Gerenciar() {
 
     useEffect(() => {
         if (token == null || token == undefined) {
-            navigate('/')
+            navigate('/empresa/login');
         }
     }, []);
     return (
         <div className="gerenciar-funcionarios">
-            <MenuLateral />
+            <MenuLateral menuEmpresa={true}/>
             <MenuEmpresa menuEmpresa={true} />
             <Cabecalho>
                 <div className="content">
@@ -32,13 +32,14 @@ export default function Gerenciar() {
                     <div className="principal">
                         <div className="esquerda">
                             <div className="addFilial">
-                                <img src="/assets/images/novo.svg" alt="" />
-                                <h1>Novo Cargo</h1>
+                                <Link to='/empresa/cadastrarFuncionarios'><img src="/assets/images/novo.svg" alt="" />
+                                    <h1>Novo Cargo</h1>
+                                </Link>
                             </div>
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFuncionarios rota='/empresa/cadastrarFuncionarios' />
+                                    <CardFuncionarios />
                                 </div>
                                 <MenuLinks menuEmpresa={true} />
                             </div>

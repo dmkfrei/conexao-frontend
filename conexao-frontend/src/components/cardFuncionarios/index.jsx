@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import PopUpDeletar from '../popUpDeletar';
 import { useState } from 'react';
 
-export default function CardFuncionarios({ rota }) {
+export default function CardFuncionarios() {
     const [abrirPopUpDeletar, setAbrirPopUpDeletar] = useState(false);
 
     return (
         <div className="card-funcionarios">
-            <p className="id"><Link to={rota}>#1</Link></p>
+            <p className="id">#1</p>
 
             <div className="card-info">
                 <div className="item">

@@ -20,7 +20,7 @@ export default function ValidarInfos() {
 
     return (
         <div className="validar-infos">
-            <MenuLateral />
+            <MenuLateral menuFrei={true}/>
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">

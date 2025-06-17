@@ -19,7 +19,7 @@ export default function GerenciarFuncionarioINSF() {
     }, []);
     return (
         <div className="gerenciar-funcionario-insf">
-            <MenuLateral />
+            <MenuLateral menuFrei={true}/>
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
@@ -31,15 +31,17 @@ export default function GerenciarFuncionarioINSF() {
                     <div className="principal">
                         <div className="esquerda">
                             <div className="addFilial">
-                                <img src="/assets/images/novo.svg" alt="" />
-                                <h1>Novo Cargo</h1>
+                                <Link to='/infosFuncionario'>
+                                    <img src="/assets/images/novo.svg" alt="" />
+                                    <h1>Novo Cargo</h1>
+                                </Link>
                             </div>
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFuncionarios rota='/infosFuncionario' />
+                                    <CardFuncionarios/>
                                 </div>
-                                    <MenuLinks menuFrei={true} />
+                                <MenuLinks menuFrei={true} />
                             </div>
                         </div>
                     </div>

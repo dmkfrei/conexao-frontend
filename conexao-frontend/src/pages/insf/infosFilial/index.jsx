@@ -18,7 +18,7 @@ export default function InfosFilial() {
     }, []);
     return (
         <div className="infos-filial">
-            <MenuLateral />
+            <MenuLateral menuFrei={true}/>
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="conteudo">

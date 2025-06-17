@@ -19,7 +19,7 @@ export default function Validacoes() {
 
     return (
         <div className="validacoes">
-            <MenuLateral />
+            <MenuLateral menuFrei={true}/>
             <MenuEmpresa menuFrei={true} />
 
             <Cabecalho>

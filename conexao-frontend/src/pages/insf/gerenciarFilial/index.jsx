@@ -18,7 +18,7 @@ export default function GerenciarFilialINSF() {
     }, []);
     return (
         <div className="gerenciar-filial-insf">
-            <MenuLateral />
+            <MenuLateral menuFrei={true}/>
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
@@ -30,15 +30,17 @@ export default function GerenciarFilialINSF() {
                     <div className="principal">
                         <div className="esquerda">
                             <div className="addFilial">
-                                <img src="/assets/images/novo.svg" alt="" />
-                                <h1>Nova Filial</h1>
+                                <Link to='/infosFilial'>
+                                    <img src="/assets/images/novo.svg" alt="" />
+                                    <h1>Nova Filial</h1>
+                                </Link>
                             </div>
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFilial rota='/infosFilial' />
+                                    <CardFilial />
                                 </div>
-                                    <MenuLinks menuFrei={true} />
+                                <MenuLinks menuFrei={true} />
                             </div>
                         </div>
                     </div>

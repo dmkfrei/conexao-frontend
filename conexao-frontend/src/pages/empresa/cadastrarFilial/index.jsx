@@ -13,13 +13,13 @@ export default function CadastroFilial() {
 
     useEffect(() => {
         if (token == null || token == undefined) {
-            navigate('/')
+            navigate('/empresa/login');
         }
     }, []);
     
     return (
         <div className="cadastro-filial">
-            <MenuLateral />
+            <MenuLateral menuEmpresa={true}/>
             <MenuEmpresa menuEmpresa={true} />
             <Cabecalho>
                 <div className="conteudo">

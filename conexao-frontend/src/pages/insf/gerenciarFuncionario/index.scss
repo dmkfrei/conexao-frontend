@@ -42,14 +42,23 @@
                     max-width: 560px;
                     gap: 8px;
 
-                    h1 {
-                        font: 500 16px inter;
-                        color: #8F8D8D;
-                    }
+                   a {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        width: 21%;
+                        gap: 8px;
+                        text-decoration: none;
 
-                    img {
-                        cursor: pointer;
-                        width: 18px;
+                        h1 {
+                            font: 500 16px inter;
+                            color: #8F8D8D;
+                        }
+
+                        img {
+                            cursor: pointer;
+                            width: 18px;
+                        }
                     }
                 }
 
@@ -106,6 +115,10 @@
 
                     .addFilial {
                         max-width: 480px;
+
+                        a{
+                            width: 25%;
+                        }
                     }
 
                     .meio {

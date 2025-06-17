@@ -44,7 +44,7 @@ export default function MenuEmpresa({ menuFrei, menuEmpresa }) {
                     <h1>INSF</h1>
 
                     <div className="botoes">
-                        <Link to='/empresa/salvarInfos'>Informações</Link>
+                        <Link to='/empresa/salvarInfos' className={'ativo'}>Informações</Link>
                     </div>
                 </>}
         </div>

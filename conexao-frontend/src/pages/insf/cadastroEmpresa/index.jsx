@@ -48,7 +48,7 @@ export default function CadastroEmpresa() {
     return (
 
         <div className="cadastro-empresa">
-            <MenuLateral />
+            <MenuLateral menuFrei={true}/>
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
 

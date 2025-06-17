@@ -13,13 +13,13 @@ export default function SalvarInfos() {
 
     useEffect(() => {
         if (token == null || token == undefined) {
-            navigate('/')
+            navigate('/empresa/login');
         }
     }, []);
     
     return (
         <div className="salvar-infos">
-            <MenuLateral />
+            <MenuLateral menuEmpresa={true}/>
             <MenuEmpresa menuEmpresa={true} />
             <Cabecalho>
                 <div className="content">
