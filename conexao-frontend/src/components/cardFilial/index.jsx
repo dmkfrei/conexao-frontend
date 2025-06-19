@@ -11,23 +11,29 @@ export default function CardFilial() {
     const [idFilialSelecionada, setIdFilialSelecionada] = useState(null);
     const [infos, setInfos] = useState([]);
     const navigate = useNavigate();
-    
+
     const token = localStorage.getItem('token');
     const decode = jwtDecode(token);
     const id_login = decode.id;
+    const tipo = decode.tipo;
 
     async function BuscarId() {
-        let url = 'http://localhost:5001/buscarEmpresaPeloLogin';
-        let resp = await axios.post(url, { id_login });
+        if (tipo === 'adm') return null;
+
+        const url = 'http://localhost:5001/buscarEmpresaPeloLogin';
+        const resp = await axios.post(url, { id_login });
 
         return resp.data.id_empresa;
-    };
+    }
+
 
     useEffect(() => {
         GetInfos();
     }, []);
 
     async function GetInfos() {
+        if (tipo == 'adm') return null;
+        
         try {
             const id = await BuscarId();
 
@@ -46,7 +52,7 @@ export default function CardFilial() {
 
                 if (mensagemErro == 'Cadastre a empresa primeiro') {
                     navigate('/empresa/salvarInfos');
-                }   
+                }
             } else {
                 toast.error('Erro inesperado, tente novamente.');
             }

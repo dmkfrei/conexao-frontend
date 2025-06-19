@@ -15,12 +15,15 @@ export default function CardFuncionarios() {
     const token = localStorage.getItem('token');
     const decode = jwtDecode(token);
     const id_login = decode.id;
+    const tipo = decode.tipo;
 
     useEffect(() => {
         GetInfos();
     }, []);
 
     async function BuscarId() {
+        if (tipo == 'adm') return null;
+
         const url = 'http://localhost:5001/buscarEmpresaPeloLogin';
         const resp = await axios.post(url, { id_login });
 
@@ -28,6 +31,7 @@ export default function CardFuncionarios() {
     }
 
     async function GetInfos() {
+        if (tipo == 'adm') return null;
         try {
             const id = await BuscarId();
             const url = `http://localhost:5001/buscarResp/${id}`;
