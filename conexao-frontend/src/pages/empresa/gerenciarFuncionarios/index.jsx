@@ -3,7 +3,6 @@ import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import { Link } from 'react-router-dom';
-import Formulario from '../../../components/formularioDados';
 import CardFuncionarios from '../../../components/cardFuncionarios';
 import MenuLinks from '../../../components/menuLinks'
 import { useNavigate } from 'react-router-dom';
@@ -14,13 +13,15 @@ export default function Gerenciar() {
     let token = localStorage.getItem('token');
 
     useEffect(() => {
-        if (token == null || token == undefined) {
+        if (!token) {
             navigate('/empresa/login');
+            return null;
         }
     }, []);
+
     return (
         <div className="gerenciar-funcionarios">
-            <MenuLateral menuEmpresa={true}/>
+            <MenuLateral menuEmpresa={true} />
             <MenuEmpresa menuEmpresa={true} />
             <Cabecalho>
                 <div className="content">
@@ -34,7 +35,7 @@ export default function Gerenciar() {
                             <div className="addFilial">
                                 <Link to='/empresa/cadastrarFuncionarios'><img src="/assets/images/novo.svg" alt="" />
                                     <h1>Novo Cargo</h1>
-                                </Link>
+                                </Link> 
                             </div>
 
                             <div className="meio">
@@ -48,8 +49,6 @@ export default function Gerenciar() {
                     </div>
                 </div>
             </Cabecalho>
-
-
         </div>
     )
 }   

@@ -26,9 +26,11 @@ export default function LoginEmpresa() {
             navigate('/empresa/salvarInfos');
         } catch (error) {
             if (error.response && error.response.data) {
+                toast.remove();
                 let mensagemErro = error.response.data.erro;
                 toast.error(mensagemErro);
             } else {
+                toast.remove();
                 toast.error('Erro inesperado, tente novamente.');
             }
         }
@@ -65,14 +67,6 @@ export default function LoginEmpresa() {
                     <img src="/assets/images/arte.svg" alt="" />
                 </div>
             </div>
-
-            <Toaster
-                toastOptions={{
-                    style: {
-                        font: '500 15px inter',
-                    }
-                }}
-            />
         </div>
     )
 }

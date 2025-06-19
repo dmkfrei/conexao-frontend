@@ -19,10 +19,18 @@ import InfosFilial from "./pages/insf/infosFilial";
 import GerenciarFilialINSF from "./pages/insf/gerenciarFilial";
 import GerenciarFuncionarioINSF from "./pages/insf/gerenciarFuncionario";
 import Acordo from "./pages/empresa/acordo";
+import { Toaster } from "react-hot-toast";
 
 export default function Navegacao() {
     return (
         <BrowserRouter>
+            <Toaster
+                toastOptions={{
+                    style: {
+                        font: '500 15px inter',
+                    },
+                }}
+            />
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/cadastroEmpresa" element={<CadastroEmpresa />} />

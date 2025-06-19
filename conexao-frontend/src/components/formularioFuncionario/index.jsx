@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './index.scss';
 import { IMaskInput } from 'react-imask';
 import axios from 'axios';
-import { toast, Toaster } from 'react-hot-toast';
-import { jwtDecode } from 'jwt-decode'
+import { toast } from 'react-hot-toast';
+import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 export default function FormularioFuncionario() {
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
+    const navigate = useNavigate();
 
     let token = localStorage.getItem('token');
     const decoded = jwtDecode(token);
-    console.log(decoded);
     let id_login = decoded.id;
 
     async function BuscarId() {
@@ -22,7 +23,6 @@ export default function FormularioFuncionario() {
 
         return resp.data.id_empresa;
     };
-
 
     async function CadastrarFuncionario() {
         try {
@@ -95,14 +95,6 @@ export default function FormularioFuncionario() {
             <div className="botao">
                 <button onClick={CadastrarFuncionario}>Salvar</button>
             </div>
-
-            <Toaster
-                toastOptions={{
-                    style: {
-                        font: '500 15px inter',
-                    }
-                }}
-            />
         </div>
     )
 }

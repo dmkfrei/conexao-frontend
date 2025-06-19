@@ -200,14 +200,6 @@ export default function Formulario({ botaoTexto, botaoDestino }) {
             <div className="botao">
                 <button onClick={CadastrarEmpresa}><Link to={botaoDestino}>{botaoTexto}</Link></button>
             </div>
-
-            <Toaster
-                toastOptions={{
-                    style: {
-                        font: '500 15px inter',
-                    }
-                }}
-            />
         </div>
     )
 }
