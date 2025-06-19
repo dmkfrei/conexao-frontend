@@ -37,7 +37,7 @@ export default function CadastroFilial() {
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
-                                <Formulario botaoTexto='Salvar' />
+                                <Formulario tipo='filial' botaoTexto='Salvar' />
                             </div>
 
 

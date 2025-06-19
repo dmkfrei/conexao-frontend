@@ -36,7 +36,7 @@ export default function InfosFilial() {
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
-                                <Formulario botaoTexto='Salvar' />
+                                <Formulario tipo='matriz' botaoTexto='Salvar' />
                             </div>
 
 

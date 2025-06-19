@@ -34,13 +34,9 @@ export default function CardFuncionarios() {
         if (tipo == 'adm') return null;
         try {
             const id = await BuscarId();
-            const url = `http://localhost:5001/buscarResp/${id}`;
+            const url = `http://localhost:5001/buscarResp/${id}?x-access-token=${token}`;
 
-            const resp = await axios.get(url, {
-                headers: {
-                    'x-access-token': token
-                }
-            });
+            const resp = await axios.get(url);
 
             setInfos(resp.data.infos);
         } catch (error) {

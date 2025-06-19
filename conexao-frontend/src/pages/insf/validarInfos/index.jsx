@@ -38,7 +38,7 @@ export default function ValidarInfos() {
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
-                                <Formulario botaoTexto='Proximo' botaoDestino='/confirmarInfos' />
+                                <Formulario tipo='matriz' botaoTexto='Proximo' botaoDestino='/confirmarInfos' />
                             </div>
 
 

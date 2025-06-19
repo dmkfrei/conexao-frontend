@@ -28,7 +28,7 @@ export default function FormularioFuncionario() {
         try {
             const id = await BuscarId();
 
-            let url = 'http://localhost:5001/resp';
+            let url = `http://localhost:5001/resp?x-access-token=${token}`;
 
             const obj = {
                 id_empresa: id,
@@ -39,11 +39,7 @@ export default function FormularioFuncionario() {
                 tp_role: cargo
             };
 
-            let resp = await axios.post(url, obj, {
-                headers: {
-                    'x-access-token': token
-                }
-            });
+            let resp = await axios.post(url, obj);
 
             toast.success('Cadastro do responsável realizado com sucesso.');
             setNome('');

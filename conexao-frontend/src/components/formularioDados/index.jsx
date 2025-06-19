@@ -2,11 +2,11 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import { IMaskInput } from 'react-imask';
 import { jwtDecode } from 'jwt-decode';
 
-export default function Formulario({ botaoTexto, botaoDestino }) {
+export default function Formulario({ tipo, botaoTexto, botaoDestino }) {
     const [nome, setNome] = useState('');
     const [cnpj, setCnpj] = useState('');
     const [inscricao, setInscricao] = useState('');
@@ -21,37 +21,78 @@ export default function Formulario({ botaoTexto, botaoDestino }) {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
-    async function CadastrarEmpresa() {
+    let token = localStorage.getItem('token');
+    const decode = jwtDecode(token);
+    const id_login = decode.id;
+    const tipoDeLogin = decode.tipo;
+
+    async function BuscarId() {
+        if (tipoDeLogin == 'adm') return null;
+
+        const url = 'http://localhost:5001/buscarEmpresaPeloLogin';
+        const resp = await axios.post(url, { id_login });
+
+        return resp.data.id_empresa;
+    }
+
+    async function cadastrarMatriz() {
+        let url = `http://localhost:5001/matriz?x-access-token=${token}`;
+
+        let obj = {
+            ds_razao_social: nome,
+            ds_cnpj: cnpj,
+            ds_inscricao: inscricao,
+            ds_endereco: endereco,
+            ds_numero: numero,
+            ds_bairro: bairro,
+            ds_cep: cep,
+            ds_cidade: cidade,
+            ds_estado: estado,
+            ds_telefone: telefone,
+            ds_celular: celular
+        };
+
+        return await axios.post(url, obj);
+    }
+
+    async function cadastrarFilial() {
+        let url = `http://localhost:5001/filial?x-access-token=${token}`;
+
+        const id_empresa = await BuscarId();
+
+        let obj = {
+            id_empresa: id_empresa,
+            ds_razao_social: nome,
+            ds_cnpj: cnpj,
+            ds_inscricao: inscricao,
+            ds_endereco: endereco,
+            ds_numero: numero,
+            ds_bairro: bairro,
+            ds_cep: cep,
+            ds_cidade: cidade,
+            ds_estado: estado,
+            ds_telefone: telefone,
+            ds_celular: celular
+        };
+
+        return await axios.post(url, obj);
+    }
+
+    async function cadastrar() {
         try {
-            let token = localStorage.getItem('token');
-            const decoded = jwtDecode(token);
-            let id = decoded.id;
+            let resp;
+            if (tipo == 'matriz') {
+                resp = await cadastrarMatriz();
+            } else if (tipo == 'filial') {
+                resp = await cadastrarFilial();
+                if (!resp) return;
+            } else {
+                toast.error('Tipo inválido.');
+                return;
+            }
 
-            const url = 'http://localhost:5001/matriz';
+            toast.success(`${tipo === 'matriz' ? 'Matriz' : 'Filial'} cadastrada com sucesso.`);
 
-            let obj = {
-                id_login: id,
-                ds_razao_social: nome,
-                ds_cnpj: cnpj,
-                ds_inscricao: inscricao,
-                ds_endereco: endereco,
-                ds_numero: numero,
-                ds_bairro: bairro,
-                ds_cep: cep,
-                ds_cidade: cidade,
-                ds_estado: estado,
-                ds_telefone: telefone,
-                ds_celular: celular
-            };
-
-            let resp = await axios.post(url, obj, {
-                headers: {
-                    'x-access-token': token
-                }
-            });
-
-            toast.success('Cadastro da empresa realizado com sucesso.');
-            
             setNome('');
             setCelular('');
             setBairro('');
@@ -60,17 +101,14 @@ export default function Formulario({ botaoTexto, botaoDestino }) {
             setEmail('');
             setCnpj('');
             setNumero('');
-            setNome('');
             setInscricao('');
             setEstado('');
             setSenha('');
             setTelefone('');
             setEndereco('');
-
         } catch (error) {
             if (error.response && error.response.data) {
-                let mensagemErro = error.response.data.erro;
-                toast.error(mensagemErro);
+                toast.error(error.response.data.erro);
             } else {
                 toast.error('Erro inesperado, tente novamente.');
             }
@@ -80,12 +118,9 @@ export default function Formulario({ botaoTexto, botaoDestino }) {
     async function buscarCep(cepDigitado) {
         try {
             const cepLimpo = cepDigitado.replace(/\D/g, '');
-            if (cepLimpo.length != 8) {
-                return;
-            }
+            if (cepLimpo.length !== 8) return;
 
             const response = await axios.get(`https://viacep.com.br/ws/${cepLimpo}/json/`);
-
             if (response.data.erro) {
                 toast.error('CEP não encontrado');
                 return;
@@ -95,7 +130,7 @@ export default function Formulario({ botaoTexto, botaoDestino }) {
             setCidade(response.data.localidade);
             setEstado(response.data.uf);
             setEndereco(response.data.logradouro);
-        } catch (error) {
+        } catch {
             toast.error('Erro ao buscar CEP');
         }
     }
@@ -106,7 +141,7 @@ export default function Formulario({ botaoTexto, botaoDestino }) {
                 <div className="infos">
                     <div className="card">
                         <img src="/assets/images/apartamento.svg" alt="" />
-                        <h1>Identificação</h1>
+                        <h1>{tipo === 'matriz' ? 'Cadastro da Matriz' : 'Cadastro da Filial'}</h1>
                     </div>
 
                     <div className="campo">
@@ -134,7 +169,7 @@ export default function Formulario({ botaoTexto, botaoDestino }) {
                             value={cep}
                             onAccept={(value) => {
                                 setCep(value);
-                                if (value.replace(/\D/g, '').length == 8) {
+                                if (value.replace(/\D/g, '').length === 8) {
                                     buscarCep(value);
                                 }
                             }}
@@ -195,11 +230,15 @@ export default function Formulario({ botaoTexto, botaoDestino }) {
                         <h1>Senha</h1>
                         <input type="password" value={senha} onChange={e => setSenha(e.target.value)} />
                     </div>
+
                 </div>
             </div>
+
             <div className="botao">
-                <button onClick={CadastrarEmpresa}><Link to={botaoDestino}>{botaoTexto}</Link></button>
+                <button onClick={cadastrar}>
+                    <Link to={botaoDestino}>{botaoTexto}</Link>
+                </button>
             </div>
         </div>
-    )
+    );
 }

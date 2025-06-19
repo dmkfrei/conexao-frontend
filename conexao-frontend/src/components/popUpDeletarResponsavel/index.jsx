@@ -7,13 +7,9 @@ export default function PopUpDeletar({ fecharPopUp, id_responsavel, atualizarLis
 
     async function DeletarResp() {
         try {
-            const url = `http://localhost:5001/resp/${id_responsavel}`;
+            const url = `http://localhost:5001/resp/${id_responsavel}?x-access-token=${token}`;
 
-            let resp = await axios.delete(url, {
-                headers: {
-                    'x-access-token': token
-                }
-            });
+            let resp = await axios.delete(url);
             toast.success('O funcionário foi deletado com sucesso.');
             atualizarLista();
         } catch (error) {

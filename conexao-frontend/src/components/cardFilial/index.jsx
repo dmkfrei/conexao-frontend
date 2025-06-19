@@ -18,7 +18,7 @@ export default function CardFilial() {
     const tipo = decode.tipo;
 
     async function BuscarId() {
-        if (tipo === 'adm') return null;
+        if (tipo == 'adm') return null;
 
         const url = 'http://localhost:5001/buscarEmpresaPeloLogin';
         const resp = await axios.post(url, { id_login });
@@ -37,12 +37,8 @@ export default function CardFilial() {
         try {
             const id = await BuscarId();
 
-            const url = `http://localhost:5001/filial/${id}`;
-            const resp = await axios.get(url, {
-                headers: {
-                    'x-access-token': token
-                }
-            });
+            const url = `http://localhost:5001/filial/${id}?x-access-token=${token}`;
+            const resp = await axios.get(url);
             setInfos(resp.data.infos);
         } catch (error) {
             if (error.response && error.response.data) {

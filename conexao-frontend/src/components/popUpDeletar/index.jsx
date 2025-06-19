@@ -7,13 +7,9 @@ export default function PopUpDeletar({ fecharPopUp, id_filial, atualizarLista })
 
     async function DeletarFilial() {
         try {
-            const url = `http://localhost:5001/filial/${id_filial}`;
+            const url = `http://localhost:5001/filial/${id_filial}?x-access-token=${token}`;
 
-            let resp = await axios.delete(url, {
-                headers: {
-                    'x-access-token': token
-                }
-            });
+            let resp = await axios.delete(url);
             toast.success('A filial foi deletada com sucesso.');
             fecharPopUp();
             atualizarLista();
