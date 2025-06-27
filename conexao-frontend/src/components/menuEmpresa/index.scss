@@ -11,10 +11,23 @@
     border: 1px solid #E0E0E0;
 
     .borda {
-
         img {
             width: 100%;
             max-width: 100px;
+        }
+    }
+
+    .bolinha{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        .cor{
+            width: 12px;
+            height: 12px;
+            border-radius: 20px;
         }
     }
 

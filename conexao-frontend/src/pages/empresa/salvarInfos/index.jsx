@@ -31,7 +31,7 @@ export default function SalvarInfos() {
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
-                                <Formulario tipo='matriz'botaoTexto='Salvar' />
+                                <Formulario tipo='matriz'botaoTexto='Salvar' buscar={false} />
                             </div>
 
                             <MenuLinks menuEmpresa={true} />
@@ -40,8 +40,6 @@ export default function SalvarInfos() {
                     </div>
                 </div>
             </Cabecalho>
-
-
         </div>
     )
 }   

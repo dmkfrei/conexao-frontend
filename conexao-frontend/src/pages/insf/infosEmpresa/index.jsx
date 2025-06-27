@@ -31,7 +31,7 @@ export default function InfosEmpresa() {
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
-                                <Formulario tipo='matriz' botaoTexto='Salvar' />
+                                <Formulario tipo='editar-matriz' botaoTexto='Salvar' buscar={true} />
                             </div>
 
 

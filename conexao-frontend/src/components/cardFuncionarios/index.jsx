@@ -1,53 +1,38 @@
 import './index.scss';
 import { useEffect, useState } from 'react';
-import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 import PopUpDeletarResponsavel from '../popUpDeletarResponsavel';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-export default function CardFuncionarios() {
+export default function CardFuncionarios({ tipo }) {
     const [abrirPopUpDeletar, setAbrirPopUpDeletar] = useState(false);
     const [idRespSelecionada, setIdRespSelecionada] = useState(null);
-    const [infos, setInfos] = useState([]); 
+    const [infos, setInfos] = useState([]);
     const navigate = useNavigate();
-    
+
     const token = localStorage.getItem('token');
-    const decode = jwtDecode(token);
-    const id_login = decode.id;
-    const tipo = decode.tipo;
+    const { id } = useParams();
 
     useEffect(() => {
         GetInfos();
     }, []);
 
-    async function BuscarId() {
-        if (tipo == 'adm') return null;
-
-        const url = 'http://localhost:5001/buscarEmpresaPeloLogin';
-        const resp = await axios.post(url, { id_login });
-
-        return resp.data.id_empresa;
-    }
-
     async function GetInfos() {
-        if (tipo == 'adm') return null;
         try {
-            const id = await BuscarId();
-            const url = `http://localhost:5001/buscarResp/${id}?x-access-token=${token}`;
+            let url = `http://localhost:5001/buscarResp?x-access-token=${token}`;
+
+            if (id) {
+                url += `&id_empresa=${id}`;
+            }
 
             const resp = await axios.get(url);
-
             setInfos(resp.data.infos);
         } catch (error) {
             if (error.response && error.response.data) {
                 toast.remove();
-                let mensagemErro = error.response.data.erro;
+                const mensagemErro = error.response.data.erro;
                 toast.error(mensagemErro);
-                
-                if (mensagemErro == 'Cadastre a empresa primeiro') {
-                    navigate('/empresa/salvarInfos');
-                }   
             } else {
                 toast.error('Erro inesperado, tente novamente.');
             }
@@ -56,9 +41,19 @@ export default function CardFuncionarios() {
 
     return (
         <div className="card-funcionarios">
-            {infos.map((item, index) => (
-                <div className="card-info" key={index}>
-                    <p className="id">#{item.id_responsavel}</p>
+            {infos.map((item) => (
+                <div className="card-info" key={item.id_responsavel}>
+                    {tipo == 'adm' ? (
+                        <Link
+                            to={`/infosFuncionario/${item.id_responsavel}`}
+                            state={{ id_empresa: id }}
+                            className="id"
+                        >
+                            #{item.id_responsavel}
+                        </Link>
+                    ) : (
+                        <p className="id">#{item.id_responsavel}</p>
+                    )}
 
                     <div className="item">
                         <img src="/assets/images/pessoa.svg" alt="Nome" />

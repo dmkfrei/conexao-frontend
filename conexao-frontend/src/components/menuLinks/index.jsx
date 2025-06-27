@@ -1,9 +1,10 @@
 import './index.scss'
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 
 export default function MenuLinks({ menuFrei, menuEmpresa }) {
     const location = useLocation();
     const rotaAtual = location.pathname;
+    const { id } = useParams();
 
     let rotaFuncionario = [
         '/infosFuncionario',
@@ -52,22 +53,23 @@ export default function MenuLinks({ menuFrei, menuEmpresa }) {
             {menuFrei &&
                 <>
                     <div className="dados">
-                        <div className={`item ${rotaAtual == '/infosEmpresa' ? 'ativo' : ''}`}>
+                        <div className={`item ${rotaAtual.startsWith('/infosEmpresa') ? 'ativo' : ''}`}>
                             <div className="barra" />
-                            <Link to='/infosEmpresa'>Dados da Empresa</Link>
-                        </div>
-                        <div className={`item ${rotaFuncionario.includes(rotaAtual) ? 'ativo' : ''}`}>
-                            <div className="barra" />
-                            <Link to='/gerenciarFuncionario'>Dados dos Responsáveis</Link>
+                            <Link to={`/infosEmpresa/${id}`}>Dados da Empresa</Link>
                         </div>
 
-                        <div className={`item ${rotaFilial.includes(rotaAtual) ? 'ativo' : ''}`}>
+                        <div className={`item ${rotaFuncionario.some(rota => rotaAtual.startsWith(rota)) ? 'ativo' : ''}`}>
                             <div className="barra" />
-                            <Link to='/gerenciarFilial'>Filiais</Link>
+                            <Link to={`/gerenciarFuncionario/${id}`}>Dados dos Responsáveis</Link>
                         </div>
 
+                        <div className={`item ${rotaFilial.some(rota => rotaAtual.startsWith(rota)) ? 'ativo' : ''}`}>
+                            <div className="barra" />
+                            <Link to={`/gerenciarFilial/${id}`}>Filiais</Link>
+                        </div>
                     </div>
-                </>}
+                </>
+            }
         </div>
     )
 }

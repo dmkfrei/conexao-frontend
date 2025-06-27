@@ -2,7 +2,7 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import CardFilial from '../../../components/cardFilial';
 import MenuLinks from '../../../components/menuLinks'
 import CardFuncionarios from '../../../components/cardFuncionarios';
@@ -11,15 +11,17 @@ import { useEffect } from 'react';
 export default function GerenciarFuncionarioINSF() {
     const navigate = useNavigate();
     let token = localStorage.getItem('token');
+    const { id } = useParams();
 
     useEffect(() => {
         if (token == null || token == undefined) {
             navigate('/')
         }
     }, []);
+    
     return (
         <div className="gerenciar-funcionario-insf">
-            <MenuLateral menuFrei={true}/>
+            <MenuLateral menuFrei={true} />
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
@@ -31,7 +33,7 @@ export default function GerenciarFuncionarioINSF() {
                     <div className="principal">
                         <div className="esquerda">
                             <div className="addFilial">
-                                <Link to='/infosFuncionario'>
+                                <Link>
                                     <img src="/assets/images/novo.svg" alt="" />
                                     <h1>Novo Cargo</h1>
                                 </Link>
@@ -39,7 +41,7 @@ export default function GerenciarFuncionarioINSF() {
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFuncionarios/>
+                                    <CardFuncionarios tipo='adm'/>
                                 </div>
                                 <MenuLinks menuFrei={true} />
                             </div>

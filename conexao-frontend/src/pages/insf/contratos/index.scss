@@ -77,6 +77,14 @@
         }
     }
 
+    @media(max-width: 1280px){
+        .content{
+            .bordaBranca{
+                max-height: 60vh;
+            }
+        }
+    }
+
     @media (max-width: 768px) {
         .content {
             justify-content: center;

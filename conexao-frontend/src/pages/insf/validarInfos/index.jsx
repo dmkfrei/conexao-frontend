@@ -2,32 +2,32 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import Formulario from '../../../components/formularioDados';
 import MenuDireita from '../../../components/menuDireita';
 import { useEffect } from 'react';
 
 export default function ValidarInfos() {
-    let navigate = useNavigate();
-
-    let token = localStorage.getItem('token');
+    const navigate = useNavigate();
+    const token = localStorage.getItem('token');
+    const { id } = useParams();
 
     useEffect(() => {
-        if (token == null || token == undefined) {
-            navigate('/')
+        if (!token) {
+            navigate('/');
         }
-    }, []);
+    }, [token, navigate]);
 
     return (
         <div className="validar-infos">
-            <MenuLateral menuFrei={true}/>
+            <MenuLateral menuFrei={true} />
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
                     <div className="text">
                         <div className="seta-voltar">
                             <Link to='/validacoes' className='link'>
-                            <img src="/assets/images/Vector.svg" alt="" />
+                                <img src="/assets/images/Vector.svg" alt="Voltar" />
                                 <h1>Voltar</h1>
                             </Link>
                         </div>
@@ -38,13 +38,16 @@ export default function ValidarInfos() {
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
-                                <Formulario tipo='matriz' botaoTexto='Proximo' botaoDestino='/confirmarInfos' />
+                                <Formulario 
+                                    tipo='visualizar' 
+                                    botaoTexto='Próximo' 
+                                    botaoDestino={`/confirmarInfos/${id}`}
+                                    buscar={true} 
+                                />
                             </div>
-
 
                             <MenuDireita />
                         </div>
-
                     </div>
                 </div>
             </Cabecalho>

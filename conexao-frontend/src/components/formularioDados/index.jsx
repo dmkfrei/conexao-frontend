@@ -1,12 +1,12 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { IMaskInput } from 'react-imask';
-import { jwtDecode } from 'jwt-decode';
+import { useParams } from 'react-router-dom';
 
-export default function Formulario({ tipo, botaoTexto, botaoDestino }) {
+export default function Formulario({ tipo, botaoTexto, botaoDestino, buscar }) {
     const [nome, setNome] = useState('');
     const [cnpj, setCnpj] = useState('');
     const [inscricao, setInscricao] = useState('');
@@ -18,92 +18,120 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino }) {
     const [estado, setEstado] = useState('');
     const [telefone, setTelefone] = useState('');
     const [celular, setCelular] = useState('');
-    const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
 
+    const { id } = useParams();
     let token = localStorage.getItem('token');
-    const decode = jwtDecode(token);
-    const id_login = decode.id;
-    const tipoDeLogin = decode.tipo;
 
-    async function BuscarId() {
-        if (tipoDeLogin == 'adm') return null;
-
-        const url = 'http://localhost:5001/buscarEmpresaPeloLogin';
-        const resp = await axios.post(url, { id_login });
-
-        return resp.data.id_empresa;
+    function criarObjetoEmpresa() {
+        return {
+            ds_razao_social: nome,
+            ds_cnpj: cnpj,
+            ds_inscricao: inscricao,
+            ds_endereco: endereco,
+            ds_numero: numero,
+            ds_bairro: bairro,
+            ds_cep: cep,
+            ds_cidade: cidade,
+            ds_estado: estado,
+            ds_telefone: telefone,
+            ds_celular: celular
+        };
     }
 
     async function cadastrarMatriz() {
-        let url = `http://localhost:5001/matriz?x-access-token=${token}`;
-
-        let obj = {
-            ds_razao_social: nome,
-            ds_cnpj: cnpj,
-            ds_inscricao: inscricao,
-            ds_endereco: endereco,
-            ds_numero: numero,
-            ds_bairro: bairro,
-            ds_cep: cep,
-            ds_cidade: cidade,
-            ds_estado: estado,
-            ds_telefone: telefone,
-            ds_celular: celular
-        };
-
-        return await axios.post(url, obj);
+        const url = `http://localhost:5001/matriz?x-access-token=${token}`;
+        return await axios.post(url, criarObjetoEmpresa());
     }
 
     async function cadastrarFilial() {
-        let url = `http://localhost:5001/filial?x-access-token=${token}`;
-
-        const id_empresa = await BuscarId();
-
-        let obj = {
-            id_empresa: id_empresa,
-            ds_razao_social: nome,
-            ds_cnpj: cnpj,
-            ds_inscricao: inscricao,
-            ds_endereco: endereco,
-            ds_numero: numero,
-            ds_bairro: bairro,
-            ds_cep: cep,
-            ds_cidade: cidade,
-            ds_estado: estado,
-            ds_telefone: telefone,
-            ds_celular: celular
-        };
-
-        return await axios.post(url, obj);
+        const url = `http://localhost:5001/filial?x-access-token=${token}`;
+        return await axios.post(url, criarObjetoEmpresa());
     }
+
+    async function EditarMatriz() {
+        const url = `http://localhost:5001/matriz/${id}?x-access-token=${token}`;
+        return await axios.put(url, criarObjetoEmpresa());
+    }
+
+    async function EditarFilial() {
+        const url = `http://localhost:5001/filial/${id}?x-access-token=${token}`;
+        return await axios.put(url, criarObjetoEmpresa());
+    }
+
+    async function buscarMatriz() {
+        const url = `http://localhost:5001/buscarEmpresaPorId/${id}?x-access-token=${token}`;
+        const resp = await axios.get(url);
+        preencherCampos(resp.data[0]);
+    }
+
+    async function buscarFilial() {
+        const url = `http://localhost:5001/filial?id_empresa=${id}&x-access-token=${token}`;
+        const resp = await axios.get(url);
+        preencherCampos(resp.data.dados[0]);
+    }
+
+    async function buscarFilialPorId() {
+        const url = `http://localhost:5001/buscarFilialPorId/${id}?x-access-token=${token}`;
+        const resp = await axios.get(url);
+        preencherCampos(resp.data[0]);
+    }
+
+
+    function preencherCampos(empresa) {
+        if (!empresa) return;
+        setNome(empresa.ds_razao_social);
+        setCnpj(empresa.ds_cnpj);
+        setInscricao(empresa.ds_inscricao);
+        setCep(empresa.ds_cep);
+        setEndereco(empresa.ds_endereco);
+        setNumero(empresa.ds_numero);
+        setBairro(empresa.ds_bairro);
+        setCidade(empresa.ds_cidade);
+        setEstado(empresa.ds_estado);
+        setTelefone(empresa.ds_telefone);
+        setCelular(empresa.ds_celular);
+    }
+
+    useEffect(() => {
+        if (buscar) {
+            if (tipo == 'editar-filial') {
+                buscarFilialPorId();
+            } else if (tipo == 'editar-matriz' || tipo == 'visualizar') {
+                buscarMatriz();
+            }
+        }
+    }, [buscar, tipo]);
 
     async function cadastrar() {
         try {
             let resp;
+
             if (tipo == 'matriz') {
                 resp = await cadastrarMatriz();
+                toast.success('Matriz cadastrada com sucesso.');
             } else if (tipo == 'filial') {
                 resp = await cadastrarFilial();
-                if (!resp) return;
+                toast.success('Filial cadastrada com sucesso.');
+            } else if (tipo == 'editar-matriz') {
+                resp = await EditarMatriz();
+                toast.success('Matriz editada com sucesso.');
+            } else if (tipo == 'editar-filial') {
+                resp = await EditarFilial();
+                toast.success('Filial editada com sucesso.');
             } else {
                 toast.error('Tipo inválido.');
                 return;
             }
-
-            toast.success(`${tipo === 'matriz' ? 'Matriz' : 'Filial'} cadastrada com sucesso.`);
 
             setNome('');
             setCelular('');
             setBairro('');
             setCep('');
             setCidade('');
-            setEmail('');
             setCnpj('');
             setNumero('');
             setInscricao('');
             setEstado('');
-            setSenha('');
             setTelefone('');
             setEndereco('');
         } catch (error) {
@@ -118,7 +146,7 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino }) {
     async function buscarCep(cepDigitado) {
         try {
             const cepLimpo = cepDigitado.replace(/\D/g, '');
-            if (cepLimpo.length !== 8) return;
+            if (cepLimpo.length != 8) return;
 
             const response = await axios.get(`https://viacep.com.br/ws/${cepLimpo}/json/`);
             if (response.data.erro) {
@@ -141,7 +169,7 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino }) {
                 <div className="infos">
                     <div className="card">
                         <img src="/assets/images/apartamento.svg" alt="" />
-                        <h1>{tipo === 'matriz' ? 'Cadastro da Matriz' : 'Cadastro da Filial'}</h1>
+                        <h1>{tipo.includes('matriz') ? 'Cadastro da Matriz' : 'Cadastro da Filial'}</h1>
                     </div>
 
                     <div className="campo">
@@ -215,30 +243,24 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino }) {
                         <h1>Celular</h1>
                         <IMaskInput mask='(00) 00000-0000' type="text" value={celular} onChange={e => setCelular(e.target.value)} maxLength={15} />
                     </div>
-
-                    <div className="card">
-                        <img src="/assets/images/cadeado.svg" alt="" />
-                        <h1>Login</h1>
-                    </div>
-
-                    <div className="campo">
-                        <h1>Email</h1>
-                        <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
-                    </div>
-
-                    <div className="campo">
-                        <h1>Senha</h1>
-                        <input type="password" value={senha} onChange={e => setSenha(e.target.value)} />
-                    </div>
-
                 </div>
             </div>
 
-            <div className="botao">
-                <button onClick={cadastrar}>
-                    <Link to={botaoDestino}>{botaoTexto}</Link>
-                </button>
-            </div>
+            {tipo != 'visualizar' && (
+                <div className="botao">
+                    <button onClick={cadastrar}>
+                        <Link to={botaoDestino}>{botaoTexto}</Link>
+                    </button>
+                </div>
+            )}
+
+            {tipo == 'visualizar' && (
+                <div className="botao">
+                    <Link to={botaoDestino}>
+                        <button>{botaoTexto}</button>
+                    </Link>
+                </div>
+            )}
         </div>
     );
 }

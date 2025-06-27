@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './index.scss';
 import axios from 'axios';
-import { toast, Toaster } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
@@ -9,7 +9,7 @@ export default function Login() {
     const [senha, setSenha] = useState("");
     const navigate = useNavigate();
     localStorage.removeItem('token');
-
+    
     async function Login(e) {
         e.preventDefault();
 

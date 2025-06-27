@@ -2,11 +2,11 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import MenuLinks from '../../../components/menuLinks'
 import FormularioFuncionario from '../../../components/formularioFuncionario';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function InfosFuncionario() {
     const navigate = useNavigate();
@@ -17,15 +17,20 @@ export default function InfosFuncionario() {
             navigate('/')
         }
     }, []);
+
+    const { id } = useParams(); 
+    const location = useLocation();
+    const id_empresa = location.state?.id_empresa;
+
     return (
         <div className="infos-funcionario">
-            <MenuLateral menuFrei={true}/>
+            <MenuLateral menuFrei={true} />
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="conteudo">
                     <div className="text">
                         <div className="link">
-                            <Link to='/gerenciarFuncionario' className='link'><img src="/assets/images/Vector.svg" alt="" />
+                            <Link to={`/gerenciarFuncionario/${id_empresa}`} className='link'><img src="/assets/images/Vector.svg" alt="" />
                                 <h1>Voltar</h1>
                             </Link>
                         </div>
@@ -35,7 +40,7 @@ export default function InfosFuncionario() {
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
-                                <FormularioFuncionario />
+                                <FormularioFuncionario modo="editar"/>
                             </div>
 
                             <MenuLinks menuFrei={true} />

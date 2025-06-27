@@ -1,6 +1,6 @@
 import './index.scss';
 import { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useParams } from 'react-router-dom';
 import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
@@ -12,9 +12,10 @@ import PopUpReprovar from '../../../components/popUpReprovar';
 export default function ConfirmarInfos() {
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
-
     const [abrirPopUpAprovar, setAbrirPopUpAprovar] = useState(false);
     const [abrirPopUpReprovar, setAbrirPopUpReprovar] = useState(false);
+
+    const { id } = useParams();
 
     useEffect(() => {
         if (!token) {
@@ -24,13 +25,13 @@ export default function ConfirmarInfos() {
 
     return (
         <div className="confirmar-infos">
-            <MenuLateral menuFrei={true}/>
+            <MenuLateral menuFrei={true} />
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
                     <div className="texto">
                         <div className="links">
-                            <Link to='/validarInfos' className="link">
+                            <Link to={`/validarInfos/${id}`} className="link">
                                 <img src="/assets/images/Vector.svg" alt="" />
                                 <h1>Voltar</h1>
                             </Link>
@@ -55,10 +56,10 @@ export default function ConfirmarInfos() {
             </Cabecalho>
 
             {abrirPopUpAprovar && (
-                <PopUpAprovar onClose={() => setAbrirPopUpAprovar(false)} />
+                <PopUpAprovar fecharPopUp={() => setAbrirPopUpAprovar(false)} />
             )}
             {abrirPopUpReprovar && (
-                <PopUpReprovar onClose={() => setAbrirPopUpReprovar(false)} />
+                <PopUpReprovar fecharPopUp={() => setAbrirPopUpReprovar(false)} />
             )}
         </div>
     );

@@ -40,7 +40,7 @@ export default function Gerenciar() {
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFuncionarios />
+                                    <CardFuncionarios tipo='empresa'/>
                                 </div>
                                 <MenuLinks menuEmpresa={true} />
                             </div>

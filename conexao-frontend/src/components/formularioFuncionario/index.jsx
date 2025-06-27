@@ -1,37 +1,44 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './index.scss';
 import { IMaskInput } from 'react-imask';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-import { jwtDecode } from 'jwt-decode';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-export default function FormularioFuncionario() {
+export default function FormularioFuncionario({ modo }) {
     const [nome, setNome] = useState('');
     const [cargo, setCargo] = useState('');
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
     const navigate = useNavigate();
 
-    let token = localStorage.getItem('token');
-    const decoded = jwtDecode(token);
-    let id_login = decoded.id;
+    const token = localStorage.getItem('token');
+    const { id } = useParams();
 
-    async function BuscarId() {
-        let url = 'http://localhost:5001/buscarEmpresaPeloLogin';
-        let resp = await axios.post(url, { id_login });
+    useEffect(() => {
+        if (modo == 'editar') {
+            buscarFuncionario();
+        }
+    }, [modo]);
 
-        return resp.data.id_empresa;
-    };
-
-    async function CadastrarFuncionario() {
+    async function buscarFuncionario() {
         try {
-            const id = await BuscarId();
+            const url = `http://localhost:5001/resp/${id}?x-access-token=${token}`;
+            const resp = await axios.get(url);
+            const dados = resp.data.infos[0];
+            
+            setNome(dados.nm_nome);
+            setCargo(dados.ds_cargo);
+            setEmail(dados.ds_email);
+            setTelefone(dados.ds_telefone);
+        } catch (error) {
+            toast.error('Erro ao buscar dados do funcionário.');
+        }
+    }
 
-            let url = `http://localhost:5001/resp?x-access-token=${token}`;
-
+    async function salvarFuncionario() {
+        try {
             const obj = {
-                id_empresa: id,
                 nm_nome: nome,
                 ds_cargo: cargo,
                 ds_email: email,
@@ -39,21 +46,25 @@ export default function FormularioFuncionario() {
                 tp_role: cargo
             };
 
-            let resp = await axios.post(url, obj);
+            if (modo == 'editar') {
+                const url = `http://localhost:5001/resp/${id}?x-access-token=${token}`;
+                await axios.put(url, obj);
 
-            toast.success('Cadastro do responsável realizado com sucesso.');
-            setNome('');
-            setCargo('');
-            setEmail('');
-            setTelefone('');
-
-        } catch (error) {
-            if (error.response && error.response.data) {
-                let mensagemErro = error.response.data.erro;
-                toast.error(mensagemErro);
+                toast.success('Funcionário atualizado com sucesso!');
             } else {
-                toast.error('Erro inesperado, tente novamente.');
+                const url = `http://localhost:5001/resp?x-access-token=${token}`;
+                await axios.post(url, obj);
+
+                toast.success('Funcionário cadastrado com sucesso!');
+
+                setNome('');
+                setCargo('');
+                setEmail('');
+                setTelefone('');
             }
+        } catch (error) {
+            const msg = error.response?.data?.erro || 'Erro inesperado.';
+            toast.error(msg);
         }
     }
 
@@ -89,7 +100,9 @@ export default function FormularioFuncionario() {
             </div>
 
             <div className="botao">
-                <button onClick={CadastrarFuncionario}>Salvar</button>
+                <button onClick={salvarFuncionario}>
+                    {modo == 'editar' ? 'Salvar' : 'Cadastrar'}
+                </button>
             </div>
         </div>
     )

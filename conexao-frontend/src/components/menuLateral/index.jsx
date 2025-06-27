@@ -1,33 +1,26 @@
 import './index.scss';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function MenuLateral({ menuFrei, menuEmpresa }) {
     const location = useLocation();
     const [menuAberto, setMenuAberto] = useState(false);
+    const navigate = useNavigate();
 
     function toggleMenu() {
         setMenuAberto(!menuAberto);
     };
 
-    const rotas = [
-        '/cadastroEmpresa',
-        '/validacoes',
-        '/contratos',
-        '/validarInfos',
-        '/confirmarInfos'
-    ];
+    async function sairEmpresa() {
+        localStorage.removeItem('token');
+        navigate('/empresa/login');
+    }
 
-    const rotaInfos = [
-        '/infosEmpresa',
-        '/infosFilial',
-        '/infosFuncionario',
-        '/gerenciarFuncionario',
-        '/gerenciarFilial'
-    ];
-
-    const rotaPertenceCadastro = rotas.includes(location.pathname);
-    const rotaPertenceInfo = rotaInfos.includes(location.pathname);
+    async function sairFrei() {
+        localStorage.removeItem('token');
+        navigate('/');
+    }
 
     return (
         <>
@@ -45,11 +38,43 @@ export default function MenuLateral({ menuFrei, menuEmpresa }) {
                             <img id="logo" src="/assets/images/logoFrei.svg" alt="Logo" />
                         </div>
                         <div className="navegacao">
-                            <Link to="/cadastroEmpresa" className={rotaPertenceCadastro ? 'ativo' : ''}>Cadastros</Link>
-                            <Link to="/infosEmpresa" className={rotaPertenceInfo ? 'ativo' : ''}>Informações</Link>
+                            <Link
+                                to="/cadastroEmpresa"
+                                className={
+                                    [
+                                        '/cadastroEmpresa',
+                                        '/validacoes',
+                                        '/contratos',
+                                        '/validarInfos',
+                                        '/confirmarInfos'
+                                    ].some(rota => location.pathname.startsWith(rota))
+                                        ? 'ativo'
+                                        : ''
+                                }
+                            >
+                                Cadastros
+                            </Link>
+
+                            <Link
+                                to="/gerenciarEmpresa"
+                                className={
+                                    [
+                                        '/gerenciarEmpresa',
+                                        '/infosEmpresa',
+                                        '/infosFilial',
+                                        '/infosFuncionario',
+                                        '/gerenciarFuncionario',
+                                        '/gerenciarFilial'
+                                    ].some(rota => location.pathname.startsWith(rota))
+                                        ? 'ativo'
+                                        : ''
+                                }
+                            >
+                                Informações
+                            </Link>
                         </div>
                         <div className="exit">
-                            <Link to="/">Sair</Link>
+                            <Link to="/" onClick={sairFrei}>Sair</Link>
                         </div>
                     </div>
                 </>
@@ -69,7 +94,7 @@ export default function MenuLateral({ menuFrei, menuEmpresa }) {
                             <img id="logo" src="/assets/images/logoFrei.svg" alt="Logo" />
                         </div>
                         <div className="navegacao">
-                            <Link className={'ativo'}>Informações</Link>
+                            <Link to="/empresa/salvarInfos" className='ativo'>Informações</Link>
                         </div>
                         <div className="exit">
                             <Link to="/empresa/login">Sair</Link>
@@ -77,7 +102,6 @@ export default function MenuLateral({ menuFrei, menuEmpresa }) {
                     </div>
                 </>
             }
-
         </>
     );
 }

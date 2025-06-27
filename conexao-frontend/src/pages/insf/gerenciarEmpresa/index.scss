@@ -1,0 +1,121 @@
+.gerenciar-empresa {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    overflow: hidden;
+
+    #h1Info {
+        font: 700 20px inter;
+        color: #5D636B;
+        text-align: left;
+        margin: 20px 0 30px;
+    }
+
+    .id {
+        position: absolute;
+        bottom: 8px;
+        left: 8px;
+        font: 0.8rem inter;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 35px;
+        padding: 0 20px;
+
+        .bordaBranca {
+            width: 100%;
+            max-width: 560px;
+            border-radius: 15px;
+            border: 1px solid #fff;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(224, 224, 224, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+            max-height: 68vh;
+            overflow-y: auto;
+
+            .card-info {
+                display: flex;
+                flex-direction: row;
+                gap: 2.5rem;
+                justify-content: center;
+                align-items: center;
+                padding: 35px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                width: 100%;
+                background-color: #fff;
+                position: relative;
+                height: 117px;
+
+                .item {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2rem;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        object-fit: contain;
+                    }
+
+                    .text {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: .2rem;
+
+                        h1 {
+                            font: 600 0.9rem inter;
+                            color: #374151;
+                        }
+                    }
+
+                    p {
+                        font: 0.85rem inter;
+                        color: #6b7280;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1280px) {
+        .content {
+            .texto {
+                #h1Info {
+                    font-size: 18px;
+                }
+            }
+
+            .bordaBranca{
+                max-height: 55vh;
+            }
+        }
+    }
+
+    @media (max-width: 768px){
+        .content{
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            width: 100%;
+            max-width: 450px;
+            gap: 20px;
+
+            .texto {
+                width: 100%;
+            }
+        }
+    }
+}

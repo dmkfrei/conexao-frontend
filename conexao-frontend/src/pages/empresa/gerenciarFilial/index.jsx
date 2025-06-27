@@ -40,7 +40,7 @@ export default function GerenciarFilial() {
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFilial />
+                                    <CardFilial tipo='empresa'/>
                                 </div>
                                 <MenuLinks menuEmpresa={true} />
                             </div>

@@ -1,57 +1,43 @@
 import './index.scss';
 import { useEffect, useState } from 'react';
-import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 import PopUpDeletar from '../popUpDeletar';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 
-export default function CardFilial() {
+export default function CardFilial({ tipo }) {
     const [abrirpopUp, setAbrirPopUpDeletar] = useState(false);
     const [idFilialSelecionada, setIdFilialSelecionada] = useState(null);
     const [infos, setInfos] = useState([]);
     const navigate = useNavigate();
 
     const token = localStorage.getItem('token');
-    const decode = jwtDecode(token);
-    const id_login = decode.id;
-    const tipo = decode.tipo;
-
-    async function BuscarId() {
-        if (tipo == 'adm') return null;
-
-        const url = 'http://localhost:5001/buscarEmpresaPeloLogin';
-        const resp = await axios.post(url, { id_login });
-
-        return resp.data.id_empresa;
-    }
-
 
     useEffect(() => {
         GetInfos();
     }, []);
 
+    const { id } = useParams();
+
     async function GetInfos() {
-        if (tipo == 'adm') return null;
-        
         try {
-            const id = await BuscarId();
+            const urlBase = `http://localhost:5001/filial?x-access-token=${token}`;
+            const resp = await axios.get(urlBase);
 
-            const url = `http://localhost:5001/filial/${id}?x-access-token=${token}`;
-            const resp = await axios.get(url);
-            setInfos(resp.data.infos);
-        } catch (error) {
-            if (error.response && error.response.data) {
-                toast.remove();
-                let mensagemErro = error.response.data.erro;
-                toast.error(mensagemErro);
+            const tipo = resp.data.tipo;
 
-                if (mensagemErro == 'Cadastre a empresa primeiro') {
-                    navigate('/empresa/salvarInfos');
-                }
+            if (tipo === 'adm') {
+                const urlAdmin = `http://localhost:5001/filial?id_empresa=${id}&x-access-token=${token}`;
+                const respAdm = await axios.get(urlAdmin);
+                setInfos(respAdm.data.dados);
             } else {
-                toast.error('Erro inesperado, tente novamente.');
+                setInfos(resp.data.dados);
             }
+
+        } catch (error) {
+            toast.remove();
+            const mensagem = error.response?.data?.erro || 'Erro inesperado, tente novamente.';
+            toast.error(mensagem);
         }
     }
 
@@ -59,7 +45,13 @@ export default function CardFilial() {
         <div className="card-filial">
             {infos.map((item, index) => (
                 <div key={index} className="card-info">
-                    <p className="id">#{item.id_filial}</p>
+                    {tipo == 'adm' ? (
+                        <Link className="id" to={`/infosFilial/${item.id_filial}`} state={{ id_empresa: id }}>
+                            #{item.id_filial}
+                        </Link>
+                    ) : (
+                        <p className="id">#{item.id_filial}</p>
+                    )}
 
                     <div className="item">
                         <img src="/assets/images/apartamento.svg" alt="Nome" />

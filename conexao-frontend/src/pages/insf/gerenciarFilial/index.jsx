@@ -2,7 +2,7 @@ import './index.scss';
 import Cabecalho from '../../../components/cabecalho';
 import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import CardFilial from '../../../components/cardFilial';
 import MenuLinks from '../../../components/menuLinks'
 import { useEffect } from 'react';
@@ -16,9 +16,12 @@ export default function GerenciarFilialINSF() {
             navigate('/')
         }
     }, []);
+
+    const { id } = useParams();
+
     return (
         <div className="gerenciar-filial-insf">
-            <MenuLateral menuFrei={true}/>
+            <MenuLateral menuFrei={true} />
             <MenuEmpresa menuFrei={true} />
             <Cabecalho>
                 <div className="content">
@@ -26,11 +29,10 @@ export default function GerenciarFilialINSF() {
                         <h1 id='h1Info'>Gerenciamento de Filiais</h1>
                     </div>
 
-
                     <div className="principal">
                         <div className="esquerda">
                             <div className="addFilial">
-                                <Link to='/infosFilial'>
+                                <Link>
                                     <img src="/assets/images/novo.svg" alt="" />
                                     <h1>Nova Filial</h1>
                                 </Link>
@@ -38,7 +40,7 @@ export default function GerenciarFilialINSF() {
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFilial />
+                                    <CardFilial tipo='adm'/>
                                 </div>
                                 <MenuLinks menuFrei={true} />
                             </div>

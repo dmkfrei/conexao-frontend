@@ -1,21 +1,25 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import './index.scss';
 
 export default function MenuDireita() {
     const location = useLocation();
+    const { id: idParam } = useParams();
 
-    const rotaAtual = location.pathname;
+    const id = idParam;
+
+    const rotaPertenceValidarInfos = location.pathname.startsWith('/validarInfos');
+    const rotaPertenceConfirmar = location.pathname.startsWith('/confirmarInfos');
 
     return (
         <div className="menu-direita">
-            <div className={`item ${rotaAtual == '/validarInfos' ? 'ativo' : ''}`}>
+            <div className={`item ${rotaPertenceValidarInfos ? 'ativo' : ''}`}>
                 <div className="barra" />
-                <Link to="/validarInfos">Dados da Empresa</Link>
+                <Link to={`/validarInfos/${id}`}>Dados da Empresa</Link>
             </div>
 
-            <div className={`item ${rotaAtual == '/confirmarInfos' ? 'ativo' : ''}`}>
+            <div className={`item ${rotaPertenceConfirmar ? 'ativo' : ''}`}>
                 <div className="barra" />
-                <Link to="/confirmarInfos">Dados dos Responsáveis</Link>
+                <Link to={`/confirmarInfos/${id}`}>Dados dos Responsáveis</Link>
             </div>
         </div>
     );

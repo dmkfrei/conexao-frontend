@@ -12,7 +12,7 @@ export default function Acordo() {
     let token = localStorage.getItem('token');
 
     async function BaixarAcordo() {
-        window.open('http://localhost:5001/baixarAcordo/', '_blank');
+        window.open(`http://localhost:5001/baixarAcordo?x-access-token=${token}`, '_blank');
     }
 
     useEffect(() => {

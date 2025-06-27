@@ -20,6 +20,8 @@ import GerenciarFilialINSF from "./pages/insf/gerenciarFilial";
 import GerenciarFuncionarioINSF from "./pages/insf/gerenciarFuncionario";
 import Acordo from "./pages/empresa/acordo";
 import { Toaster } from "react-hot-toast";
+import MenuDireita from "./components/menuDireita";
+import GerenciarEmpresa from "./pages/insf/gerenciarEmpresa";
 
 export default function Navegacao() {
     return (
@@ -34,8 +36,8 @@ export default function Navegacao() {
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/cadastroEmpresa" element={<CadastroEmpresa />} />
-                <Route path="/validarInfos" element={<ValidarInfos />} />
-                <Route path="/confirmarInfos" element={<ConfirmarInfos />} />
+                <Route path="/validarInfos/:id" element={<ValidarInfos />} />
+                <Route path="/confirmarInfos/:id" element={<ConfirmarInfos />} />
                 <Route path="/validacoes" element={<Validacoes />} />
                 <Route path="/contratos" element={<Contratos />} />
                 <Route path="/empresa/login" element={<LoginEmpresa />} />
@@ -46,12 +48,14 @@ export default function Navegacao() {
                 <Route path='/empresa/cadastrarFuncionarios' element={<CadastroFuncionario />} />
                 <Route path='/empresa/gerenciarFilial' element={<GerenciarFilial />} />
                 <Route path='/empresa/cadastrarFilial' element={<CadastroFilial />} />
-                <Route path='/infosEmpresa' element={<InfosEmpresa />} />
-                <Route path='/infosFuncionario' element={<InfosFuncionario />} />
-                <Route path='/infosFilial' element={<InfosFilial />} />
-                <Route path='/gerenciarFilial' element={<GerenciarFilialINSF />} />
-                <Route path='/gerenciarFuncionario' element={<GerenciarFuncionarioINSF />} />
+                <Route path='/infosEmpresa/:id' element={<InfosEmpresa />} />
+                <Route path='/infosFuncionario/:id' element={<InfosFuncionario />} />
+                <Route path='/infosFilial/:id' element={<InfosFilial />} />
+                <Route path='/gerenciarFilial/:id' element={<GerenciarFilialINSF />} />
+                <Route path='/gerenciarFuncionario/:id' element={<GerenciarFuncionarioINSF />} />
                 <Route path='/empresa/acordo' element={<Acordo />} />
+                <Route path='./components/menuDireita' element={<MenuDireita />} />
+                <Route path='/gerenciarEmpresa' element={<GerenciarEmpresa />} />
             </Routes>
         </BrowserRouter>
     )

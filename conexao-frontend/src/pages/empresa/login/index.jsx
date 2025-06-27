@@ -10,7 +10,7 @@ export default function LoginEmpresa() {
     const [senha, setSenha] = useState('');
     const navigate = useNavigate();
     localStorage.removeItem('token');
-
+    
     async function Login() {
         try {
             const url = 'http://localhost:5001/logar';
