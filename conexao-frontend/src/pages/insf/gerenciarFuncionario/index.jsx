@@ -21,8 +21,8 @@ export default function GerenciarFuncionarioINSF() {
     
     return (
         <div className="gerenciar-funcionario-insf">
-            <MenuLateral menuFrei={true} />
-            <MenuEmpresa menuFrei={true} />
+            <MenuLateral />
+            <MenuEmpresa />
             <Cabecalho>
                 <div className="content">
                     <div className="texto">
@@ -43,7 +43,7 @@ export default function GerenciarFuncionarioINSF() {
                                 <div className="bordaBranca">
                                     <CardFuncionarios tipo='adm'/>
                                 </div>
-                                <MenuLinks menuFrei={true} />
+                                <MenuLinks id_empresa={id}/>
                             </div>
                         </div>
                     </div>

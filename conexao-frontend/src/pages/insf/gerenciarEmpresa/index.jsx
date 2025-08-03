@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import toast from 'react-hot-toast';
 
 export default function GerenciarEmpresa() {
     const [infos, setInfos] = useState([]);
@@ -28,14 +29,14 @@ export default function GerenciarEmpresa() {
             setInfos(dados);
 
         } catch (err) {
-            console.error('Erro ao buscar empresas:', err);
+            toast.error('Erro ao buscar empresas:', err);
         }
     }
 
     return (
         <div className="gerenciar-empresa">
-            <MenuLateral menuFrei={true} />
-            <MenuEmpresa menuFrei={true} />
+            <MenuLateral />
+            <MenuEmpresa />
 
             <Cabecalho>
                 <div className="content">

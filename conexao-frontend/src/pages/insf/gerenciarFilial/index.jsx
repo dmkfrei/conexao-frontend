@@ -21,8 +21,8 @@ export default function GerenciarFilialINSF() {
 
     return (
         <div className="gerenciar-filial-insf">
-            <MenuLateral menuFrei={true} />
-            <MenuEmpresa menuFrei={true} />
+            <MenuLateral />
+            <MenuEmpresa />
             <Cabecalho>
                 <div className="content">
                     <div className="texto">
@@ -42,7 +42,7 @@ export default function GerenciarFilialINSF() {
                                 <div className="bordaBranca">
                                     <CardFilial tipo='adm'/>
                                 </div>
-                                <MenuLinks menuFrei={true} />
+                                <MenuLinks id_empresa={id}/>
                             </div>
                         </div>
                     </div>

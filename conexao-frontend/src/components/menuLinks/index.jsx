@@ -1,10 +1,13 @@
 import './index.scss'
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useEmpresa } from '../../routes/EmpresaContext.jsx';
 
-export default function MenuLinks({ menuFrei, menuEmpresa }) {
+export default function MenuLinks({ id_empresa }) {
     const location = useLocation();
     const rotaAtual = location.pathname;
-    const { id } = useParams();
+    const { tipoUsuario, situacao } = useEmpresa();
+
+    const empresaCriada = situacao != null;
 
     let rotaFuncionario = [
         '/infosFuncionario',
@@ -28,47 +31,68 @@ export default function MenuLinks({ menuFrei, menuEmpresa }) {
 
     return (
         <div className="menu-links">
-            {menuEmpresa &&
-                <>
-                    <div className="dados">
-                        <div className={`item ${rotaAtual == '/empresa/salvarInfos' ? 'ativo' : ''}`}>
-                            <div className="barra" />
-                            <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
-                        </div>
-                        <div className={`item ${rotaFuncionarioEmpresa.includes(rotaAtual) ? 'ativo' : ''}`}>
-                            <div className="barra" />
+            {tipoUsuario == 'cliente' &&
+                <div className="dados">
+                    <div className={`item ${rotaAtual == '/empresa/salvarInfos' ? 'ativo' : ''}`}>
+                        <div className="barra" />
+                        <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
+                    </div>
+
+                    <div className={`item ${rotaFuncionarioEmpresa.includes(rotaAtual) ? 'ativo' : ''}`}>
+                        <div className="barra" />
+                        {empresaCriada ? (
                             <Link to='/empresa/gerenciarFuncionarios'>Dados dos Responsáveis</Link>
-                        </div>
-                        <div className={`item ${rotaFilialEmpresa.includes(rotaAtual) ? 'ativo' : ''}`}>
-                            <div className="barra" />
+                        ) : (
+                            <span className="bloqueado">
+                                <img src="/assets/images/Lock.svg" alt="Cadeado" />
+                                <Link>Dados dos Responsáveis</Link>
+                            </span>
+                        )}
+                    </div>
+
+                    <div className={`item ${rotaFilialEmpresa.includes(rotaAtual) ? 'ativo' : ''}`}>
+                        <div className="barra" />
+                        {empresaCriada ? (
                             <Link to='/empresa/gerenciarFilial'>Filiais</Link>
-                        </div>
-                        <div className={`item ${rotaAtual == '/empresa/Acordo' ? 'ativo' : ''}`}>
-                            <div className="barra" />
-                            <Link to='/empresa/Acordo'>Acordo</Link>
-                        </div>
+                        ) : (
+                            <span className="bloqueado">
+                                <img src="/assets/images/Lock.svg" alt="Cadeado" />
+                                Filiais
+                            </span>
+                        )}
                     </div>
-                </>}
 
-            {menuFrei &&
-                <>
-                    <div className="dados">
-                        <div className={`item ${rotaAtual.startsWith('/infosEmpresa') ? 'ativo' : ''}`}>
-                            <div className="barra" />
-                            <Link to={`/infosEmpresa/${id}`}>Dados da Empresa</Link>
-                        </div>
-
-                        <div className={`item ${rotaFuncionario.some(rota => rotaAtual.startsWith(rota)) ? 'ativo' : ''}`}>
-                            <div className="barra" />
-                            <Link to={`/gerenciarFuncionario/${id}`}>Dados dos Responsáveis</Link>
-                        </div>
-
-                        <div className={`item ${rotaFilial.some(rota => rotaAtual.startsWith(rota)) ? 'ativo' : ''}`}>
-                            <div className="barra" />
-                            <Link to={`/gerenciarFilial/${id}`}>Filiais</Link>
-                        </div>
+                    <div className={`item ${rotaAtual === '/empresa/acordo' ? 'ativo' : ''}`}>
+                        <div className="barra" />
+                        {empresaCriada ? (
+                            <Link to='/empresa/acordo'>Acordo</Link>
+                        ) : (
+                            <span className="bloqueado">
+                                <img src="/assets/images/Lock.svg" alt="Cadeado" />
+                                Acordo
+                            </span>
+                        )}
                     </div>
-                </>
+                </div>
+            }
+
+            {tipoUsuario == 'adm' &&
+                <div className="dados">
+                    <div className={`item ${rotaAtual.startsWith('/infosEmpresa') ? 'ativo' : ''}`}>
+                        <div className="barra" />
+                        <Link to={`/infosEmpresa/${id_empresa}`}>Dados da Empresa</Link>
+                    </div>
+
+                    <div className={`item ${rotaFuncionario.some(rota => rotaAtual.startsWith(rota)) ? 'ativo' : ''}`}>
+                        <div className="barra" />
+                        <Link to={`/gerenciarFuncionario/${id_empresa}`}>Dados dos Responsáveis</Link>
+                    </div>
+
+                    <div className={`item ${rotaFilial.some(rota => rotaAtual.startsWith(rota)) ? 'ativo' : ''}`}>
+                        <div className="barra" />
+                        <Link to={`/gerenciarFilial/${id_empresa}`}>Filiais</Link>
+                    </div>
+                </div>
             }
         </div>
     )

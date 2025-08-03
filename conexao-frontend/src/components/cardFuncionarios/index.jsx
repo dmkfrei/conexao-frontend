@@ -39,27 +39,24 @@ export default function CardFuncionarios({ tipo }) {
         }
     }
 
+    function mascararEmail(email) {
+        if (!email || typeof email != 'string') return '---@---';
+
+        const [nome] = email.split('@');
+        return `${nome}@...`;
+    }
+
     return (
         <div className="card-funcionarios">
-            {infos.map((item) => (
-                <div className="card-info" key={item.id_responsavel}>
-                    {tipo == 'adm' ? (
-                        <Link
-                            to={`/infosFuncionario/${item.id_responsavel}`}
-                            state={{ id_empresa: id }}
-                            className="id"
-                        >
-                            #{item.id_responsavel}
-                        </Link>
-                    ) : (
-                        <p className="id">#{item.id_responsavel}</p>
-                    )}
+            {infos.length == 0 ? (
+                <div className="card-info">
+                    <p className="id">#-</p>
 
                     <div className="item">
                         <img src="/assets/images/pessoa.svg" alt="Nome" />
                         <div className="text">
                             <p className="label">Nome</p>
-                            <p className="valor">{item.nm_nome}</p>
+                            <p className="valor">-------------</p>
                         </div>
                     </div>
 
@@ -67,7 +64,7 @@ export default function CardFuncionarios({ tipo }) {
                         <img src="/assets/images/Briefcase.svg" alt="Cargo" />
                         <div className="text">
                             <p className="label">Cargo</p>
-                            <p className="valor">{item.ds_cargo}</p>
+                            <p className="valor">-------------</p>
                         </div>
                     </div>
 
@@ -75,7 +72,7 @@ export default function CardFuncionarios({ tipo }) {
                         <img src="/assets/images/telefone.svg" alt="Contato" />
                         <div className="text">
                             <p className="label">Contato</p>
-                            <p className="valor">{item.ds_telefone}</p>
+                            <p className="valor">-------------</p>
                         </div>
                     </div>
 
@@ -83,21 +80,69 @@ export default function CardFuncionarios({ tipo }) {
                         <img src="/assets/images/email.svg" alt="Email" />
                         <div className="text">
                             <p className="label">Email</p>
-                            <p className="valor">{item.ds_email}</p>
+                            <p className="valor">-------------</p>
                         </div>
                     </div>
-
-                    <img
-                        src="/assets/images/lixeira.svg"
-                        alt="Deletar"
-                        className="icon-lixeira"
-                        onClick={() => {
-                            setAbrirPopUpDeletar(true);
-                            setIdRespSelecionada(item.id_responsavel);
-                        }}
-                    />
                 </div>
-            ))}
+            ) : (
+                infos.map((item) => (
+                    <div className="card-info" key={item.id_responsavel}>
+                        {tipo == 'adm' ? (
+                            <Link
+                                to={`/infosFuncionario/${item.id_responsavel}`}
+                                state={{ id_empresa: id }}
+                                className="id"
+                            >
+                                #{item.id_responsavel}
+                            </Link>
+                        ) : (
+                            <p className="id">#{item.id_responsavel}</p>
+                        )}
+
+                        <div className="item">
+                            <img src="/assets/images/pessoa.svg" alt="Nome" />
+                            <div className="text">
+                                <p className="label">Nome</p>
+                                <p className="valor">{item.nm_nome}</p>
+                            </div>
+                        </div>
+
+                        <div className="item">
+                            <img src="/assets/images/Briefcase.svg" alt="Cargo" />
+                            <div className="text">
+                                <p className="label">Cargo</p>
+                                <p className="valor">{item.ds_cargo}</p>
+                            </div>
+                        </div>
+
+                        <div className="item">
+                            <img src="/assets/images/telefone.svg" alt="Contato" />
+                            <div className="text">
+                                <p className="label">Contato</p>
+                                <p className="valor">{item.ds_telefone}</p>
+                            </div>
+                        </div>
+
+                        <div className="item">
+                            <img src="/assets/images/email.svg" alt="Email" />
+                            <div className="text">
+                                <p className="label">Email</p>
+                                <p className="valor">{mascararEmail(item.ds_email)}</p>
+                            </div>
+                        </div>
+
+                        <img
+                            src="/assets/images/lixeira.svg"
+                            alt="Deletar"
+                            className="icon-lixeira"
+                            onClick={() => {
+                                setAbrirPopUpDeletar(true);
+                                setIdRespSelecionada(item.id_responsavel);
+                            }}
+                        />
+                    </div>
+                ))
+            )}
 
             {abrirPopUpDeletar && (
                 <PopUpDeletarResponsavel

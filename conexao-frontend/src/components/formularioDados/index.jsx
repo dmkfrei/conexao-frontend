@@ -5,6 +5,7 @@ import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { IMaskInput } from 'react-imask';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Formulario({ tipo, botaoTexto, botaoDestino, buscar }) {
     const [nome, setNome] = useState('');
@@ -18,7 +19,7 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino, buscar }) {
     const [estado, setEstado] = useState('');
     const [telefone, setTelefone] = useState('');
     const [celular, setCelular] = useState('');
-
+    const navigate = useNavigate();
     const { id } = useParams();
     let token = localStorage.getItem('token');
 
@@ -93,6 +94,8 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino, buscar }) {
     }
 
     useEffect(() => {
+        if (token == null) return null;
+
         if (buscar) {
             if (tipo == 'editar-filial') {
                 buscarFilialPorId();
@@ -109,6 +112,7 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino, buscar }) {
             if (tipo == 'matriz') {
                 resp = await cadastrarMatriz();
                 toast.success('Matriz cadastrada com sucesso.');
+                navigate('/empresa/gerenciarFuncionarios');
             } else if (tipo == 'filial') {
                 resp = await cadastrarFilial();
                 toast.success('Filial cadastrada com sucesso.');
@@ -122,7 +126,7 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino, buscar }) {
                 toast.error('Tipo inválido.');
                 return;
             }
-
+            
             setNome('');
             setCelular('');
             setBairro('');
@@ -174,15 +178,15 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino, buscar }) {
 
                     <div className="campo">
                         <h1>Nome da Empresa</h1>
-                        <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
+                        <input type="text" value={nome} onChange={e => setNome(e.target.value)} disabled={tipo == 'visualizar'} minLength={2} />
                     </div>
                     <div className="campo">
                         <h1>CNPJ</h1>
-                        <IMaskInput mask='00.000.000/0000-00' type="text" value={cnpj} onChange={e => setCnpj(e.target.value)} />
+                        <IMaskInput mask='00.000.000/0000-00' type="text" value={cnpj} onChange={e => setCnpj(e.target.value)} disabled={tipo == 'visualizar'}/>
                     </div>
                     <div className="campo">
                         <h1>Inscrição</h1>
-                        <input type="text" value={inscricao} onChange={e => setInscricao(e.target.value)} />
+                        <input type="text" value={inscricao} onChange={e => setInscricao(e.target.value)} disabled={tipo == 'visualizar'} />
                     </div>
 
                     <div className="card">
@@ -201,32 +205,32 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino, buscar }) {
                                     buscarCep(value);
                                 }
                             }}
+                            disabled={tipo == 'visualizar'}
                         />
+                    </div>
+                    <div className="campo">
+                        <h1>Número</h1>
+                        <input type="text" value={numero} onChange={e => setNumero(e.target.value)} disabled={tipo == 'visualizar'} />
                     </div>
 
                     <div className="campo">
                         <h1>Endereço</h1>
-                        <input type="text" value={endereco} onChange={e => setEndereco(e.target.value)} />
-                    </div>
-
-                    <div className="campo">
-                        <h1>Número</h1>
-                        <input type="text" value={numero} onChange={e => setNumero(e.target.value)} />
+                        <input type="text" value={endereco} onChange={e => setEndereco(e.target.value)} disabled={true} />
                     </div>
 
                     <div className="campo">
                         <h1>Bairro</h1>
-                        <input type="text" value={bairro} onChange={e => setBairro(e.target.value)} />
+                        <input type="text" value={bairro} onChange={e => setBairro(e.target.value)} disabled={true} />
                     </div>
 
                     <div className="campo">
                         <h1>Cidade</h1>
-                        <input type="text" value={cidade} onChange={e => setCidade(e.target.value)} />
+                        <input type="text" value={cidade} onChange={e => setCidade(e.target.value)} disabled={true} />
                     </div>
 
                     <div className="campo">
                         <h1>Estado</h1>
-                        <input type="text" value={estado} onChange={e => setEstado(e.target.value)} maxLength={2} />
+                        <input type="text" value={estado} onChange={e => setEstado(e.target.value)} maxLength={2} disabled={true} />
                     </div>
 
                     <div className="card">
@@ -236,12 +240,12 @@ export default function Formulario({ tipo, botaoTexto, botaoDestino, buscar }) {
 
                     <div className="campo">
                         <h1>Telefone</h1>
-                        <IMaskInput mask='(00) 00000-0000' type="text" value={telefone} onChange={e => setTelefone(e.target.value)} maxLength={15} />
+                        <IMaskInput mask='(00) 00000-0000' type="text" value={telefone} onChange={e => setTelefone(e.target.value)} maxLength={15} disabled={tipo == 'visualizar'} minLength={14} />
                     </div>
 
                     <div className="campo">
                         <h1>Celular</h1>
-                        <IMaskInput mask='(00) 00000-0000' type="text" value={celular} onChange={e => setCelular(e.target.value)} maxLength={15} />
+                        <IMaskInput mask='(00) 00000-0000' type="text" value={celular} onChange={e => setCelular(e.target.value)} maxLength={15} disabled={tipo == 'visualizar'} minLength={14} />
                     </div>
                 </div>
             </div>

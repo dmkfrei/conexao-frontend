@@ -10,7 +10,7 @@ export default function LoginEmpresa() {
     const [senha, setSenha] = useState('');
     const navigate = useNavigate();
     localStorage.removeItem('token');
-    
+
     async function Login() {
         try {
             const url = 'http://localhost:5001/logar';
@@ -50,10 +50,10 @@ export default function LoginEmpresa() {
 
                     <div className="form">
                         <h1>Usuário</h1>
-                        <input type="text" placeholder='Insira o seu nome de usuário.' value={usuario} onChange={e => setUsuario(e.target.value)}/>
+                        <input type="text" placeholder='Insira o seu nome de usuário.' value={usuario} onChange={e => setUsuario(e.target.value)} />
 
                         <h1>Senha</h1>
-                        <input type="text" placeholder='Minímo 8 caracteres.' value={senha} onChange={e => setSenha(e.target.value)}/>
+                        <input type="password" placeholder='Minímo 8 caracteres.' value={senha} onChange={e => setSenha(e.target.value)} />
 
                         <div className="senha">
                             <Link to='/empresa/enviarCodigo'>Esqueceu a senha?</Link>

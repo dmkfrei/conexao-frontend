@@ -6,21 +6,23 @@ import { Link, useNavigate } from 'react-router-dom';
 import Formulario from '../../../components/formularioDados';
 import MenuLinks from '../../../components/menuLinks';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 export default function InfosEmpresa() {
     const navigate = useNavigate();
     let token = localStorage.getItem('token');
+    const { id } = useParams();
 
     useEffect(() => {
         if (token == null || token == undefined) {
             navigate('/')
         }
     }, []);
-    
+
     return (
         <div className="infos-empresa">
-            <MenuLateral menuFrei={true}/>
-            <MenuEmpresa menuFrei={true} />
+            <MenuLateral />
+            <MenuEmpresa />
             <Cabecalho>
                 <div className="content">
                     <div className="text">
@@ -35,7 +37,7 @@ export default function InfosEmpresa() {
                             </div>
 
 
-                            <MenuLinks menuFrei={true} />
+                            <MenuLinks id_empresa={id}/>
                         </div>
 
                     </div>

@@ -24,8 +24,8 @@ export default function InfosFuncionario() {
 
     return (
         <div className="infos-funcionario">
-            <MenuLateral menuFrei={true} />
-            <MenuEmpresa menuFrei={true} />
+            <MenuLateral/>
+            <MenuEmpresa/>
             <Cabecalho>
                 <div className="conteudo">
                     <div className="text">
@@ -43,7 +43,7 @@ export default function InfosFuncionario() {
                                 <FormularioFuncionario modo="editar"/>
                             </div>
 
-                            <MenuLinks menuFrei={true} />
+                            <MenuLinks id_empresa={id_empresa} />
                         </div>
 
                     </div>

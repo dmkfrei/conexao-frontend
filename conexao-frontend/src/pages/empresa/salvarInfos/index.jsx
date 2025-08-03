@@ -19,8 +19,8 @@ export default function SalvarInfos() {
     
     return (
         <div className="salvar-infos">
-            <MenuLateral menuEmpresa={true}/>
-            <MenuEmpresa menuEmpresa={true} />
+            <MenuLateral/>
+            <MenuEmpresa/>
             <Cabecalho>
                 <div className="content">
                     <div className="texto">
@@ -31,10 +31,10 @@ export default function SalvarInfos() {
                     <div className="principal">
                         <div className="meio">
                             <div className="esquerda">
-                                <Formulario tipo='matriz'botaoTexto='Salvar' buscar={false} />
+                                <Formulario tipo='matriz' botaoTexto='Salvar' buscar={false} />
                             </div>
 
-                            <MenuLinks menuEmpresa={true} />
+                            <MenuLinks/>
                         </div>
 
                     </div>

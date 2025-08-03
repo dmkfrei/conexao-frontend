@@ -6,21 +6,44 @@ import { Link, useNavigate } from 'react-router-dom';
 import Formulario from '../../../components/formularioDados';
 import MenuLinks from '../../../components/menuLinks'
 import { useEffect } from 'react';
+import axios from 'axios';
 
 export default function CadastroFilial() {
     const navigate = useNavigate();
     let token = localStorage.getItem('token');
 
+    async function empresaEstaCadastrada() {
+        const url = `http://localhost:5001/verificarCadastro?x-access-token=${token}`;
+
+        let resp = await axios.get(url);
+
+        return resp;
+    }
+
     useEffect(() => {
         if (token == null || token == undefined) {
             navigate('/empresa/login');
         }
+
+        async function verificarCadastro() {
+            try {
+                const resp = await empresaEstaCadastrada();
+
+                if (!resp.data.cadastrada) {
+                    navigate('/empresa/salvarInfos');
+                }
+            } catch (error) {
+                navigate('/empresa/salvarInfos');
+            }
+        }
+
+        verificarCadastro();
     }, []);
-    
+
     return (
         <div className="cadastro-filial">
-            <MenuLateral menuEmpresa={true}/>
-            <MenuEmpresa menuEmpresa={true} />
+            <MenuLateral />
+            <MenuEmpresa />
             <Cabecalho>
                 <div className="conteudo">
                     <div className="text">
@@ -41,7 +64,7 @@ export default function CadastroFilial() {
                             </div>
 
 
-                            <MenuLinks menuEmpresa={true} />
+                            <MenuLinks />
                         </div>
 
                     </div>

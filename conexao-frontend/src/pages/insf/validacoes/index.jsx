@@ -19,14 +19,14 @@ export default function Validacoes() {
 
     return (
         <div className="validacoes">
-            <MenuLateral menuFrei={true}/>
-            <MenuEmpresa menuFrei={true} />
+            <MenuLateral/>
+            <MenuEmpresa />
 
-            <Cabecalho>
+            <Cabecalho >
                 <div className="conteudo">
 
                     <div className="texto">
-                        <h1>Validações Pendentes</h1>
+                        <h1>Validações Pendentes</h1>   
                     </div>
 
 

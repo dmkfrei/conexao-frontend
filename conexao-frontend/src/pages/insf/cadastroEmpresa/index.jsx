@@ -21,11 +21,15 @@ export default function CadastroEmpresa() {
     }, []);
 
     async function Cadastro() {
+        if (senha.length < 6) {
+            return toast.error('A senha deve ter no mínimo 6 caracteres.');
+        }
+
         if (senha != confirmarSenha) {
             return toast.error('As senhas não coincidem.')
         }
         try {
-            const url = 'http://localhost:5001/login';
+            const url = `http://localhost:5001/login?x-access-token=${token}`;
 
             let obj = {
                 ds_usuario: Usuario,
@@ -34,6 +38,9 @@ export default function CadastroEmpresa() {
 
             let resp = await axios.post(url, obj);
             toast.success('Cadastro inicial da empresa realizado com sucesso!');
+            setUsuario('');
+            setSenha('');
+            setConfirmarSenha('');
         } catch (error) {
             if (error.response && error.response.data) {
                 toast.remove();
@@ -50,9 +57,9 @@ export default function CadastroEmpresa() {
     return (
 
         <div className="cadastro-empresa">
-            <MenuLateral menuFrei={true}/>
-            <MenuEmpresa menuFrei={true} />
-            <Cabecalho>
+            <MenuLateral/>
+            <MenuEmpresa/>
+            <Cabecalho >
 
                 <div className="content">
                     <div className="bordaBranca">

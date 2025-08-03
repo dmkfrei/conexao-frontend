@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Login from "./pages/insf/login";
 import CadastroEmpresa from "./pages/insf/cadastroEmpresa";
 import ValidarInfos from "./pages/insf/validarInfos";
@@ -19,44 +20,56 @@ import InfosFilial from "./pages/insf/infosFilial";
 import GerenciarFilialINSF from "./pages/insf/gerenciarFilial";
 import GerenciarFuncionarioINSF from "./pages/insf/gerenciarFuncionario";
 import Acordo from "./pages/empresa/acordo";
-import { Toaster } from "react-hot-toast";
-import MenuDireita from "./components/menuDireita";
 import GerenciarEmpresa from "./pages/insf/gerenciarEmpresa";
+import ContratoEmpresa from "./pages/insf/contratoEmpresa";
+import Configuracoes from "./pages/empresa/configuracoes";
+import Erro from "./pages/insf/erro";
+import PrivateRoute from "./routes/PrivateRoutes.jsx";
 
 export default function Navegacao() {
     return (
         <BrowserRouter>
             <Toaster
                 toastOptions={{
-                    style: {
-                        font: '500 15px inter',
-                    },
+                    style: { font: '500 15px inter' },
                 }}
             />
             <Routes>
+                {/* ROTAS PÚBLICAS */}
                 <Route path="/" element={<Login />} />
-                <Route path="/cadastroEmpresa" element={<CadastroEmpresa />} />
-                <Route path="/validarInfos/:id" element={<ValidarInfos />} />
-                <Route path="/confirmarInfos/:id" element={<ConfirmarInfos />} />
-                <Route path="/validacoes" element={<Validacoes />} />
-                <Route path="/contratos" element={<Contratos />} />
                 <Route path="/empresa/login" element={<LoginEmpresa />} />
-                <Route path="/empresa/salvarInfos" element={<SalvarInfos />} />
-                <Route path='/empresa/enviarCodigo' element={<EnviarCodigo />} />
-                <Route path='/empresa/redefinirSenha' element={<MudarSenha />} />
-                <Route path='/empresa/gerenciarFuncionarios' element={<Gerenciar />} />
-                <Route path='/empresa/cadastrarFuncionarios' element={<CadastroFuncionario />} />
-                <Route path='/empresa/gerenciarFilial' element={<GerenciarFilial />} />
-                <Route path='/empresa/cadastrarFilial' element={<CadastroFilial />} />
-                <Route path='/infosEmpresa/:id' element={<InfosEmpresa />} />
-                <Route path='/infosFuncionario/:id' element={<InfosFuncionario />} />
-                <Route path='/infosFilial/:id' element={<InfosFilial />} />
-                <Route path='/gerenciarFilial/:id' element={<GerenciarFilialINSF />} />
-                <Route path='/gerenciarFuncionario/:id' element={<GerenciarFuncionarioINSF />} />
-                <Route path='/empresa/acordo' element={<Acordo />} />
-                <Route path='./components/menuDireita' element={<MenuDireita />} />
-                <Route path='/gerenciarEmpresa' element={<GerenciarEmpresa />} />
+                <Route path="/empresa/enviarCodigo" element={<EnviarCodigo />} />
+                <Route path="/empresa/redefinirSenha" element={<MudarSenha />} />
+
+                {/* ADM */}
+                <Route element={<PrivateRoute tipo="adm" />}>
+                    <Route path="/cadastroEmpresa" element={<CadastroEmpresa />} />
+                    <Route path="/validarInfos/:id" element={<ValidarInfos />} />
+                    <Route path="/confirmarInfos/:id" element={<ConfirmarInfos />} />
+                    <Route path="/validacoes" element={<Validacoes />} />
+                    <Route path="/contratos" element={<Contratos />} />
+                    <Route path="/infosEmpresa/:id" element={<InfosEmpresa />} />
+                    <Route path="/infosFuncionario/:id" element={<InfosFuncionario />} />
+                    <Route path="/infosFilial/:id" element={<InfosFilial />} />
+                    <Route path="/gerenciarFilial/:id" element={<GerenciarFilialINSF />} />
+                    <Route path="/gerenciarFuncionario/:id" element={<GerenciarFuncionarioINSF />} />
+                    <Route path="/gerenciarEmpresa" element={<GerenciarEmpresa />} />
+                    <Route path="/contratoEmpresa/:id" element={<ContratoEmpresa />} />
+                </Route>
+
+                {/* EMPRESA */}
+                <Route element={<PrivateRoute tipo="cliente" />}>
+                    <Route path="/empresa/salvarInfos" element={<SalvarInfos />} />
+                    <Route path="/empresa/gerenciarFuncionarios" element={<Gerenciar />} />
+                    <Route path="/empresa/cadastrarFuncionarios" element={<CadastroFuncionario />} />
+                    <Route path="/empresa/gerenciarFilial" element={<GerenciarFilial />} />
+                    <Route path="/empresa/cadastrarFilial" element={<CadastroFilial />} />
+                    <Route path="/empresa/acordo" element={<Acordo />} />
+                    <Route path="/empresa/configuracoes" element={<Configuracoes />} />
+                </Route>
+
+                <Route path="*" element={<Erro />} />
             </Routes>
         </BrowserRouter>
-    )
-};
+    );
+}

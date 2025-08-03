@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 export default function CardEmpresa() {
     const [infos, setInfos] = useState([]);
@@ -18,7 +19,7 @@ export default function CardEmpresa() {
             
             setInfos(resp.data);
         } catch (err) {
-            console.error('Erro ao buscar empresas:', err);
+            toast.error('Erro ao buscar empresas:', err);
         }
     }
     

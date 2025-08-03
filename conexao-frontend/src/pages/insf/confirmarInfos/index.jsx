@@ -25,9 +25,9 @@ export default function ConfirmarInfos() {
 
     return (
         <div className="confirmar-infos">
-            <MenuLateral menuFrei={true} />
-            <MenuEmpresa menuFrei={true} />
-            <Cabecalho>
+            <MenuLateral />
+            <MenuEmpresa />
+            <Cabecalho >
                 <div className="content">
                     <div className="texto">
                         <div className="links">

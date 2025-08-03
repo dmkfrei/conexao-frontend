@@ -35,7 +35,6 @@ export default function Login() {
                 toast.error('Erro inesperado, tente novamente.');
             }
         }
-
     }
     return (
         <div className="secao-login">

@@ -4,27 +4,79 @@ import MenuLateral from '../../../components/menuLateral';
 import MenuEmpresa from '../../../components/menuEmpresa';
 import MenuLinks from '../../../components/menuLinks';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import SignaturePad from 'react-signature-canvas';
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 export default function Acordo() {
     const navigate = useNavigate();
+    const assinaturaRef = useRef();
     let token = localStorage.getItem('token');
 
     async function BaixarAcordo() {
         window.open(`http://localhost:5001/baixarAcordo?x-access-token=${token}`, '_blank');
     }
 
+    async function empresaEstaCadastrada() {
+        const url = `http://localhost:5001/verificarCadastro?x-access-token=${token}`;
+
+        let resp = await axios.get(url);
+
+        return resp;
+    }
+
     useEffect(() => {
         if (token == null || token == undefined) {
             navigate('/empresa/login');
         }
+
+        async function verificarCadastro() {
+            try {
+                const resp = await empresaEstaCadastrada();
+
+                if (!resp.data.cadastrada) {
+                    navigate('/empresa/salvarInfos');
+                }
+            } catch (error) {
+                navigate('/empresa/salvarInfos');
+            }
+        }
+
+        verificarCadastro();
     }, []);
+
+    async function enviarAssinatura() {
+        try {
+            if (assinaturaRef.current.isEmpty()) {
+                toast.error('Por favor, assine antes de enviar.');
+                return;
+            }
+
+            const base64Image = assinaturaRef.current.toDataURL('image/png');
+
+            const blob = await (await fetch(base64Image)).blob();
+            const formData = new FormData();
+            formData.append('img', blob, 'assinatura.png');
+
+            await axios.put(`http://localhost:5001/enviarAcordo?x-access-token=${token}`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            toast.success('Acordo enviado com sucesso!');
+            assinaturaRef.current.clear();
+
+        } catch (error) {
+            toast.error('Erro ao enviar o acordo.');
+        }
+    }
 
     return (
         <div className="acordo">
-            <MenuLateral menuEmpresa={true}/>
-            <MenuEmpresa menuEmpresa={true} />
+            <MenuLateral />
+            <MenuEmpresa />
 
             <Cabecalho>
                 <div className="content">
@@ -35,21 +87,24 @@ export default function Acordo() {
                     <div className="principal">
                         <div className="esquerda">
                             <div className="bordaBranca">
-                                <input id='assinatura' placeholder='Assine aqui ' />
+                                <SignaturePad
+                                    ref={assinaturaRef}
+                                    canvasProps={{
+                                        className: 'assinatura-canvas'
+                                    }}
+                                />
                             </div>
 
                             <div className="botoes">
-                                <button>Ver</button>
                                 <button onClick={BaixarAcordo}>Baixar</button>
+                                <button onClick={enviarAssinatura}>Enviar</button>
                             </div>
                         </div>
 
-                        <MenuLinks menuEmpresa={true} />
+                        <MenuLinks />
                     </div>
                 </div>
-
             </Cabecalho>
-
         </div>
-    )
+    );
 }

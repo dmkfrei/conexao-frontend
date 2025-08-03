@@ -69,6 +69,14 @@
                     color: #5D636B;
                     width: 25%;
                 }
+
+                input:disabled,
+                .imask-input:disabled {
+                    background-color: #f0f0f0;
+                    cursor: not-allowed;
+                    color: #aaa8a8;
+                    border: 1px solid #ccc;
+                }
             }
         }
     }
@@ -79,7 +87,7 @@
         align-items: flex-end;
         width: 100%;
         max-width: 560px;
-        
+
         button {
             width: 113px;
             height: 42px;
@@ -97,8 +105,8 @@
         }
     }
 
-    @media (max-width: 1399px){
-        .bordaBranca{
+    @media (max-width: 1399px) {
+        .bordaBranca {
             max-height: 45vh;
         }
     }
@@ -109,7 +117,7 @@
             max-width: 550px;
         }
 
-        .botao{
+        .botao {
             max-width: 550px;
         }
     }
@@ -118,7 +126,7 @@
         margin: 0 auto;
         justify-content: center;
         align-items: center;
-        
+
         .bordaBranca {
             max-width: 400px;
 

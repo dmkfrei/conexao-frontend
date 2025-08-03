@@ -17,16 +17,15 @@ export default function InfosFilial() {
             navigate('/')
         }
     }, []);
-
-    const { id } = useParams();
+    
     const location = useLocation();
-    const id_empresa = location.state?.id_empresa;
+    const id_empresa = location.state.id_empresa;
 
     return (
         <div className="infos-filial">
-            <MenuLateral menuFrei={true} />
-            <MenuEmpresa menuFrei={true} />
-            <Cabecalho>
+            <MenuLateral />
+            <MenuEmpresa />
+            <Cabecalho >
                 <div className="conteudo">
                     <div className="text">
                         <div className="link">
@@ -44,7 +43,7 @@ export default function InfosFilial() {
                                 <Formulario tipo='editar-filial' botaoTexto='Salvar' buscar={true} />
                             </div>
 
-                            <MenuLinks menuFrei={true} />
+                            <MenuLinks id_empresa={id_empresa} />
                         </div>
 
                     </div>
