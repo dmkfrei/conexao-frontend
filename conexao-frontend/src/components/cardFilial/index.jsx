@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { useEmpresa } from '../../routes/EmpresaContext';
 
-export default function CardFilial({ tipo }) {
+export default function CardFilial() {
     const [abrirpopUp, setAbrirPopUpDeletar] = useState(false);
     const [idFilialSelecionada, setIdFilialSelecionada] = useState(null);
     const [infos, setInfos] = useState([]);

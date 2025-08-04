@@ -39,7 +39,6 @@ export default function CadastroFilial() {
                                 <Formulario tipo='filial' botaoTexto='Salvar' />
                             </div>
 
-
                             <MenuLinks />
                         </div>
 
