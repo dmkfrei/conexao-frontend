@@ -13,33 +13,11 @@ export default function Gerenciar() {
     const navigate = useNavigate();
     let token = localStorage.getItem('token');
 
-    async function empresaEstaCadastrada() {
-        const url = `http://localhost:5001/verificarCadastro?x-access-token=${token}`;
-
-        let resp = await axios.get(url);
-
-        return resp;
-    }
-
     useEffect(() => {
         if (!token) {
             navigate('/empresa/login');
             return;
         }
-
-        async function verificarCadastro() {
-            try {
-                const resp = await empresaEstaCadastrada();
-
-                if (!resp.data.cadastrada) {
-                    navigate('/empresa/salvarInfos');
-                }
-            } catch (error) {
-                navigate('/empresa/salvarInfos');
-            }
-        }
-
-        verificarCadastro();
     }, []);
 
     return (

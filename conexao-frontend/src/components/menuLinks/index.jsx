@@ -1,13 +1,11 @@
-import './index.scss'
+import './index.scss';
 import { Link, useLocation } from 'react-router-dom';
 import { useEmpresa } from '../../routes/EmpresaContext.jsx';
 
 export default function MenuLinks({ id_empresa }) {
     const location = useLocation();
     const rotaAtual = location.pathname;
-    const { tipoUsuario, situacao } = useEmpresa();
-
-    const empresaCriada = situacao != null;
+    const { tipoUsuario } = useEmpresa();
 
     let rotaFuncionario = [
         '/infosFuncionario',
@@ -31,52 +29,28 @@ export default function MenuLinks({ id_empresa }) {
 
     return (
         <div className="menu-links">
-            {tipoUsuario == 'cliente' &&
+            {tipoUsuario === 'cliente' &&
                 <div className="dados">
-                    <div className={`item ${rotaAtual == '/empresa/salvarInfos' ? 'ativo' : ''}`}>
+                    <div className={`item ${rotaAtual === '/empresa/salvarInfos' ? 'ativo' : ''}`}>
                         <div className="barra" />
                         <Link to='/empresa/salvarInfos'>Dados da Empresa</Link>
                     </div>
-
                     <div className={`item ${rotaFuncionarioEmpresa.includes(rotaAtual) ? 'ativo' : ''}`}>
                         <div className="barra" />
-                        {empresaCriada ? (
-                            <Link to='/empresa/gerenciarFuncionarios'>Dados dos Responsáveis</Link>
-                        ) : (
-                            <span className="bloqueado">
-                                <img src="/assets/images/Lock.svg" alt="Cadeado" />
-                                <Link>Dados dos Responsáveis</Link>
-                            </span>
-                        )}
+                        <Link to='/empresa/gerenciarFuncionarios'>Dados dos Responsáveis</Link>
                     </div>
-
                     <div className={`item ${rotaFilialEmpresa.includes(rotaAtual) ? 'ativo' : ''}`}>
                         <div className="barra" />
-                        {empresaCriada ? (
-                            <Link to='/empresa/gerenciarFilial'>Filiais</Link>
-                        ) : (
-                            <span className="bloqueado">
-                                <img src="/assets/images/Lock.svg" alt="Cadeado" />
-                                Filiais
-                            </span>
-                        )}
+                        <Link to='/empresa/gerenciarFilial'>Filiais</Link>
                     </div>
-
                     <div className={`item ${rotaAtual === '/empresa/acordo' ? 'ativo' : ''}`}>
                         <div className="barra" />
-                        {empresaCriada ? (
-                            <Link to='/empresa/acordo'>Acordo</Link>
-                        ) : (
-                            <span className="bloqueado">
-                                <img src="/assets/images/Lock.svg" alt="Cadeado" />
-                                Acordo
-                            </span>
-                        )}
+                        <Link to='/empresa/acordo'>Acordo</Link>
                     </div>
                 </div>
             }
 
-            {tipoUsuario == 'adm' &&
+            {tipoUsuario === 'adm' &&
                 <div className="dados">
                     <div className={`item ${rotaAtual.startsWith('/infosEmpresa') ? 'ativo' : ''}`}>
                         <div className="barra" />
@@ -95,5 +69,5 @@ export default function MenuLinks({ id_empresa }) {
                 </div>
             }
         </div>
-    )
+    );
 }

@@ -12,32 +12,10 @@ export default function CadastroFilial() {
     const navigate = useNavigate();
     let token = localStorage.getItem('token');
 
-    async function empresaEstaCadastrada() {
-        const url = `http://localhost:5001/verificarCadastro?x-access-token=${token}`;
-
-        let resp = await axios.get(url);
-
-        return resp;
-    }
-
     useEffect(() => {
         if (token == null || token == undefined) {
             navigate('/empresa/login');
         }
-
-        async function verificarCadastro() {
-            try {
-                const resp = await empresaEstaCadastrada();
-
-                if (!resp.data.cadastrada) {
-                    navigate('/empresa/salvarInfos');
-                }
-            } catch (error) {
-                navigate('/empresa/salvarInfos');
-            }
-        }
-
-        verificarCadastro();
     }, []);
 
     return (
@@ -54,8 +32,6 @@ export default function CadastroFilial() {
                         </div>
                         <h1 id='h1Info'>Informações da Nova Filial</h1>
                     </div>
-
-
 
                     <div className="principal">
                         <div className="meio">

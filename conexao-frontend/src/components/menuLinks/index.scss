@@ -33,23 +33,6 @@
                 }
             }
         }
-
-        .bloqueado {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font: 500 15px inter;
-            color: #8F8D8D;
-            text-decoration: none;
-            cursor: not-allowed;
-            margin-left: -18px;
-
-            img {
-                width: 16px;
-                height: 16px;
-            }
-        }
-
     }
 
     @media (max-width: 1187px) {

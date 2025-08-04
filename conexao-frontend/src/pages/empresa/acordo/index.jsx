@@ -18,32 +18,10 @@ export default function Acordo() {
         window.open(`http://localhost:5001/baixarAcordo?x-access-token=${token}`, '_blank');
     }
 
-    async function empresaEstaCadastrada() {
-        const url = `http://localhost:5001/verificarCadastro?x-access-token=${token}`;
-
-        let resp = await axios.get(url);
-
-        return resp;
-    }
-
     useEffect(() => {
         if (token == null || token == undefined) {
             navigate('/empresa/login');
         }
-
-        async function verificarCadastro() {
-            try {
-                const resp = await empresaEstaCadastrada();
-
-                if (!resp.data.cadastrada) {
-                    navigate('/empresa/salvarInfos');
-                }
-            } catch (error) {
-                navigate('/empresa/salvarInfos');
-            }
-        }
-
-        verificarCadastro();
     }, []);
 
     async function enviarAssinatura() {
