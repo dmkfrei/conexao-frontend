@@ -40,8 +40,9 @@ export default function GerenciarFilialINSF() {
 
                             <div className="meio">
                                 <div className="bordaBranca">
-                                    <CardFilial />
+                                    <CardFilial tipo='adm'/>
                                 </div>
+
                                 <MenuLinks id_empresa={id}/>
                             </div>
                         </div>

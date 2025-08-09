@@ -1,5 +1,5 @@
 .cadastro-filial {
-   display: flex;
+    display: flex;
     flex-direction: row;
     background-color: #f9f9f9;
     overflow: hidden;
@@ -79,7 +79,7 @@
                 margin-top: 0px;
 
                 .meio {
-                    gap: 40px;
+                    gap: 45px;
                 }
             }
         }
@@ -89,17 +89,22 @@
         .conteudo {
             margin-top: 0px;
 
-            .text{
+            .text {
                 margin-top: 15px;
             }
 
             .principal {
                 margin-top: -20px;
+
                 .meio {
                     gap: 20px;
 
                     .esquerda {
                         max-width: 480px;
+                    }
+
+                    .menu-links {
+                        display: none;
                     }
                 }
             }

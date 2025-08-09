@@ -12,6 +12,7 @@ export default function EnviarCodigo() {
     const navigate = useNavigate();
 
     async function enviarCodigo() {
+        toast.remove();
         try {
             if (!email) {
                 toast.error('Digite um e-mail válido.');

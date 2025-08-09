@@ -15,7 +15,7 @@ export default function PopUpAprovar({ fecharPopUp }) {
 
             let resp = await axios.put(url, obj);
 
-            toast.success('A empresa foi reprovada com sucesso.')
+            toast.success('A empresa foi aprovada com sucesso.')
             fecharPopUp();
             navigate('/validacoes');
         } catch (error) {

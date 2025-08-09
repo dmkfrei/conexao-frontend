@@ -74,6 +74,9 @@ export default function Configuracoes() {
                 await axios.put(url, obj);
 
                 toast.success('As configurações foram atualizadas com sucesso.');
+                setUsuario('');
+                setSenhaAntiga('');
+                setSenha('');
             } catch (err) {
                 toast.error(err.response.data.erro || 'Erro ao atualizar login.');
             }
